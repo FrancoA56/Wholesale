@@ -1,6 +1,6 @@
 import React from "react";
 
-function Contactame() {
+function Footer() {
   return (
     <footer className="text-center bg-indigo-500 bg-opacity-80 py-4 items-end">
       <p className="text-white">
@@ -10,4 +10,4 @@ function Contactame() {
   );
 }
 
-export default Contactame;
+export default Footer;
