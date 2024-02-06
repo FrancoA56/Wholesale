@@ -12,7 +12,7 @@ function Resumen() {
         </a>
       </div>
       <div className="text-center mx-auto bg-white bg-opacity-70 hover:scale-110 hover:bg-opacity-90 transition duration-300 ease-in-out transform rounded-xl w-3/5 overflow-hidden shadow-lg my-8">
-        <div className="px-12 py-6">
+        <div className="px-12 py-6 font-gothamBI">
           {" "}
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec
           odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla

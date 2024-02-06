@@ -1,0 +1,20 @@
+@font-face {
+    font-family: 'Gotham-Book';
+    src: url('./media/fonts/Gotham-Book.otf') format('opentype');
+  }
+  
+  @font-face {
+    font-family: 'Gotham-BookItalic';
+    src: url('./media/fonts/Gotham-BookItalic.otf') format('opentype');
+  }
+  
+  @font-face {
+    font-family: 'BodoniStd-Book';
+    src: url('./media/fonts/BodoniStd-Book.otf') format('opentype');
+  }
+  
+  @font-face {
+    font-family: 'BodoniStd-BookItalic';
+    src: url('./media/fonts/BodoniStd-BookItalic.otf') format('opentype');
+  }
+  

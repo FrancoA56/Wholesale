@@ -4,12 +4,11 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        dark: "white",
-        light: "black",
-        mainD: "#5EC3BF",
-        mainL: "#004F3A",
-        bgcLight: "#F1EFEF",
-        bgcDark: "#F1EFEF",
+        tono1: "#26455A",
+        tono2: "#335C78",
+        tono3: "#5599BF",
+        tono4: "#B2B2B2",
+        tono5: "#FFFFFF",
       },
       fontSize: {
         parrafo: "1.2rem",
@@ -17,17 +16,16 @@ module.exports = {
         semititulo: "2.2rem",
         titulo: "3rem",
       },
-      backgroundImage: {
-        'radial-dark': 'radial-gradient(circle at top left, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.7))',
-        'radial-light': 'radial-gradient(circle at top left, rgba(0, 0, 0, 0.4), rgb(255, 255, 255))',
+      fontFamily: {
+        gothamB: 'Gotham-Book',
+        gothamBI: 'Gotham-BookItalic',
+        BodoniB: 'BodoniStd-Book',
+        BodoniBI: 'BodoniStd-BookItalic',
       },
-      boxShadow: {
-        'dark': '20px 20px 50px rgba(0, 0, 0, 0.1)',
-        'light': '20px 20px 100px 15px rgba(255, 255, 255, 0.3)',
-      }
+      borderRadius: {
+        "4xl": "2rem",
+      },
     },
   },
   plugins: [],
-  darkMode: 'class'
-}
-
+};
