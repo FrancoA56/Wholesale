@@ -8,7 +8,6 @@ function Contacto() {
   return (
     <div className="font-gothamB">
       <Nav />
-      <div className="my-4"></div>
       <div className="my-4 text-semititulo font-BodoniB bg-tono3 text-tono5">
         ¿Quienes somos?
       </div>
