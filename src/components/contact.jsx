@@ -190,7 +190,7 @@ function AcercaDe() {
               <div className="flex items-center justify-center">
                 <button
                   type="submit"
-                  className="bg-tono3 hover:bg-tono1 hover:scale-125 transition ease-in-out transform text-tono5 py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                  className="bg-tono3 shadow-[0_4px_9px_-4px_#000000] hover:bg-tono1 hover:scale-125 transition ease-in-out transform text-tono5 py-2 px-4 rounded focus:outline-none focus:shadow-outline"
                 >
                   Enviar
                 </button>
@@ -207,7 +207,7 @@ function AcercaDe() {
                   </p>
                 </div>
               </div>
-              <div className=" px-4 py-2 rounded bg-tono3 hover:scale-125 transition ease-in-out transform">
+              <div className="shadow-[0_4px_9px_-4px_#000000] px-4 py-2 rounded bg-tono3 hover:scale-125 transition ease-in-out transform">
               +54 9 11-2305-3139
               </div>
             </div>
@@ -222,7 +222,7 @@ function AcercaDe() {
                     </p>
                 </div>
               </div>
-              <div className="px-4 py-2 rounded bg-tono3 hover:scale-125 transition ease-in-out transform">011-2305-3139</div>
+              <div className="shadow-[0_4px_9px_-4px_#000000] px-4 py-2 rounded bg-tono3 hover:scale-125 transition ease-in-out transform">011-2305-3139</div>
             </div>
           </div>
         </div>

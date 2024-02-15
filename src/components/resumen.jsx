@@ -114,195 +114,7 @@ function Resumen() {
   };
   return (
     <>
-      <div className="flex justify-center my-12">
-        <div className="text-black flex font-BodoniB text-semititulo">
-          ¿Tienes una tienda y quieres vender nuestros productos?
-          <button
-            onClick={() => setPopupOpen(true)}
-            className="text-subtitulo font-gothamB shadow-xl mx-12 bg-tono3 px-4 text-white rounded-md hover:bg-tono2 hover:scale-125 transition duration-300 ease-in-out transform"
-          >
-            ¡Registrate!
-          </button>
-          {isPopupOpen && (
-            <div className="fixed inset-0 bg-gray-500 bg-opacity-75 z-50 flex items-center justify-center">
-              <form
-                className="mt-1"
-                ref={form}
-                onSubmit={(e) => {
-                  handleSubmit(e);
-                  sendEmail(e);
-                }}
-              >
-                {/* ... Tu formulario aquí */}
-                <div className="isolate w-full h-2/3 bg-tono4 rounded-md px-6 sm:py-3 lg:px-3">
-                  {/* Creo q le da animacion y el tamaño */}
-                  <div
-                    className="absolute inset-x-0 top-[-10rem] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[-20rem]"
-                    aria-hidden="true"
-                  ></div>
-                  {/* Encabezado */}
-                  <div className="mx-auto flex flex-col items-center justify-center min-w-xl max-w-xl border-b border-[#303030]">
-                    <h2 className="text-3xl font-BodoniB tracking-tight text-[#303030]  sm:text-4xl  uppercase leading-normal">
-                      ¡Contactanos para registrarte!
-                    </h2>
-                  </div>
-                  {/* Formulario */}
-                  <div
-                    action="#"
-                    method="POST"
-                    className="mx-auto max-w-xl mt-5"
-                  >
-                    {/* Formulario container */}
-                    <div className="grid md:grid-rows-5"></div>
-                    {/* Nombre y apellido */}
-                    <div className="grid md:grid-cols-2 grid-cols-1">
-                      {/* Nombre */}
-                      <div className=" flex flex-col items-start pl-5 pr-1 py-0.5">
-                        <label
-                          for="first-name"
-                          className="text-sm font-gothamBI text-[#303030] px-2"
-                        >
-                          {" "}
-                          Nombre
-                        </label>
-                        <input
-                          name="user_name"
-                          id="name"
-                          autocomplete="Nombre"
-                          // autocomplete="off"
-                          type="text"
-                          onChange={handleChange}
-                          value={formData.user_name}
-                          required
-                          className="text-gothamB shadow appearance-none border rounded-md w-full py-2 px-3 text-[#303030] leading-tight focus:outline-[#909090] focus:shadow-outline dark:bg-[#505050]"
-                        />
-                      </div>
-                      {/* Apellido */}
-                      <div className="flex flex-col items-start pr-5 pl-1 py-0.5">
-                        <label
-                          for="last-name"
-                          className="text-sm font-gothamBI text-[#303030] px-2"
-                        >
-                          {" "}
-                          Apellido
-                        </label>
-                        <input
-                          type="text"
-                          name="lastname"
-                          id="lastname"
-                          autocomplete="Apellido"
-                          // autocomplete="off"
-                          onChange={handleChange}
-                          required
-                          // value={formData.lastname}
-                          className="text-gothamB shadow appearance-none border rounded-md w-full py-2 px-3 text-[#303030] leading-tight focus:outline-[#909090] focus:shadow-outline dark:bg-[#505050]"
-                        />
-                      </div>
-                    </div>
-                    {/* name (company name)*/}
-                    <div className=" flex flex-col items-start px-5 py-0.5">
-                      <label
-                        for="name"
-                        className="text-sm font-gothamBI text-[#303030] px-2"
-                      >
-                        {" "}
-                        Empresa
-                      </label>
-                      <input
-                        type="text"
-                        name="name"
-                        id="name"
-                        autocomplete="organization"
-                        // autocomplete="off"
-                        onChange={handleChange}
-                        required
-                        className="shadow appearance-none border rounded-md w-full py-2 px-3 text-[#303030] leading-tight focus:outline-[#909090] focus:shadow-outline dark:text-white dark:bg-[#505050]"
-                      />
-                    </div>
-                    {/* phone (phone number)*/}
-                    <div className=" flex flex-col items-start px-5 py-0.5">
-                      <label
-                        for="phone"
-                        className="text-sm font-gothamBI text-[#303030] px-2"
-                      >
-                        {" "}
-                        Teléfono
-                      </label>
-                      <input
-                        type="number"
-                        name="phone"
-                        id="phone"
-                        autocomplete="Teléfono"
-                        // autocomplete="off"
-                        onChange={handleChange}
-                        required
-                        className="shadow appearance-none border rounded-md w-full py-2 px-3 text-[#303030] leading-tight focus:outline-[#909090] focus:shadow-outline dark:text-white dark:bg-[#505050]"
-                      />
-                    </div>
-                    {/* email */}
-                    <div className=" flex flex-col items-start px-5 py-0.5">
-                      <label
-                        for="email"
-                        className="text-sm font-gothamBI text-[#303030] px-2"
-                      >
-                        {" "}
-                        Mail
-                      </label>
-                      <input
-                        type="email"
-                        name="user_email"
-                        id="email"
-                        autocomplete="email"
-                        // autocomplete="off"
-                        onChange={handleChange}
-                        required
-                        value={formData.user_email}
-                        className="shadow appearance-none border rounded-md w-full py-2 px-3 text-[#303030] leading-tight focus:outline-[#909090] focus:shadow-outline dark:text-white dark:bg-[#505050]"
-                      />
-                    </div>
-                    {/* message */}
-                    <div className=" flex flex-col items-start px-5 py-0.5">
-                      <label
-                        for="message"
-                        className="text-sm font-gothamBI text-[#303030] px-2"
-                      >
-                        {" "}
-                        Mensaje
-                      </label>
-                      <textarea
-                        name="message"
-                        id="message"
-                        rows="4"
-                        onChange={handleChange}
-                        required
-                        value={formData.message}
-                        className="shadow appearance-none border rounded-md w-full py-2 px-3 text-[#303030] leading-tight focus:outline-[#909090] focus:shadow-outline dark:text-white dark:bg-[#505050]"
-                      />
-                    </div>
-                    {/* Botones */}
-                    <div className="flex flex-col justify-center items-center mt-5 md:px-4 md:flex-row md:justify-center">
-                      <button
-                        type="submit"
-                        name="submit"
-                        value="Send"
-                        className="h-10 w-11/12 mt-2 mb-2 bg-tono3 rounded-md md:px-2 md:w-2/3 md:m-1 text-sm font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#000000] transition duration-150 ease-in-out hover:bg-tono2 dark:hover:bg-logo hover:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.3),0_4px_18px_0_rgba(0,0,0,0.2)]"
-                      >
-                        Enviar
-                      </button>
-                      <button
-                        onClick={() => setPopupOpen(false)}
-                        className="mt-2 mb-2 h-10 w-11/12 inline-block bg-[#505050] md:w-2/3 rounded-md md:px-2 md:m-1 text-sm font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#000000] transition duration-150 ease-in-out hover:bg-[#303030] hover:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.3),0_4px_18px_0_rgba(0,0,0,0.2)]"
-                      >
-                        Cerrar
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </form>
-            </div>
-          )}
-        </div>
-      </div>
+    <div className="py-3"></div>
       <div className="flex bg-tono3 py-6">
         <div className="flex-1 flex justify-center items-center">
           <img
@@ -319,12 +131,12 @@ function Resumen() {
           <img
             src={emileLogo}
             alt="emileLogo"
-            className="w-1/4 mr-24 hover:scale-125 transition duration-300 ease-in-out transform"
+            className="w-1/4 mr-24  hover:scale-125 transition duration-300 ease-in-out transform"
           />
         </div>
       </div>
 
-      <div className="flex justify-center gap-12 bg-tono2 py-12">
+      <div className="flex justify-center gap-24 bg-tono2 py-12 mt-6">
         <div className="w-2/5">
           <CarouselProvider
             naturalSlideHeight={36}
@@ -397,7 +209,7 @@ function Resumen() {
             </div>
           </CarouselProvider>
         </div>
-        <div className="w-2/5 mx-12">
+        <div className="w-2/5 ">
           <CarouselProvider
             naturalSlideHeight={36}
             naturalSlideWidth={52}
@@ -470,6 +282,7 @@ function Resumen() {
           </CarouselProvider>
         </div>
       </div>
+      <div className="py-3"></div>
     </>
   );
 }

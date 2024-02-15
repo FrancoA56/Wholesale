@@ -13,7 +13,7 @@ import ooniHornoFull from "../media/imagenes/ooni horno full.jpeg"
 function Head() {
   return (
     <>
-      <div className=""></div>
+      <div className="py-3"></div>
       <div className="flex ">
         <img className="w-1/5" src={emile2} alt="emile henry" />
         <img className="w-1/5" src={ooniHorno} alt="Ooni" />
