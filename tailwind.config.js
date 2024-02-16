@@ -5,6 +5,7 @@ module.exports = {
     extend: {
       colors: {
         tono1: "#26455A",
+        tono1b: 'rgb(38, 69, 90, 0.6)',
         tono2: "#335C78",
         tono3: "#5599BF",
         tono4: "#B2B2B2",
@@ -24,6 +25,9 @@ module.exports = {
       },
       borderRadius: {
         "4xl": "2rem",
+      },
+      backgroundImage: {
+        "fondo": "url('/src/media/imagenes/fondoEmily3.jpg')",
       },
     },
   },

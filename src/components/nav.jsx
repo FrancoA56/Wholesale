@@ -80,10 +80,10 @@ function Nav() {
   };
 
   return (
-    <div className="bg-tono1 text-tono5 font-gothamBI">
+    <div className="bg-tono1 text-tono5 font-gothamBI fixed w-screen z-40 pr-3">
       <div className="flex justify-between items-center py-2 px-3">
         {/* Agregar la imagen a la izquierda */}
-        <img className="w-12" src={wsBlanco} alt="wholesale logo" />
+        <img className="w-12 hover:scale-125 transition duration-300 ease-in-out transform" src={wsBlanco} alt="wholesale logo" />
         {/* Elementos principales alineados a la derecha */}
         <div className="flex gap-6">
           <NavLink
