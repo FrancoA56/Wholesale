@@ -3,6 +3,7 @@ import Swal from "sweetalert2";
 import emailjs from "@emailjs/browser";
 import wsBlanco from "../media/imagenes/MONOGRAMA-WHOLESALE-BLANCO.png";
 import { NavLink } from "react-router-dom";
+import Dropdown from "./dropDown"
 
 function Nav() {
   // ? FUNCIONES PARA USAR EMAIL JS
@@ -79,6 +80,8 @@ function Nav() {
     });
   };
 
+  
+
   return (
     <div className="bg-tono1 text-tono5 font-gothamBI fixed w-screen z-40 pr-3">
       <div className="flex justify-between items-center py-2 px-3">
@@ -104,6 +107,7 @@ function Nav() {
           >
             Acerca de
           </NavLink>
+          <Dropdown/>
           <button
             onClick={() => setPopupOpen(true)}
             className="shadow-[0_4px_9px_-4px_#000000] font-gothamB bg-tono3 px-2 rounded-md hover:bg-tono2 hover:scale-110 transition duration-300 ease-in-out transform"
@@ -290,8 +294,9 @@ function Nav() {
             </div>
           )}
           <a
-            className="hover:scale-110 transition duration-300 ease-in-out transform"
-            to=""
+            className="hover:scale-110 transition pointer duration-300 ease-in-out transform"
+            href="https://app.holded.com/login?lang=es"
+            target="_blank"
           >
             Ingresar
           </a>

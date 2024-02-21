@@ -1,21 +1,13 @@
 import React from "react";
-import Nav from "./nav.jsx";
-import Footer from "./footer.jsx";
-import hornosOoni from "../media/imagenes/ooni/hornos_ooni2.jpg";
-import logoWS from "../media/imagenes/MONOGRAMA-WHOLESALE-BLANCO.png";
 
 function Contacto() {
   return (
-    <div className="font-gothamB">
-      <Nav />
-      <div className="my-4 text-semititulo font-BodoniB bg-tono3 text-tono5">
+    <div className="font-gothamB pt-12">
+      <div className="flex justify-center items-center text-gray-700 font-gothamB text-subtitulo mt-6">
         ¿Quienes somos?
       </div>
-      <div className="">
-        <img src={hornosOoni} alt="hornosOoni" className="w-screen" />
-      </div>
-      <div className="flex justify-center bg-tono3 my-4">
-        <div className="items-center p-12 text-tono5 font-gothamB ">
+      <div className="grid grid-cols-2">
+        <div className="items-center justify-center items-center flex p-12 text-gray-700 font-gothamB py-12 text-parrafo">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec
           odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla
           quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent
@@ -27,32 +19,30 @@ function Contacto() {
           Maecenas mattis. Sed convallis tristique sem. Proin ut ligula vel nunc
           egestas porttitor. Morbi lectus risus, iaculis vel, suscipit quis,
           luctus non, massa. Fusce ac turpis quis ligula lacinia aliquet. Mauris
-          ipsum. Nulla metus metus, ullamcorper vel, tincidunt sed, euismod in,
-          nibh. Quisque volutpat condimentum velit. Class aptent taciti sociosqu
-          ad litora torquent per conubia nostra, per inceptos himenaeos. Nam nec
-          ante. Sed lacinia, urna non tincidunt mattis, tortor neque adipiscing
-          diam, a cursus ipsum ante quis turpis. Nulla facilisi. Ut fringilla.
-          Suspendisse potenti. Nunc feugiat mi a tellus consequat imperdiet.
-          Vestibulum sapien. Proin quam. Etiam ultrices. Suspendisse in justo eu
-          magna luctus suscipit. Sed lectus. Integer euismod lacus luctus magna.
-          Quisque cursus, metus vitae pharetra auctor, sem massa mattis sem, at
-          interdum magna augue eget diam. Vestibulum ante ipsum primis in
-          faucibus orci luctus et ultrices posuere cubilia Curae; Morbi lacinia
-          molestie dui. Praesent blandit dolor. Sed non quam. In vel mi sit amet
-          augue congue elementum. Morbi in ipsum sit amet pede facilisis
-          laoreet. Donec lacus nunc, viverra nec, blandit vel, egestas et,
-          augue. Vestibulum tincidunt malesuada tellus. Ut ultrices ultrices
-          enim. Curabitur sit amet mauris.{" "}
+          ipsum. Nulla metus metus,{" "}
         </div>
-        <div className="flex items-center ">
-          <img src={logoWS} alt="logoWS" className="mr-60" style={{ width: '2000px', height: 'auto' }}/>
+        <div className="flex justify-center text-center items-center p-6 ">
+          <img
+            src="https://www.emilehenryusa.com/cdn/shop/products/Bread-cloche-1_1024x1024@2x.gif?v=1701888711"
+            alt="emile henry gif"
+            className="rounded-2xl"
+          />
         </div>
       </div>
-
-      <Footer />
+      <div className="grid grid-cols-3">
+        <div></div>
+        <div></div>
+        <div>
+          <div className="flex justify-center items-center text-gray-700 font-gothamB text-subtitulo mt-6">
+            ¡Nuestras redes!
+          </div>
+          <div className="text-tono2 flex justify-center items-center my-1">
+            <i class="fa-solid fa-arrow-down-long"></i>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
 
 export default Contacto;
-

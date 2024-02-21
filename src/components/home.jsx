@@ -8,10 +8,8 @@ import Nav from "./nav.jsx";
 function Home() {
   return (
     <div className="font-gothamB">
-      <Nav />
       <Head />  
       <Resumen />
-      <Footer />
     </div>
   );
 }

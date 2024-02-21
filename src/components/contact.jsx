@@ -1,22 +1,16 @@
 import React, { useState, useRef } from "react";
 import Swal from "sweetalert2";
 import emailjs from "@emailjs/browser";
-import Nav from "./nav.jsx";
-import Footer from "./footer.jsx";
-import imagen1 from "../media/imagenes/emile/imagen1.jpeg";
-import imagen2 from "../media/imagenes/emile/imagen2.jpeg";
-import imagen3 from "../media/imagenes/emile/imagen3.jpeg";
-import imagen4 from "../media/imagenes/emile/imagen4.jpeg";
-import imagen5 from "../media/imagenes/emile/imagen5.jpeg";
+import gifOoni from "../media/imagenes/ooni/gif/Fyra 12_Flame Loop_Transparent.gif";
 
 function AcercaDe() {
   // ? FUNCIONES PARA USAR EMAIL JS
   const form = useRef();
 
   const [formData, setFormData] = useState({
-    user_name: "",
-    user_enterprise: "",
-    user_email: "",
+    companyName: "",
+    phone: "",
+    email: "",
     message: "",
   });
 
@@ -26,11 +20,11 @@ function AcercaDe() {
     if (formData.user_email && formData.message) {
       console.log("Form Data:", formData);
       showSuccessAlert(
-        "El mensaje fue enviado correctamente. ¡Pronto nuestro personal se estara comunicando contigo!"
+        "El mensaje fue enviado correctamente. ¡Pronto nuestro personal se estará comunicando contigo!"
       );
     } else {
       showErrorAlert(
-        "Tiene que rellenar por lo menos la casilla del mail y el mensaje"
+        "Tiene que rellenar por lo menos la casilla del correo electrónico y el mensaje"
       );
     }
   };
@@ -82,152 +76,105 @@ function AcercaDe() {
 
   return (
     <div className="font-gothamB">
-      <Nav />
-      <div className=""></div>
-      <div className="my-4 text-semititulo font-BodoniB bg-tono3 text-tono5">
-        ¡Contactanos!
-      </div>
-      <div className="flex ">
-        <img className="w-1/5" src={imagen1} alt="emile henry" />
-        <img className="w-1/5" src={imagen2} alt="emile henry" />
-        <img className="w-1/5" src={imagen3} alt="emile henry" />
-        <img className="w-1/5" src={imagen4} alt="emile henry" />
-        <img className="w-1/5" src={imagen5} alt="emile henry" />
-      </div>
-      <div className="">
-        <div className="flex justify-center">
-          <div className="w-1/2">
-            <div className="my-4 text-semititulo font-BodoniB bg-tono3 text-tono5 text-center">
-              ¡Envíanos un mensaje!
-            </div>
-          </div>
-          <div className="w-1/2">
-            <div className="my-4 pr-32 text-semititulo font-BodoniB bg-tono3 text-tono5 text-center">
-              Otros medios de contacto
-            </div>
-          </div>
+      <div className="grid grid-cols-5 pt-6< ">
+        <div className="col-span-5 grid grid-cols-5">
+        <div className="col-span-2"></div>
+        <div className="col-span-3 flex justify-center items-center text-gray-700 font-gothamB text-subtitulo mb-6 mt-16">
+          ¡Envíanos un mensaje!
         </div>
-        <div className="flex justify-between mb-4">
-          <div className="w-full max-w-lg ml-28">
-            <form
-              className="bg-tono2 shadow-3xl rounded px-8 pt-6 pb-4 mb-4"
-              ref={form}
-              onSubmit={(e) => {
-                handleSubmit(e);
-                sendEmail(e);
-              }}
-            >
-              <div className="mb-4">
+        </div>
+        <div className="flex col-span-2 justify-end items-center">
+          <img src={gifOoni} alt="gifOoni"/>
+        </div>
+        <div className="flex col-span-3 justify-center">
+          <div className="w-1/2 mb-12 mx-auto mt-8">
+            <form ref={form} onSubmit={handleSubmit}>
+              <div className="mb-6">
                 <label
-                  htmlFor="first-name"
-                  className="block  text-tono5 text-sm font-gothamBI mb-2"
+                  htmlFor="companyName"
+                  className="block text-gray-700 font-bold mb-2"
                 >
-                  Nombre
+                  Nombre de la empresa
                 </label>
                 <input
-                  name="user_name"
-                  id="name"
-                  autoComplete="name"
                   type="text"
+                  id="companyName"
+                  name="companyName"
+                  value={formData.companyName}
                   onChange={handleChange}
-                  value={formData.user_name}
-                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  className="appearance-none border-b-2 border-tono2 focus:outline-none focus:border-tono3 w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none"
+                  placeholder="Wholesale"
                 />
               </div>
-              <div className="mb-4">
+              <div className="mb-6">
                 <label
-                  htmlFor="enterprise-name"
-                  className="block  text-tono5 text-sm font-gothamBI mb-2"
+                  htmlFor="phone"
+                  className="block text-gray-700 font-bold mb-2"
                 >
-                  Empresa
+                  Teléfono
                 </label>
                 <input
-                  name="user_enterprise"
-                  id="enterprise-name"
-                  autoComplete="organization"
-                  type="text"
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  value={formData.phone}
                   onChange={handleChange}
-                  value={formData.user_enterprise}
-                  required
-                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  className="appearance-none border-b-2 border-tono2 focus:outline-none focus:border-tono3 w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none"
+                  placeholder="011-2305-3139"
                 />
               </div>
-              <div className="mb-4">
+              <div className="mb-6">
                 <label
-                  htmlFor="user-email"
-                  className="block  text-tono5 text-sm font-gothamBI mb-2"
+                  htmlFor="email"
+                  className="block text-gray-700 font-bold mb-2"
                 >
-                  Email
+                  Correo electrónico
                 </label>
                 <input
-                  name="user_email"
-                  id="user-email"
-                  autoComplete="email"
                   type="email"
+                  id="email"
+                  name="email"
+                  value={formData.email}
                   onChange={handleChange}
-                  value={formData.user_email}
-                  required
-                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  className="appearance-none border-b-2 border-tono2 focus:outline-none focus:border-tono3 w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none"
+                  placeholder="hola@ws-dyr.com"
                 />
               </div>
               <div className="mb-6">
                 <label
                   htmlFor="message"
-                  className="block text-tono5 text-sm font-gothamBI mb-2"
+                  className="block text-gray-700 font-bold mb-2"
                 >
                   Mensaje
                 </label>
                 <textarea
-                  name="message"
                   id="message"
-                  autoComplete="off"
-                  onChange={handleChange}
+                  name="message"
                   value={formData.message}
-                  required
-                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                />
+                  onChange={handleChange}
+                  className="appearance-none border-b-2 border-tono2 focus:outline-none focus:border-tono3 w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none"
+                  placeholder="¡Estoy interesado en sus productos! Quisiera saber mas."
+                  rows="4"
+                ></textarea>
               </div>
               <div className="flex items-center justify-center">
                 <button
                   type="submit"
-                  className="bg-tono3 shadow-[0_4px_9px_-4px_#000000] hover:bg-tono1 hover:scale-125 transition ease-in-out transform text-tono5 py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                  className="bg-tono3 shadow-xl transition transform ease-in-out hover:scale-110 hover:bg-tono1 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
                 >
                   Enviar
                 </button>
               </div>
             </form>
           </div>
-          <div className="flex flex-col items-center justify-center mb-4 bg-tono2 text-tono5 rounded mx-auto">
-            <div className="flex flex-col items-center justify-center mb-4 p-12">
-              <div className="px-4 py-2 mb-2">
-                <div className="flex">
-                  Nuestro Whats App
-                  <p className="text-green-400 ml-4">
-                    <i className="fab fa-whatsapp"></i>
-                  </p>
-                </div>
-              </div>
-              <div className="shadow-[0_4px_9px_-4px_#000000] px-4 py-2 rounded bg-tono3 hover:scale-125 transition ease-in-out transform">
-              +54 9 11-2305-3139
-              </div>
-            </div>
-            <div className="mb-8">Y nuestro</div>
-            <div className="flex flex-col items-center justify-center mb-4">
-              <div className="px-4 py-2 mb-2">
-                <div className="flex">
-                  Numero de linea 
-                  <p className="text-tono4 ml-4">
-                    
-                    <i className="fas fa-mobile-alt"></i>
-                    </p>
-                </div>
-              </div>
-              <div className="shadow-[0_4px_9px_-4px_#000000] px-4 py-2 rounded bg-tono3 hover:scale-125 transition ease-in-out transform">011-2305-3139</div>
-            </div>
-          </div>
         </div>
       </div>
-      <Footer />
+      <div className="flex justify-center items-center text-gray-700 font-gothamB text-subtitulo mt-6">
+        Otros medios de comunicación
+      </div>
+      <div className="text-tono2">
+        <i class="fa-solid fa-arrow-down-long"></i>{" "}
+      </div>
     </div>
   );
 }

@@ -38,7 +38,7 @@ function Footer() {
         <div className="flex-1 flex justify-center">
           <div className="flex flex-col">
             <div
-              className="flex hover:scale-110 transition duration-300 ease-in-out transform"
+              className="flex"
               style={{ cursor: "pointer" }}
               onClick={copiarEmail}
             >
@@ -46,7 +46,7 @@ function Footer() {
               hola@ws-dyr.com
             </div>
             <div
-              className="flex hover:scale-110 transition duration-300 ease-in-out transform"
+              className="flex"
               style={{ cursor: "pointer" }}
               onClick={copiarTel}
             >
@@ -54,7 +54,7 @@ function Footer() {
               011-2305-3139
             </div>
             <div
-              className="flex hover:scale-110 transition duration-300 ease-in-out transform"
+              className="flex"
               style={{ cursor: "pointer" }}
               onClick={copiarWsp}
             >

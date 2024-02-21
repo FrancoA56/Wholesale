@@ -28,6 +28,9 @@ module.exports = {
       },
       backgroundImage: {
         "fondo": "url('/src/media/imagenes/fondoEmily3.jpg')",
+        "fondoOoni": "url('/src/media/imagenes/ooni/portada.jpeg')",
+        "fondoEmile": "url('/src/media/imagenes/emile/portada.jpeg')",
+        "fondoMauviel": "url('/src/media/imagenes/mauviel/portada.jpeg')",
       },
     },
   },
