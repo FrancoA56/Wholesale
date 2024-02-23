@@ -27,12 +27,12 @@ function Footer() {
     <>
     <ToastContainer position="top-right" autoClose={1500} />
     <footer className="text-center bg-tono1 py-4 items-end pt-12 text-tono5 ">
-      <div className="flex pb-8">
+      <div className="grid sm:flex grid-rows-3 gap-12 sm:gap-0 pb-8">
         <div className="flex-1 flex justify-center items-center">
           <img
             src={logoWholesale}
             alt="logoWholesale"
-            className="w-80 h-auto hover:scale-110 transition duration-300 ease-in-out transform"
+            className="w-80 h-auto"
           />
         </div>
         <div className="flex-1 flex justify-center">

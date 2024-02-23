@@ -1,0 +1,21 @@
+.animated-section {
+  opacity: 0;
+  transition: opacity 1s ease-out, transform 2s ease-out;
+  transform: translateX(-300px); /* Empieza desplazado hacia la izquierda */
+}
+
+.animated-section-right {
+  opacity: 0;
+  transition: opacity 1s ease-out, transform 2s ease-out;
+  transform: translateX(300px); /* Empieza desplazado hacia la izquierda */
+}
+
+.slide-in-left {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.slide-in-right {
+  opacity: 1;
+  transform: translateX(0);
+}

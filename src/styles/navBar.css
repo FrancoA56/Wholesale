@@ -1,0 +1,12 @@
+.navbar {
+    /* Estilos de tu NavBar */
+    /* Por ejemplo: */
+    transition: height 0.8s ease;
+    height: 50px; /* Altura inicial */
+    overflow: hidden;
+  }
+  
+  .navbar.expanded {
+    height: 300px; /* Altura expandida */
+  }
+  

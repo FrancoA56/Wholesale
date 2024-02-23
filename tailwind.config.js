@@ -31,6 +31,11 @@ module.exports = {
         "fondoOoni": "url('/src/media/imagenes/ooni/portada.jpeg')",
         "fondoEmile": "url('/src/media/imagenes/emile/portada.jpeg')",
         "fondoMauviel": "url('/src/media/imagenes/mauviel/portada.jpeg')",
+        "pizita": "url('/src/media/imagenes/ooni/pizita.jpeg')",
+        "pizitaCel": "url('/src/media/imagenes/ooni/pizitaCel.jpeg')",
+      },
+      transitionDuration: {
+        'height': '0.5s',
       },
     },
   },

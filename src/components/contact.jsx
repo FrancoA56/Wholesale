@@ -75,20 +75,34 @@ function AcercaDe() {
   };
 
   return (
-    <div className="font-gothamB">
+    <div className="font-gothamB pt-16">
       <div className="grid grid-cols-5 pt-6< ">
-        <div className="col-span-5 grid grid-cols-5">
-        <div className="col-span-2"></div>
-        <div className="col-span-3 flex justify-center items-center text-gray-700 font-gothamB text-subtitulo mb-6 mt-16">
-          ¡Envíanos un mensaje!
-        </div>
-        </div>
         <div className="flex col-span-2 justify-end items-center">
-          <img src={gifOoni} alt="gifOoni"/>
+          <img src={gifOoni} alt="gifOoni" />
         </div>
-        <div className="flex col-span-3 justify-center">
+        <div className="flex flex-col col-span-3 justify-center">
+          <div className="flex justify-center items-center text-gray-700 font-gothamB text-semititulo mt-6 ">
+            ¡Envíanos un mensaje!
+          </div>
           <div className="w-1/2 mb-12 mx-auto mt-8">
             <form ref={form} onSubmit={handleSubmit}>
+              <div className="mb-6">
+                <label
+                  htmlFor="companyName"
+                  className="block text-gray-700 font-bold mb-2"
+                >
+                  Nombre y Apellido
+                </label>
+                <input
+                  type="text"
+                  id="companyName"
+                  name="companyName"
+                  value={formData.companyName}
+                  onChange={handleChange}
+                  className="appearance-none border-b-2 border-tono2 focus:outline-none focus:border-tono3 w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none"
+                  placeholder="Pedro Alfonso"
+                />
+              </div>
               <div className="mb-6">
                 <label
                   htmlFor="companyName"

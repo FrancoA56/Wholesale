@@ -1,27 +1,27 @@
 import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
 
 const Dropdown = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedMarca, setSelectedMarca] = useState(null);
   const marcas = ['Ooni', 'Mauviel 1830', 'Emile Henry'];
 
-  const toggleDropdown = () => {
-    setIsOpen(!isOpen);
+  const handleMouseEnter = () => {
+    setIsOpen(true);
   };
 
-  const handleMarcaChange = (marca) => {
-    setSelectedMarca(marca);
+  const handleMouseLeave = () => {
+    setIsOpen(false);
+  };
+
+  const handleMarcaChange = () => {
     setIsOpen(false);
   };
 
   return (
-    <div className="relative inline-block text-left">
+    <div className="relative inline-block text-left" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
       <div>
         <button
-          onClick={toggleDropdown}
           type="button"
-          className="inline-flex justify-center w-full text-gray-700 text-white"
+          className="sm:inline-flex sm:justify-center w-full text-white flex justify-end "
           id="options-menu"
           aria-expanded={isOpen ? 'true' : 'false'}
           aria-haspopup="true"
@@ -29,7 +29,7 @@ const Dropdown = () => {
           {'Marcas'}
           {/* Icono de flecha abajo */}
           <svg
-            className="-mr-1 ml-2 h-5 w-5"
+            className=" ml-2 h-5 w-5"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 20 20"
             fill="currentColor"
@@ -47,22 +47,23 @@ const Dropdown = () => {
       {/* Dropdown */}
       {isOpen && (
         <div
-          className="origin-top-right absolute mt-2 w-36 bg-tono1 rounded-md shadow-lg "
+          className="sm:origin-top-right absolute w-32 rounded-md shadow-lg origin-top-left right-20 bottom-0 sm:right-0 sm:left-0 sm:top-5"
           role="menu"
           aria-orientation="vertical"
           aria-labelledby="options-menu"
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
         >
           {marcas.map((marca, index) => (
-            <NavLink key={index} to={`/${marca.replace(/\s+/g, '')}`} activeClassName="bg-gray-100 text-gray-900" className="block">
+            <a key={index} href={`/${marca.replace(/\s+/g, '')}`} activeClassName="bg-gray-100 text-white" className="block">
               <button
-                onClick={() => handleMarcaChange(marca)}
-                className="flex w-full px-4 py-2 text-sm text-left"
+                onClick={() => handleMarcaChange()}
+                className="flex w-full px-4 py-1 text-sm text-left hover:scale-110 transition transform ease-in-out"
                 role="menuitem"
               >
                 {marca}
               </button>
-              <hr className='border-tono3 mx-2'/>
-            </NavLink>
+            </a>
           ))}
         </div>
       )}

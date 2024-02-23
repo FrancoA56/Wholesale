@@ -1,91 +1,46 @@
-import React, { useState, useRef } from "react";
-import Swal from "sweetalert2";
-import emailjs from "@emailjs/browser";
+import React, { useState, useEffect, useRef } from "react";
 import ooniLogo from "../media/imagenes/Ooni-logo negro png.png";
-import emileLogo from "../media/imagenes/EmileHenry-logo blanco png.png";
-import mauvielLogo from "../media/imagenes/logoMauvielNegro.png";
 import EmileHenry from "../media/imagenes/EmileHenry-02.png";
 import mauvile from "../media/imagenes/logoMauvielNegro.png";
+import "../styles/resumen.css";
 
 function Resumen() {
-  // ? FUNCIONES PARA USAR EMAIL JS
-  const form = useRef();
+  const [isVisibleOoni, setIsVisibleOoni] = useState(false);
+  const [isVisibleEmileHenry, setIsVisibleEmileHenry] = useState(false);
+  const [isVisibleMauviel, setIsVisibleMauviel] = useState(false);
 
-  const sendEmail = (e) => {
-    e.preventDefault();
-    if (formData.user_email && formData.message) {
-      emailjs
-        .sendForm(
-          "service_rjik02h",
-          "template_w2je5xe",
-          form.current,
-          "ncTuTVkphxHhuJbUE"
-        )
-        .then(
-          (result) => {
-            console.log(result.text);
-          },
-          (error) => {
-            console.log(error.text);
-          }
-        );
-    }
-  };
+  const ooniRef = useRef(null);
+  const emileHenryRef = useRef(null);
+  const mauvielRef = useRef(null);
 
-  const [isPopupOpen, setPopupOpen] = useState(false);
+  useEffect(() => {
+    const handleScroll = () => {
+      const topOoni = ooniRef.current
+        ? ooniRef.current.getBoundingClientRect().top
+        : null;
+      const topEmileHenry = emileHenryRef.current
+        ? emileHenryRef.current.getBoundingClientRect().top
+        : null;
+      const topMauviel = mauvielRef.current
+        ? mauvielRef.current.getBoundingClientRect().top
+        : null;
 
-  const [formData, setFormData] = useState({
-    user_name: "",
-    user_lastname: "",
-    user_phone: "",
-    user_company: "",
-    user_email: "",
-    message: "",
-  });
+      if (topOoni !== null) setIsVisibleOoni(topOoni < window.innerHeight);
+      if (topEmileHenry !== null)
+        setIsVisibleEmileHenry(topEmileHenry < window.innerHeight);
+      if (topMauviel !== null)
+        setIsVisibleMauviel(topMauviel < window.innerHeight);
+    };
 
-  //Función para manejar el cambio en los inputs del form
-  const handleChange = (event) => {
-    setFormData({
-      ...formData,
-      [event.target.name]: event.target.value,
-    });
-  };
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
-  //Función para manejar el envío del form
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (formData.user_email && formData.message) {
-      console.log("Form Data:", formData);
-      showSuccessAlert(
-        "El mensaje fue enviado correctamente. ¡Pronto nuestro personal se estara comunicando contigo!"
-      );
-    } else {
-      showErrorAlert(
-        "Tiene que rellenar por lo menos la casilla del mail y el mensaje"
-      );
-    }
-    setPopupOpen(false);
-  };
-  const showSuccessAlert = (message) => {
-    Swal.fire({
-      icon: "success",
-      title: "Confirmado",
-      confirmButtonColor: "rgb(94 195 191)",
-      text: `${message}`,
-    });
-  };
-  const showErrorAlert = (message) => {
-    Swal.fire({
-      icon: "error",
-      title: "Error",
-      text: `${message}`,
-    });
-  };
   return (
     <>
-      <div className="py-3"></div>
-
-      <div className="grid grid-rows-2">
+      <div className="grid grid-rows-2 py-3">
         <div className="font-gothamB text-gray-700 text-semititulo flex justify-center items-center text-start">
           Nuestras marcas
         </div>
@@ -95,102 +50,139 @@ function Resumen() {
       </div>
 
       <hr className="border-tono1 mx-12" />
-      <div className="grid grid-cols-2 justify-center py-6 mt-6">
-        <div className="col-span-1">
-          <div className="flex justify-center">
-            <iframe
-              src="https://www.youtube.com/embed/nweqeRpTUiE"
-              width="560"
-              height="315"
-              frameborder="0"
-              allowfullscreen=""
-              className="rounded-xl"
-            ></iframe>
-          </div>
-        </div>
-        <div className="col-span-1 flex justify-center items-center pb-6">
-          <div className="grid grid-rows-2">
-            <div className="flex justify-center items-center mb-6">
-              <img
-                src={ooniLogo}
-                alt="ooniLogo"
-                className="hover:scale-125 mr-12 transition duration-300 ease-in-out transform w-1/4 justify-center text-center"
-              />
+      <div
+        ref={ooniRef}
+        className={`animated-section ${isVisibleOoni ? "slide-in-left" : ""}`}
+      >
+        <div className="grid grid-cols-2 justify-center py-6 mt-6">
+          <div className="col-span-1">
+            <div className="flex justify-center">
+              <iframe
+                src="https://www.youtube.com/embed/nweqeRpTUiE"
+                width="560"
+                height="315"
+                title="Ooni video presentacion"
+                frameborder="0"
+                allowfullscreen=""
+                className="rounded-xl"
+              ></iframe>
             </div>
-            <div className="mr-12">
-              <hr className="px-12 border-black" />
+          </div>
+          <div className="col-span-1 flex justify-center items-center pb-6">
+            <div className="grid grid-rows-2">
+              <div className="flex justify-center items-center mb-6">
+                <a
+                  href="/ooni"
+                  className="w-1/4 justify-center text-center mr-12"
+                >
+                  <img
+                    src={ooniLogo}
+                    alt="ooniLogo"
+                    className="hover:scale-125  transition duration-300 ease-in-out transform "
+                  />
+                </a>
+              </div>
+              <div className="mr-12">
+                <hr className="px-12 border-black" />
 
-              <div className="text-gray-700 font-gothamB text-subtitulo pt-6 pb-4">
-                Ooni se especializa en hornos de pizza al aire libre de alta
-                temperatura para clientes residenciales.
+                <div className="text-gray-700 font-gothamB text-subtitulo pt-6 pb-4">
+                  Ooni se especializa en hornos de pizza al aire libre de alta
+                  temperatura para clientes residenciales.
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
       <hr className="border-tono1 mx-12" />
-      <div className="grid grid-cols-2 justify-center py-6 mt-6">
-        <div className="col-span-1 flex justify-center items-center pb-6">
-          <div className="grid grid-rows-2">
-            <div className="flex justify-center items-center mb-6">
-              <img
-                src={EmileHenry}
-                alt="EmileHenry"
-                className="hover:scale-125 ml-12 transition duration-300 ease-in-out transform w-1/3 justify-center text-center"
-              />
-            </div>
-            <div className="ml-12">
-              <hr className="px-12 border-black" />
+      <div
+        ref={emileHenryRef}
+        className={`animated-section-right ${
+          isVisibleEmileHenry ? "slide-in-right" : ""
+        }`}
+      >
+        <div className="grid grid-cols-2 justify-center py-6 mt-6">
+          <div className="col-span-1 flex justify-center items-center pb-6">
+            <div className="grid grid-rows-2">
+              <div className="flex justify-center items-center mb-6">
+                <a
+                  href="/emileHenry "
+                  className="w-1/3 justify-center text-center ml-12"
+                >
+                  <img
+                    src={EmileHenry}
+                    alt="EmileHenry"
+                    className="hover:scale-125 transition duration-300 ease-in-out transform "
+                  />
+                </a>
+              </div>
+              <div className="ml-12">
+                <hr className="px-12 border-black" />
 
-              <div className="text-gray-700 font-gothamB text-subtitulo pt-6 pb-4">
-                Emile Henry es un fabricante francés de hornos de cerámica,
-                vajilla y utensilios de cocina.
+                <div className="text-gray-700 font-gothamB text-subtitulo pt-6 pb-4">
+                  Emile Henry es un fabricante francés de hornos de cerámica,
+                  vajilla y utensilios de cocina.
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <div className="col-span-1">
-          <div className="flex justify-center">
-            <iframe
-              src="https://www.youtube.com/embed/O_QxcX-ja-4"
-              width="560"
-              height="315"
-              frameborder="0"
-              allowfullscreen=""
-              className="rounded-xl"
-            ></iframe>
+          <div className="col-span-1">
+            <div className="flex justify-center">
+              <iframe
+                src="https://www.youtube.com/embed/O_QxcX-ja-4"
+                width="560"
+                height="315"
+                frameborder="0"
+                allowfullscreen=""
+                title="EmileHenry video presentacion"
+                className="rounded-xl"
+              ></iframe>
+            </div>
           </div>
         </div>
       </div>
       <hr className="border-tono1 mx-12" />
-      <div className="grid grid-cols-2 justify-center py-6 mt-6">
-        <div className="col-span-1">
-          <div className="flex justify-center">
-            <iframe
-              src="https://www.youtube.com/embed/9pU8luInGtw"
-              width="560"
-              height="315"
-              frameborder="0"
-              allowfullscreen=""
-              className="rounded-xl"
-            ></iframe>
-          </div>
-        </div>
-        <div className="col-span-1 flex justify-center items-center pb-6">
-          <div className="grid grid-rows-2">
-            <div className="flex justify-center items-center mb-6">
-              <img
-                src={mauvile}
-                alt="mauvile"
-                className="hover:scale-125 mr-12 transition duration-300 ease-in-out transform w-1/2 justify-center text-center"
-              />
+      <div
+        ref={mauvielRef}
+        className={`animated-section ${
+          isVisibleMauviel ? "slide-in-right" : ""
+        }`}
+      >
+        <div className="grid grid-cols-2 justify-center py-6 mt-6">
+          <div className="col-span-1">
+            <div className="flex justify-center">
+              <iframe
+                src="https://www.youtube.com/embed/9pU8luInGtw"
+                width="560"
+                height="315"
+                title="Mauviel video presentacion"
+                frameborder="0"
+                allowfullscreen=""
+                className="rounded-xl"
+              ></iframe>
             </div>
-            <div className="mr-12">
-              <hr className="px-12 border-black" />
+          </div>
+          <div className="col-span-1 flex justify-center items-center pb-6">
+            <div className="grid grid-rows-2">
+              <div className="flex justify-center items-center mb-6">
+                <a
+                  href="/mauviel1830"
+                  className="w-1/2 justify-center text-center mr-12"
+                >
+                  <img
+                    src={mauvile}
+                    alt="mauvile"
+                    className="hover:scale-125 transition duration-300 ease-in-out transform "
+                  />
+                </a>
+              </div>
+              <div className="mr-12">
+                <hr className="px-12 border-black" />
 
-              <div className="text-gray-700 font-gothamB text-subtitulo pt-6 pb-4">
-                Lorem ipsum dolor sit consectetuer adipiscing elit sed diam
-                nonummy nibh euismod tincidunt.
+                <div className="text-gray-700 font-gothamB text-subtitulo pt-6 pb-4">
+                  Lorem ipsum dolor sit consectetuer adipiscing elit sed diam
+                  nonummy nibh euismod tincidunt.
+                </div>
               </div>
             </div>
           </div>

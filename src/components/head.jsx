@@ -12,8 +12,8 @@ function Head() {
             className="w-1/3 h-auto flex justify-center items-center hover:scale-125 transition duration-300 ease-in-out transform"
           />
           <hr className="absolute bottom-20 text-tono5 w-11/12"/>
-          <div className="absolute bottom-10 text-parrafo font-gothamB text-tono5 hover:scale-125 transition duration-300 ease-in-out transform">
-            Buenos Aires - Argentina
+          <div className="absolute bottom-10 text-parrafo font-gothamB text-tono5 ">
+            Argentina - Uruguay
           </div>
         </div>
       </div>
