@@ -9,7 +9,7 @@ function Head() {
           <img
             src={wholesaleLogo}
             alt="wholesaleLogo"
-            className="w-1/3 h-auto flex justify-center items-center hover:scale-125 transition duration-300 ease-in-out transform"
+            className="sm:w-1/3 w-1/2 h-auto flex justify-center items-center hover:scale-125 transition duration-300 ease-in-out transform"
           />
           <hr className="absolute bottom-20 text-tono5 w-11/12"/>
           <div className="absolute bottom-10 text-parrafo font-gothamB text-tono5 ">

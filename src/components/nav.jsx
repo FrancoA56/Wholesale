@@ -361,7 +361,7 @@ function Nav() {
         <div className="flex-col contents sm:hidden">
           {/* Elementos principales alineados a la derecha */}
           <div className="flex flex-col gap-6 justify-end mt-1 ">
-            {!isHovered && <i className="fa-solid fa-grip-lines"></i>}
+            {!isHovered && <i className="fa-solid fa-grip-lines flex justify-center ml-6"></i>}
             {location.pathname !== "/" && (
               <a
                 className="hover:scale-110 transition duration-300 ease-in-out transform flex justify-end"
