@@ -1,6 +1,5 @@
 import React, { useState, useRef } from "react";
 import Swal from "sweetalert2";
-import emailjs from "@emailjs/browser";
 import wsBlanco from "../media/imagenes/MONOGRAMA-WHOLESALE-BLANCO.png";
 import { useLocation } from "react-router-dom";
 import Dropdown from "./dropDown";
@@ -38,41 +37,38 @@ function Nav() {
   //Función para manejar el envío del form
   async function handleSubmit(e) {
     e.preventDefault();
+
     if (formData.user_email && formData.user_message) {
       console.log("primer console log");
-
+      const textParts = [];
+      if (formData.user_name) textParts.push(formData.user_name);
+      if (formData.user_lastname) textParts.push(formData.user_lastname);
+      if (formData.user_company) textParts.push(formData.user_company);
+      if (formData.user_email) textParts.push(formData.user_email);
+      if (formData.user_phone) textParts.push(formData.user_phone.toString());
+      if (formData.user_message) textParts.push(formData.user_message);
+      console.log("Form Data:", textParts);
       try {
         const objetoBody = {
           to: "franco.adamoli@gmail.com",
           subject: "¡Quiero registrarme!",
-          text:
-            formData.user_name +
-            formData.user_lastname +
-            formData.user_company +
-            formData.user_email +
-            formData.user_phone.toString() +
-            formData.user_message,
+          text: textParts.join(" / "),
         };
-        console.log("segundo console log", objetoBody);
-        const objetoBodyJson = JSON.stringify(objetoBody);
-        console.log("tercer console log", objetoBodyJson);
+
         const { data } = await axios.post(
           `http://localhost:3001/api/registration`,
-          objetoBodyJson
+          objetoBody
         );
         console.log("data", data);
-        if ((data.status = 200)) {
-          showSuccessAlert(
-            "El mensaje fue enviado correctamente. ¡Pronto nuestro personal se estara comunicando contigo!"
-          );
-          setPopupOpen(false);
-        }
+        showSuccessAlert(data.message);
+        setPopupOpen(false);
       } catch (error) {
-        console.log("error", error);
-        showErrorAlert(
-          "Tiene que rellenar por lo menos la casilla del mail y el mensaje"
-        );
+        showErrorAlert(error.message);
       }
+    } else {
+      showErrorAlert(
+        "Tiene que rellenar por lo menos la casilla del mail y el mensaje"
+      );
     }
   }
   const showSuccessAlert = (message) => {
@@ -141,7 +137,7 @@ function Nav() {
                 Acerca de
               </a>
             )}
-            <Dropdown />
+            <Dropdown isExpanded={isExpanded} />
             <a
               className="hover:scale-110 transition pointer duration-300 ease-in-out transform"
               href="https://app.holded.com/login?lang=es"
@@ -157,7 +153,7 @@ function Nav() {
             </button>
 
             {isPopupOpen && (
-              <div className="fixed inset-0 bg-tono1 bg-opacity-50 z-50 flex items-center justify-center">
+              <div className="fixed inset-0 bg-tono1 bg-opacity-80 z-50 flex items-center justify-center">
                 <form
                   className="mt-1"
                   ref={form}
@@ -166,15 +162,15 @@ function Nav() {
                   }}
                 >
                   {/* ... Tu formulario aquí */}
-                  <div className="isolate w-full h-2/3 bg-tono1 rounded-md px-6 sm:py-3 lg:px-3">
+                  <div className="isolate w-full h-2/3 bg-tono5 rounded-md px-6 sm:py-3 lg:px-3">
                     {/* Creo q le da animacion y el tamaño */}
                     <div
                       className="absolute inset-x-0 top-[-10rem] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[-20rem]"
                       aria-hidden="true"
                     ></div>
                     {/* Encabezado */}
-                    <div className="mx-auto flex flex-col items-center justify-center min-w-xl max-w-xl border-b border-tono5">
-                      <h2 className="text-3xl font-BodoniB tracking-tight text-tono4  sm:text-4xl  uppercase leading-normal">
+                    <div className="mx-auto flex flex-col items-center justify-center min-w-xl max-w-xl border-b border-tono3">
+                      <h2 className="text-3xl font-BodoniB tracking-tight text-tono2  sm:text-4xl  uppercase leading-normal">
                         ¡Contactanos para registrarte!
                       </h2>
                     </div>
@@ -192,7 +188,7 @@ function Nav() {
                         <div className=" flex flex-col items-start pl-5 pr-1 py-0.5">
                           <label
                             for="first-name"
-                            className="text-sm font-gothamBI text-tono5 px-2"
+                            className="text-sm font-gothamBI text-tono2 px-2"
                           >
                             {" "}
                             Nombre
@@ -207,14 +203,14 @@ function Nav() {
                             onChange={handleChange}
                             value={formData.user_name}
                             required
-                            className="text-gothamB placeholder-gray-500 shadow appearance-none border rounded-md w-full py-2 px-3 text-gray-700 leading-tight focus:outline-[#909090] focus:shadow-outline bg-tono4 border-tono3 "
+                            className="appearance-none border-b-2 border-tono2 focus:outline-none focus:border-tono3 w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none"
                           />
                         </div>
                         {/* Apellido */}
                         <div className="flex flex-col items-start pr-5 pl-1 py-0.5">
                           <label
                             for="last-name"
-                            className="text-sm font-gothamBI text-tono5 px-2"
+                            className="text-sm font-gothamBI text-tono2 px-2"
                           >
                             {" "}
                             Apellido
@@ -229,7 +225,7 @@ function Nav() {
                             onChange={handleChange}
                             required
                             // value={formData.lastname}
-                            className="text-gothamB placeholder-gray-500 shadow appearance-none border rounded-md w-full py-2 px-3 text-gray-700 leading-tight focus:outline-[#909090] focus:shadow-outline bg-tono4 border-tono3"
+                            className="appearance-none border-b-2 border-tono2 focus:outline-none focus:border-tono3 w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none"
                           />
                         </div>
                       </div>
@@ -237,7 +233,7 @@ function Nav() {
                       <div className=" flex flex-col items-start px-5 py-0.5">
                         <label
                           for="name"
-                          className="text-sm font-gothamBI text-tono5 px-2"
+                          className="text-sm font-gothamBI text-tono2 px-2"
                         >
                           {" "}
                           Empresa
@@ -251,14 +247,14 @@ function Nav() {
                           // autocomplete="off"
                           onChange={handleChange}
                           required
-                          className="shadow placeholder-gray-500 appearance-none border rounded-md w-full py-2 px-3  leading-tight focus:outline-[#909090] focus:shadow-outline text-gray-700 bg-tono4 border-tono3"
+                          className="appearance-none border-b-2 border-tono2 focus:outline-none focus:border-tono3 w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none"
                         />
                       </div>
                       {/* phone (phone number)*/}
                       <div className=" flex flex-col items-start px-5 py-0.5">
                         <label
                           for="phone"
-                          className="text-sm font-gothamBI text-tono5 px-2"
+                          className="text-sm font-gothamBI text-tono2 px-2"
                         >
                           {" "}
                           Teléfono
@@ -272,17 +268,17 @@ function Nav() {
                           // autocomplete="off"
                           onChange={handleChange}
                           required
-                          className="shadow placeholder-gray-500 appearance-none border rounded-md w-full py-2 px-3  leading-tight focus:outline-[#909090] focus:shadow-outline text-gray-700 bg-tono4 border-tono3"
+                          className="appearance-none border-b-2 border-tono2 focus:outline-none focus:border-tono3 w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none"
                         />
                       </div>
                       {/* email */}
                       <div className=" flex flex-col items-start px-5 py-0.5">
                         <label
                           for="email"
-                          className="text-sm font-gothamBI text-tono5 px-2"
+                          className="text-sm font-gothamBI text-tono2 px-2"
                         >
                           {" "}
-                          Mail
+                          Email
                         </label>
                         <input
                           type="email"
@@ -294,14 +290,14 @@ function Nav() {
                           onChange={handleChange}
                           required
                           value={formData.user_email}
-                          className="shadow placeholder-gray-500 appearance-none border rounded-md w-full py-2 px-3 leading-tight focus:outline-[#909090] focus:shadow-outline text-gray-700 bg-tono4 border-tono3"
+                          className="appearance-none border-b-2 border-tono2 focus:outline-none focus:border-tono3 w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none"
                         />
                       </div>
                       {/* message */}
                       <div className=" flex flex-col items-start px-5 py-0.5">
                         <label
                           for="message"
-                          className="text-sm font-gothamBI text-tono5 px-2"
+                          className="text-sm font-gothamBI text-tono2 px-2"
                         >
                           {" "}
                           Mensaje
@@ -314,7 +310,7 @@ function Nav() {
                           required
                           value={formData.message}
                           placeholder="¡Estoy interesado en sus productos! Quisiera registrarme."
-                          className="shadow placeholder-gray-500 appearance-none border rounded-md w-full py-2 px-3 leading-tight focus:outline-[#909090] focus:shadow-outline text-gray-700 bg-tono4 border-tono3"
+                          className="appearance-none border-b-2 border-tono2 focus:outline-none focus:border-tono3 w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none"
                         />
                       </div>
                       {/* Botones */}
@@ -323,13 +319,13 @@ function Nav() {
                           type="submit"
                           name="submit"
                           value="Send"
-                          className="h-10 w-11/12 mt-2 mb-2 bg-tono3 rounded-md md:px-2 md:w-2/3 md:m-1 text-sm font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#000000] transition duration-150 ease-in-out hover:bg-tono2 hover:bg-logo hover:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.3),0_4px_18px_0_rgba(0,0,0,0.2)]"
+                          className="font-gothamB h-10 w-11/12 mt-2 mb-2 bg-tono3 rounded-md md:px-2 md:w-2/3 md:m-1 text-sm font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#000000] transition duration-150 ease-in-out hover:bg-tono2 hover:bg-logo hover:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.3),0_4px_18px_0_rgba(0,0,0,0.2)]"
                         >
                           Enviar
                         </button>
                         <button
                           onClick={() => setPopupOpen(false)}
-                          className="mt-2 mb-2 h-10 w-11/12 inline-block bg-gray-300 text-black md:w-2/3 rounded-md md:px-2 md:m-1 text-sm font-medium uppercase leading-normal hover:text-white shadow-[0_4px_9px_-4px_#000000] transition duration-150 ease-in-out hover:bg-[#303030] hover:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.3),0_4px_18px_0_rgba(0,0,0,0.2)]"
+                          className="font-gothamB mt-2 mb-2 h-10 w-11/12 inline-block bg-gray-300 text-black md:w-2/3 rounded-md md:px-2 md:m-1 text-sm font-medium uppercase leading-normal hover:text-white shadow-[0_4px_9px_-4px_#000000] transition duration-150 ease-in-out hover:bg-[#303030] hover:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.3),0_4px_18px_0_rgba(0,0,0,0.2)]"
                         >
                           Cerrar
                         </button>
@@ -339,7 +335,7 @@ function Nav() {
                 </form>
               </div>
             )}
-            
+
             <div className="grid grid-cols-2 gap-3">
               <a
                 className="hover:scale-110 transition duration-300 ease-in-out transform"
@@ -361,7 +357,9 @@ function Nav() {
         <div className="flex-col contents sm:hidden">
           {/* Elementos principales alineados a la derecha */}
           <div className="flex flex-col gap-6 justify-end mt-1 ">
-            {!isHovered && <i className="fa-solid fa-grip-lines flex justify-center ml-6"></i>}
+            {!isHovered && (
+              <i className="fa-solid fa-grip-lines flex justify-center ml-12 mt-1"></i>
+            )}
             {location.pathname !== "/" && (
               <a
                 className="hover:scale-110 transition duration-300 ease-in-out transform flex justify-end"
@@ -402,7 +400,7 @@ function Nav() {
             </button>
 
             {isPopupOpen && (
-              <div className="fixed inset-0 bg-tono1 bg-opacity-50 z-50 flex items-center justify-center ">
+              <div className="fixed inset-0 bg-tono1 bg-opacity-80 z-50 flex pr-8 items-center justify-center ">
                 <form
                   className="mt-1"
                   ref={form}
@@ -411,15 +409,15 @@ function Nav() {
                   }}
                 >
                   {/* ... Tu formulario aquí */}
-                  <div className="isolate w-full h-2/3 bg-tono1 rounded-md px-6 sm:py-3 lg:px-3">
+                  <div className="isolate w-full mx-4 bg-tono5 rounded-md px-2">
                     {/* Creo q le da animacion y el tamaño */}
                     <div
                       className="absolute inset-x-0 top-[-10rem] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[-20rem]"
                       aria-hidden="true"
                     ></div>
                     {/* Encabezado */}
-                    <div className="mx-auto flex flex-col items-center justify-center min-w-xl max-w-xl border-b border-tono5">
-                      <h2 className="text-3xl font-BodoniB tracking-tight text-tono4  sm:text-4xl  uppercase leading-normal">
+                    <div className="mx-auto flex flex-col items-center justify-center min-w-xl max-w-xl border-b border-tono3">
+                      <h2 className="text-3xl font-BodoniB tracking-tight text-tono2  sm:text-4xl  uppercase leading-normal">
                         ¡Contactanos para registrarte!
                       </h2>
                     </div>
@@ -431,58 +429,56 @@ function Nav() {
                     >
                       {/* Formulario container */}
                       <div className="grid md:grid-rows-5"></div>
-                      {/* Nombre y apellido */}
-                      <div className="grid md:grid-cols-2 grid-cols-1">
-                        {/* Nombre */}
-                        <div className=" flex flex-col items-start pl-5 pr-1 py-0.5">
-                          <label
-                            for="first-name"
-                            className="text-sm font-gothamBI text-tono5 px-2"
-                          >
-                            {" "}
-                            Nombre
-                          </label>
-                          <input
-                            name="user_name"
-                            id="user_name"
-                            autocomplete="Nombre"
-                            // autocomplete="off"
-                            type="text"
-                            placeholder="Pedro"
-                            onChange={handleChange}
-                            value={formData.user_name}
-                            required
-                            className="text-gothamB placeholder-gray-500 shadow appearance-none border rounded-md w-full py-2 px-3 text-gray-700 leading-tight focus:outline-[#909090] focus:shadow-outline bg-tono4 border-tono3 "
-                          />
-                        </div>
-                        {/* Apellido */}
-                        <div className="flex flex-col items-start pr-5 pl-1 py-0.5">
-                          <label
-                            for="last-name"
-                            className="text-sm font-gothamBI text-tono5 px-2"
-                          >
-                            {" "}
-                            Apellido
-                          </label>
-                          <input
-                            type="text"
-                            name="user_lastname"
-                            id="user_lastname"
-                            autocomplete="Apellido"
-                            placeholder="Alfonso"
-                            // autocomplete="off"
-                            onChange={handleChange}
-                            required
-                            // value={formData.lastname}
-                            className="text-gothamB placeholder-gray-500 shadow appearance-none border rounded-md w-full py-2 px-3 text-gray-700 leading-tight focus:outline-[#909090] focus:shadow-outline bg-tono4 border-tono3"
-                          />
-                        </div>
+
+                      {/* Nombre */}
+                      <div className=" flex flex-col items-start pr-5 py-0.5">
+                        <label
+                          for="first-name"
+                          className="text-sm font-gothamBI text-tono2 px-2"
+                        >
+                          {" "}
+                          Nombre
+                        </label>
+                        <input
+                          name="user_name"
+                          id="user_name"
+                          autocomplete="Nombre"
+                          // autocomplete="off"
+                          type="text"
+                          placeholder="Pedro"
+                          onChange={handleChange}
+                          value={formData.user_name}
+                          required
+                          className="appearance-none border-b-2 border-tono2 focus:outline-none focus:border-tono3 w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none"
+                        />
+                      </div>
+                      {/* Apellido */}
+                      <div className=" flex flex-col items-start pr-5 py-0.5">
+                        <label
+                          for="last-name"
+                          className="text-sm font-gothamBI text-tono2 px-2"
+                        >
+                          {" "}
+                          Apellido
+                        </label>
+                        <input
+                          type="text"
+                          name="user_lastname"
+                          id="user_lastname"
+                          autocomplete="Apellido"
+                          placeholder="Alfonso"
+                          // autocomplete="off"
+                          onChange={handleChange}
+                          required
+                          // value={formData.lastname}
+                          className="appearance-none border-b-2 border-tono2 focus:outline-none focus:border-tono3 w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none"
+                        />
                       </div>
                       {/* name (company name)*/}
-                      <div className=" flex flex-col items-start px-5 py-0.5">
+                      <div className=" flex flex-col items-start pr-5 py-0.5">
                         <label
                           for="name"
-                          className="text-sm font-gothamBI text-tono5 px-2"
+                          className="text-sm font-gothamBI text-tono2 px-2"
                         >
                           {" "}
                           Empresa
@@ -496,14 +492,14 @@ function Nav() {
                           // autocomplete="off"
                           onChange={handleChange}
                           required
-                          className="shadow placeholder-gray-500 appearance-none border rounded-md w-full py-2 px-3  leading-tight focus:outline-[#909090] focus:shadow-outline text-gray-700 bg-tono4 border-tono3"
+                          className="appearance-none border-b-2 border-tono2 focus:outline-none focus:border-tono3 w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none"
                         />
                       </div>
                       {/* phone (phone number)*/}
-                      <div className=" flex flex-col items-start px-5 py-0.5">
+                      <div className=" flex flex-col items-start pr-5 py-0.5">
                         <label
                           for="phone"
-                          className="text-sm font-gothamBI text-tono5 px-2"
+                          className="text-sm font-gothamBI text-tono2 px-2"
                         >
                           {" "}
                           Teléfono
@@ -517,14 +513,14 @@ function Nav() {
                           // autocomplete="off"
                           onChange={handleChange}
                           required
-                          className="shadow placeholder-gray-500 appearance-none border rounded-md w-full py-2 px-3  leading-tight focus:outline-[#909090] focus:shadow-outline text-gray-700 bg-tono4 border-tono3"
+                          className="appearance-none border-b-2 border-tono2 focus:outline-none focus:border-tono3 w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none"
                         />
                       </div>
                       {/* email */}
-                      <div className=" flex flex-col items-start px-5 py-0.5">
+                      <div className=" flex flex-col items-start pr-5 py-0.5">
                         <label
                           for="email"
-                          className="text-sm font-gothamBI text-tono5 px-2"
+                          className="text-sm font-gothamBI text-tono2 px-2"
                         >
                           {" "}
                           Mail
@@ -539,14 +535,14 @@ function Nav() {
                           onChange={handleChange}
                           required
                           value={formData.user_email}
-                          className="shadow placeholder-gray-500 appearance-none border rounded-md w-full py-2 px-3 leading-tight focus:outline-[#909090] focus:shadow-outline text-gray-700 bg-tono4 border-tono3"
+                          className="appearance-none border-b-2 border-tono2 focus:outline-none focus:border-tono3 w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none"
                         />
                       </div>
                       {/* message */}
-                      <div className=" flex flex-col items-start px-5 py-0.5">
+                      <div className=" flex flex-col items-start pr-5 py-0.5">
                         <label
                           for="message"
-                          className="text-sm font-gothamBI text-tono5 px-2"
+                          className="text-sm font-gothamBI text-tono2 px-2"
                         >
                           {" "}
                           Mensaje
@@ -559,7 +555,7 @@ function Nav() {
                           required
                           value={formData.message}
                           placeholder="¡Estoy interesado en sus productos! Quisiera registrarme."
-                          className="shadow placeholder-gray-500 appearance-none border rounded-md w-full py-2 px-3 leading-tight focus:outline-[#909090] focus:shadow-outline text-gray-700 bg-tono4 border-tono3"
+                          className="appearance-none border-b-2 border-tono2 focus:outline-none focus:border-tono3 w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none"
                         />
                       </div>
                       {/* Botones */}
@@ -584,7 +580,7 @@ function Nav() {
                 </form>
               </div>
             )}
-            
+
             <div className="grid grid-cols-2 gap-3">
               <a
                 className="hover:scale-110 transition duration-300 ease-in-out transform flex justify-end"

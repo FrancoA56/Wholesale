@@ -8,6 +8,7 @@ import {
   Slide,
   ButtonBack,
   ButtonNext,
+  Dot,
 } from "pure-react-carousel";
 import emile1 from "../media/imagenes/emile/bowl.jpeg";
 import emile2 from "../media/imagenes/emile/budinera.jpeg";
@@ -31,7 +32,7 @@ function Mauviel() {
           <img
             src={mauvielLogo}
             alt="wholesaleLogo"
-            className="w-1/3 h-auto flex justify-center items-center hover:scale-125 transition duration-300 ease-in-out transform"
+            className="sm:w-1/3 w-2/3 h-auto flex justify-center items-center hover:scale-125 transition duration-300 ease-in-out transform"
           />
           <hr className="absolute bottom-20 text-tono5 w-11/12" />
           <div className="absolute bottom-10 text-parrafo font-gothamB text-tono5 ">
@@ -39,8 +40,8 @@ function Mauviel() {
           </div>
         </div>
       </div>
-      <div className="grid grid-cols-3">
-        <div className="w-9/12 ml-20 my-12 col-span-2">
+      <div className="sm:grid sm:grid-cols-3 flex flex-col">
+        <div className="sm:w-9/12 w-11/12 sm:ml-20 sm:mr-0 ml-4 mr-4 my-12 col-span-2">
           <CarouselProvider
             naturalSlideHeight={33}
             naturalSlideWidth={52}
@@ -101,25 +102,79 @@ function Mauviel() {
                   <img src={emile1} alt="emile henry" />{" "}
                 </Slide>
               </Slider>
-              <div className="flex gap-12 justify-center ">
-                <ButtonBack className="text-tono4">
+              <div className="flex gap-8 justify-center mt-1">
+                <ButtonBack className="relative left-5 text-tono4 active:text-tono1 hover:scale-110 hover:text-tono3 transition duration-300 ease-in-out transform">
                   <i class="fa-solid fa-circle-left"></i>
                 </ButtonBack>
-                <ButtonNext className="text-tono4">
+                <div className="flex gap-2 text-tono4">
+                  <Dot slide={0}>
+                    <i class="fa-solid fa-circle active:text-tono1 hover:scale-110 hover:text-tono3 transition duration-300 ease-in-out transform"></i>
+                  </Dot>
+                  <Dot slide={1}>
+                    {" "}
+                    <i class="fa-solid fa-circle active:text-tono1 hover:scale-110 hover:text-tono3 transition duration-300 ease-in-out transform"></i>
+                  </Dot>
+                  <Dot slide={2}>
+                    {" "}
+                    <i class="fa-solid fa-circle active:text-tono1 hover:scale-110 hover:text-tono3 transition duration-300 ease-in-out transform"></i>
+                  </Dot>
+                  <Dot slide={3}>
+                    {" "}
+                    <i class="fa-solid fa-circle active:text-tono1 hover:scale-110 hover:text-tono3 transition duration-300 ease-in-out transform"></i>
+                  </Dot>
+                  <Dot slide={4}>
+                    {" "}
+                    <i class="fa-solid fa-circle active:text-tono1 hover:scale-110 hover:text-tono3 transition duration-300 ease-in-out transform"></i>
+                  </Dot>
+                  <Dot slide={5}>
+                    {" "}
+                    <i class="fa-solid fa-circle active:text-tono1 hover:scale-110 hover:text-tono3 transition duration-300 ease-in-out transform"></i>
+                  </Dot>
+                  <Dot slide={6}>
+                    {" "}
+                    <i class="fa-solid fa-circle active:text-tono1 hover:scale-110 hover:text-tono3 transition duration-300 ease-in-out transform"></i>
+                  </Dot>
+                  <Dot slide={7}>
+                    {" "}
+                    <i class="fa-solid fa-circle active:text-tono1 hover:scale-110 hover:text-tono3 transition duration-300 ease-in-out transform"></i>
+                  </Dot>
+                  <Dot slide={8}>
+                    {" "}
+                    <i class="fa-solid fa-circle active:text-tono1 hover:scale-110 hover:text-tono3 transition duration-300 ease-in-out transform"></i>
+                  </Dot>
+                  <Dot slide={9}>
+                    {" "}
+                    <i class="fa-solid fa-circle active:text-tono1 hover:scale-110 hover:text-tono3 transition duration-300 ease-in-out transform"></i>
+                  </Dot>
+                  <Dot slide={10}>
+                    {" "}
+                    <i class="fa-solid fa-circle active:text-tono1 hover:scale-110 hover:text-tono3 transition duration-300 ease-in-out transform"></i>
+                  </Dot>
+                  <Dot slide={11}>
+                    {" "}
+                    <i class="fa-solid fa-circle active:text-tono1 hover:scale-110 hover:text-tono3 transition duration-300 ease-in-out transform"></i>
+                  </Dot>
+                  <Dot slide={12}>
+                    {" "}
+                    <i class="fa-solid fa-circle active:text-tono1 hover:scale-110 hover:text-tono3 transition duration-300 ease-in-out transform"></i>
+                  </Dot>
+                </div>
+                <ButtonNext className="relative right-5 text-tono4 active:text-tono1 hover:scale-110 hover:text-tono3 transition duration-300 ease-in-out transform">
                   <i class="fa-solid fa-circle-right"></i>
                 </ButtonNext>
               </div>
             </div>
           </CarouselProvider>
         </div>
-        <div className="col-span-1 flex text-justify items-center mr-28">
+        <div className="col-span-1 flex text-justify items-center sm:mr-28 mr-6 ml-6 sm:ml-0">
           <div className="flex flex-col">
             <img
               src={logoMauvielNegro}
               alt="logoMauvielNegro"
               className="w-3/4 mx-auto mt-6 bottom-12 relative"
             />
-            <div className="text-gray-700 ">
+            <hr className="border-tono3 mb-12 sm:hidden grid" />
+            <div className="text-gray-700 sm:mb-0 mb-8">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
               nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi.
               Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum.

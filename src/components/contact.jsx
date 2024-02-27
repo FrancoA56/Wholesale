@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react";
 import Swal from "sweetalert2";
-import emailjs from "@emailjs/browser";
+import axios from "axios";
 import gifOoni from "../media/imagenes/ooni/gif/Fyra 12_Flame Loop_Transparent.gif";
 
 function AcercaDe() {
@@ -8,26 +8,49 @@ function AcercaDe() {
   const form = useRef();
 
   const [formData, setFormData] = useState({
+    name: "",
     companyName: "",
     phone: "",
     email: "",
     message: "",
   });
 
-  //Función para manejar el envío del form
-  const handleSubmit = (e) => {
+  async function handleSubmit(e) {
     e.preventDefault();
-    if (formData.user_email && formData.message) {
-      console.log("Form Data:", formData);
-      showSuccessAlert(
-        "El mensaje fue enviado correctamente. ¡Pronto nuestro personal se estará comunicando contigo!"
-      );
+
+    if (formData.email && formData.message) {
+      const textParts = [];
+      if (formData.name) textParts.push(formData.name);
+      if (formData.companyName) textParts.push(formData.companyName);
+      if (formData.email) textParts.push(formData.email);
+      if (formData.phone) textParts.push(formData.phone.toString());
+      if (formData.message) textParts.push(formData.message);
+      console.log("Form Data:", textParts);
+      try {
+        const objetoBody = {
+          to: "franco.adamoli@gmail.com",
+          subject: "¡Quiero comunicarme con ustedes!",
+          text: textParts.join(" / "), // Concatenar los elementos con un espacio en blanco
+        };
+
+        console.log("objetoBody", objetoBody);
+
+        // Eliminar la conversión a JSON y enviar el objeto directamente
+        const { data } = await axios.post(
+          "http://localhost:3001/api/message",
+          objetoBody,
+          { headers: { "Content-Type": "Application/Json" } } // Configurar los encabezados
+        );
+        showSuccessAlert(data.message);
+      } catch (error) {
+        showErrorAlert(error.message);
+      }
     } else {
       showErrorAlert(
-        "Tiene que rellenar por lo menos la casilla del correo electrónico y el mensaje"
+        "Tienes que completar al menos el campo de correo electrónico y el mensaje."
       );
     }
-  };
+  }
 
   //Función para manejar el cambio en los inputs del form
   const handleChange = (event) => {
@@ -35,27 +58,6 @@ function AcercaDe() {
       ...formData,
       [event.target.name]: event.target.value,
     });
-  };
-
-  const sendEmail = (e) => {
-    e.preventDefault();
-    if (formData.user_email && formData.message) {
-      emailjs
-        .sendForm(
-          "service_rjik02h",
-          "template_w2je5xe",
-          form.current,
-          "ncTuTVkphxHhuJbUE"
-        )
-        .then(
-          (result) => {
-            console.log(result.text);
-          },
-          (error) => {
-            console.log(error.text);
-          }
-        );
-    }
   };
 
   const showSuccessAlert = (message) => {
@@ -76,7 +78,7 @@ function AcercaDe() {
 
   return (
     <div className="font-gothamB pt-16">
-      <div className="grid grid-cols-5 pt-6< ">
+      <div className="sm:grid sm:grid-cols-5 flex flex-col pt-6< ">
         <div className="flex col-span-2 justify-end items-center">
           <img src={gifOoni} alt="gifOoni" />
         </div>
@@ -84,7 +86,7 @@ function AcercaDe() {
           <div className="flex justify-center items-center text-gray-700 font-gothamB text-semititulo mt-6 ">
             ¡Envíanos un mensaje!
           </div>
-          <div className="w-1/2 mb-12 mx-auto mt-8">
+          <div className="sm:w-1/2 w-4/5 mb-12 mx-auto mt-8">
             <form ref={form} onSubmit={handleSubmit}>
               <div className="mb-6">
                 <label
@@ -95,9 +97,11 @@ function AcercaDe() {
                 </label>
                 <input
                   type="text"
-                  id="companyName"
-                  name="companyName"
-                  value={formData.companyName}
+                  id="name"
+                  name="name"
+                  autocomplete="ApellidoYNombre"
+                  required
+                  value={formData.name}
                   onChange={handleChange}
                   className="appearance-none border-b-2 border-tono2 focus:outline-none focus:border-tono3 w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none"
                   placeholder="Pedro Alfonso"
@@ -113,6 +117,8 @@ function AcercaDe() {
                 <input
                   type="text"
                   id="companyName"
+                  required
+                  autocomplete="organization"
                   name="companyName"
                   value={formData.companyName}
                   onChange={handleChange}
@@ -132,6 +138,8 @@ function AcercaDe() {
                   id="phone"
                   name="phone"
                   value={formData.phone}
+                  required
+                  autocomplete="Teléfono"
                   onChange={handleChange}
                   className="appearance-none border-b-2 border-tono2 focus:outline-none focus:border-tono3 w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none"
                   placeholder="011-2305-3139"
@@ -149,7 +157,9 @@ function AcercaDe() {
                   id="email"
                   name="email"
                   value={formData.email}
+                  required
                   onChange={handleChange}
+                  autocomplete="email"
                   className="appearance-none border-b-2 border-tono2 focus:outline-none focus:border-tono3 w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none"
                   placeholder="hola@ws-dyr.com"
                 />
@@ -165,6 +175,7 @@ function AcercaDe() {
                   id="message"
                   name="message"
                   value={formData.message}
+                  required
                   onChange={handleChange}
                   className="appearance-none border-b-2 border-tono2 focus:outline-none focus:border-tono3 w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none"
                   placeholder="¡Estoy interesado en sus productos! Quisiera saber mas."

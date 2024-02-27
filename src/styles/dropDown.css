@@ -1,0 +1,16 @@
+/* Agrega esta clase en tu archivo de estilos CSS o en tu archivo Tailwind CSS personalizado */
+.slow-open {
+    animation: openDropdown 0.8s ease forwards;
+  }
+  
+  @keyframes openDropdown {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  

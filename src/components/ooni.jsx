@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import ooniLogo from "../media/imagenes/Ooni-logo blanco png.png";
 import ooniLogoGris from "../media/imagenes/Ooni-03.png";
 import "pure-react-carousel/dist/react-carousel.es.css";
@@ -8,6 +8,7 @@ import {
   Slide,
   ButtonBack,
   ButtonNext,
+  Dot,
 } from "pure-react-carousel";
 import imagen1 from "../media/imagenes/ooni/funda.jpeg";
 import imagen2 from "../media/imagenes/ooni/balanza.jpeg";
@@ -31,7 +32,7 @@ function Ooni() {
           <img
             src={ooniLogo}
             alt="wholesaleLogo"
-            className="w-1/5 h-auto flex justify-center items-center hover:scale-125 transition duration-300 ease-in-out transform"
+            className="sm:w-1/5 w-2/5 h-auto flex justify-center items-center hover:scale-125 transition duration-300 ease-in-out transform"
           />
           <hr className="absolute bottom-20 text-tono5 w-11/12" />
           <div className="absolute bottom-10 text-parrafo font-gothamB text-tono5 ">
@@ -39,13 +40,14 @@ function Ooni() {
           </div>
         </div>
       </div>
-      <div className="grid grid-cols-3">
-        <div className="w-9/12 ml-20 my-12 col-span-2">
+      <div className="sm:grid sm:grid-cols-3 flex flex-col">
+        <div className="sm:w-9/12 sm:ml-20 my-12 col-span-2 ml-4 mr-4 sm:mr-0">
           <CarouselProvider
             naturalSlideHeight={34}
             naturalSlideWidth={52}
             totalSlides={13}
           >
+            {" "}
             <div>
               <Slider className="rounded-xl">
                 <Slide index={0}>
@@ -101,21 +103,80 @@ function Ooni() {
                   <img src={imagen13} alt="Ooni" />{" "}
                 </Slide>
               </Slider>
-              <div className="flex gap-12 justify-center">
-                <ButtonBack className="text-tono4">
+
+              <div className="flex gap-8 justify-center mt-1">
+                <ButtonBack className="relative left-5 text-tono4 active:text-tono1 hover:scale-110 hover:text-tono3 transition duration-300 ease-in-out transform">
                   <i class="fa-solid fa-circle-left"></i>
                 </ButtonBack>
-                <ButtonNext className="text-tono4">
+                <div className="flex gap-2 text-tono4">
+                  <Dot slide={0}>
+                    <i class="fa-solid fa-circle active:text-tono1 hover:scale-110 hover:text-tono3 transition duration-300 ease-in-out transform"></i>
+                  </Dot>
+                  <Dot slide={1}>
+                    {" "}
+                    <i class="fa-solid fa-circle active:text-tono1 hover:scale-110 hover:text-tono3 transition duration-300 ease-in-out transform"></i>
+                  </Dot>
+                  <Dot slide={2}>
+                    {" "}
+                    <i class="fa-solid fa-circle active:text-tono1 hover:scale-110 hover:text-tono3 transition duration-300 ease-in-out transform"></i>
+                  </Dot>
+                  <Dot slide={3}>
+                    {" "}
+                    <i class="fa-solid fa-circle active:text-tono1 hover:scale-110 hover:text-tono3 transition duration-300 ease-in-out transform"></i>
+                  </Dot>
+                  <Dot slide={4}>
+                    {" "}
+                    <i class="fa-solid fa-circle active:text-tono1 hover:scale-110 hover:text-tono3 transition duration-300 ease-in-out transform"></i>
+                  </Dot>
+                  <Dot slide={5}>
+                    {" "}
+                    <i class="fa-solid fa-circle active:text-tono1 hover:scale-110 hover:text-tono3 transition duration-300 ease-in-out transform"></i>
+                  </Dot>
+                  <Dot slide={6}>
+                    {" "}
+                    <i class="fa-solid fa-circle active:text-tono1 hover:scale-110 hover:text-tono3 transition duration-300 ease-in-out transform"></i>
+                  </Dot>
+                  <Dot slide={7}>
+                    {" "}
+                    <i class="fa-solid fa-circle active:text-tono1 hover:scale-110 hover:text-tono3 transition duration-300 ease-in-out transform"></i>
+                  </Dot>
+                  <Dot slide={8}>
+                    {" "}
+                    <i class="fa-solid fa-circle active:text-tono1 hover:scale-110 hover:text-tono3 transition duration-300 ease-in-out transform"></i>
+                  </Dot>
+                  <Dot slide={9}>
+                    {" "}
+                    <i class="fa-solid fa-circle active:text-tono1 hover:scale-110 hover:text-tono3 transition duration-300 ease-in-out transform"></i>
+                  </Dot>
+                  <Dot slide={10}>
+                    {" "}
+                    <i class="fa-solid fa-circle active:text-tono1 hover:scale-110 hover:text-tono3 transition duration-300 ease-in-out transform"></i>
+                  </Dot>
+                  <Dot slide={11}>
+                    {" "}
+                    <i class="fa-solid fa-circle active:text-tono1 hover:scale-110 hover:text-tono3 transition duration-300 ease-in-out transform"></i>
+                  </Dot>
+                  <Dot slide={12}>
+                    {" "}
+                    <i class="fa-solid fa-circle active:text-tono1 hover:scale-110 hover:text-tono3 transition duration-300 ease-in-out transform"></i>
+                  </Dot>
+                </div>
+                <ButtonNext className="relative right-5 text-tono4 active:text-tono1 hover:scale-110 hover:text-tono3 transition duration-300 ease-in-out transform">
                   <i class="fa-solid fa-circle-right"></i>
                 </ButtonNext>
               </div>
             </div>
           </CarouselProvider>
         </div>
-        <div className="col-span-1 flex text-justify items-center mr-28">
+        <div className="sm:col-span-1 flex text-justify items-center sm:mr-28 mr-6 ml-6 sm:ml-0">
           <div className="flex flex-col">
-            <img src={ooniLogoGris} alt="ooniLogoGris" className="w-3/5 mx-auto my-12 bottom-12 relative" />
-            <div className="text-gray-700 ">
+            <img
+              src={ooniLogoGris}
+              alt="ooniLogoGris"
+              className="w-3/5 mx-auto sm:mt-12 mt-10 mb-2 bottom-12 relative"
+            />
+            <hr className="border-tono3 mb-12 sm:hidden grid" />
+            <div className="text-gray-700 sm:mb-0 mb-8">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
               nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi.
               Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum.
