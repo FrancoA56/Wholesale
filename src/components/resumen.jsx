@@ -2,16 +2,19 @@ import React, { useState, useEffect, useRef } from "react";
 import ooniLogo from "../media/imagenes/Ooni-logo negro png.png";
 import EmileHenry from "../media/imagenes/EmileHenry-02.png";
 import mauvile from "../media/imagenes/logoMauvielNegro.png";
+import boj from "../media/imagenes/logo boj negro.jpg";
 import "../styles/resumen.css";
 
 function Resumen() {
   const [isVisibleOoni, setIsVisibleOoni] = useState(false);
   const [isVisibleEmileHenry, setIsVisibleEmileHenry] = useState(false);
   const [isVisibleMauviel, setIsVisibleMauviel] = useState(false);
+  const [isVisibleBoj, setIsVisibleBoj] = useState(false);
 
   const ooniRef = useRef(null);
   const emileHenryRef = useRef(null);
   const mauvielRef = useRef(null);
+  const bojRef = useRef(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,12 +27,16 @@ function Resumen() {
       const topMauviel = mauvielRef.current
         ? mauvielRef.current.getBoundingClientRect().top
         : null;
+      const topBoj = bojRef.current
+        ? bojRef.current.getBoundingClientRect().top
+        : null;
 
       if (topOoni !== null) setIsVisibleOoni(topOoni < window.innerHeight);
       if (topEmileHenry !== null)
         setIsVisibleEmileHenry(topEmileHenry < window.innerHeight);
       if (topMauviel !== null)
         setIsVisibleMauviel(topMauviel < window.innerHeight);
+      if (topBoj !== null) setIsVisibleBoj(topBoj < window.innerHeight);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -181,6 +188,49 @@ function Resumen() {
                   nonummy nibh euismod tincidunt.
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr className="border-tono1 sm:mx-12 mx-2" />
+      <div
+        ref={bojRef}
+        className={`animated-section-right ${
+          isVisibleBoj ? "slide-in-right" : ""
+        }`}
+      >
+        <div className="sm:grid sm:grid-cols-2 flex flex-col justify-center sm:h-96 h-auto pt-6 mt-6">
+          <div className="sm:col-span-1 flex flex-col justify-center items-center ">
+            <div className="sm:grid sm:grid-rows-2 flex justify-center items-center">
+              <div className="flex flex-col justify-center items-center mx-4">
+                <a
+                  href="/boj "
+                  className="sm:w-1/3 w-1/2 justify-center text-center sm:ml-28 ml-4 sm:mr-0 mr-4 pb-4"
+                >
+                  <img
+                    src={boj}
+                    alt="boj"
+                    className="hover:scale-125 transition duration-300 ease-in-out transform"
+                  />
+                </a>
+                <hr className="sm:ml-28  sm:mr-0 border-black w-full ml-4 mr-4" />
+                <div className="text-gray-700 font-gothamB text-subtitulo pt-6 sm:ml-28 ml-4 mr-4 sm:mr-0">
+                Lorem ipsum dolor sit consectetuer adipiscing elit sed diam nonummy nibh euismod tincidunt.
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="sm:col-span-1 sm:mt-0 mt-4">
+            <div className="flex justify-center">
+              <iframe
+                src="https://www.youtube.com/embed/ud4j2ppruJ8"
+                width="560"
+                height="315"
+                frameborder="0"
+                allowfullscreen=""
+                title="EmileHenry video presentacion"
+                className="rounded-xl sm:mx-0 mx-4"
+              ></iframe>
             </div>
           </div>
         </div>

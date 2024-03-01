@@ -3,7 +3,10 @@ import Swal from "sweetalert2";
 import axios from "axios";
 import gifOoni from "../media/imagenes/ooni/gif/Fyra 12_Flame Loop_Transparent.gif";
 
+
 function AcercaDe() {
+  const url = process.env.URL
+
   // ? FUNCIONES PARA USAR EMAIL JS
   const form = useRef();
 
@@ -17,27 +20,21 @@ function AcercaDe() {
 
   async function handleSubmit(e) {
     e.preventDefault();
-
     if (formData.email && formData.message) {
       const textParts = [];
-      if (formData.name) textParts.push(formData.name);
-      if (formData.companyName) textParts.push(formData.companyName);
-      if (formData.email) textParts.push(formData.email);
-      if (formData.phone) textParts.push(formData.phone.toString());
-      if (formData.message) textParts.push(formData.message);
-      console.log("Form Data:", textParts);
+      if (formData.name) textParts.push(`Nombre y Apellido: ${formData.name}`);
+      if (formData.companyName) textParts.push(`Nombre de la Empresa: ${formData.companyName}`);
+      if (formData.email) textParts.push(`Email: ${formData.email}`);
+      if (formData.phone) textParts.push(`Telefono: ${formData.phone.toString()}`);
+      if (formData.message) textParts.push(`Mensaje: ${formData.message}`);
       try {
         const objetoBody = {
           to: "franco.adamoli@gmail.com",
           subject: "¡Quiero comunicarme con ustedes!",
-          text: textParts.join(" / "), // Concatenar los elementos con un espacio en blanco
+          text: textParts.join("\n"), // Concatenar los elementos con un salto de linea
         };
-
-        console.log("objetoBody", objetoBody);
-
-        // Eliminar la conversión a JSON y enviar el objeto directamente
         const { data } = await axios.post(
-          "http://localhost:3001/api/message",
+          `${url}api/message`,
           objetoBody,
           { headers: { "Content-Type": "Application/Json" } } // Configurar los encabezados
         );

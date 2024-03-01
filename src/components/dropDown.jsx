@@ -5,7 +5,7 @@ import "../styles/dropDown.css";
 
 const Dropdown = ({ isExpanded }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const marcas = ["Emile Henry", "Ooni", "Mauviel 1830"];
+  const marcas = ["Boj", "Ooni", "Emile Henry", "Mauviel 1830"];
 
   useEffect(() => {
     if (!isExpanded) {
@@ -19,7 +19,7 @@ const Dropdown = ({ isExpanded }) => {
 
   return (
     <div
-      className="relative inline-block text-left"
+      className="relative inline-block text-left hover:scale-110 transition transform ease-in-out"
       onClick={() => setIsOpen(!isOpen)}
     >
       <div>
@@ -31,7 +31,7 @@ const Dropdown = ({ isExpanded }) => {
         )}
         <button
           type="button"
-          className="sm:inline-flex sm:justify-center w-full text-white flex justify-end "
+          className="sm:inline-flex sm:justify-center w-full text-white flex justify-end"
           id="options-menu"
           aria-expanded={isOpen ? "true" : "false"}
           aria-haspopup="true"
@@ -51,7 +51,7 @@ const Dropdown = ({ isExpanded }) => {
       {/* Dropdown */}
       {isOpen && (
         <div
-          className="sm:origin-top-right absolute w-32 rounded-md shadow-lg origin-top-left right-20 bottom-0 sm:right-0 sm:left-0 sm:top-5 -top-8 slow-open"
+          className="sm:origin-top-right absolute w-32 mt-2 rounded-md shadow-lg origin-top-left right-20 bottom-0 sm:right-0 sm:left-0 sm:top-5 -top-8 slow-open"
           role="menu"
           aria-orientation="vertical"
           aria-labelledby="options-menu"
@@ -65,7 +65,7 @@ const Dropdown = ({ isExpanded }) => {
             >
               <button
                 onClick={() => handleMarcaChange()}
-                className="flex w-full px-4 py-1 text-sm hover:scale-110 transition transform ease-in-out bg-tono1 bg-opacity-60 sm:bg-opacity-0 text-opacity-80 rounded-md"
+                className="flex w-full px-4 py-1 text-sm hover:scale-110 transition transform ease-in-out bg-tono1 bg-opacity-60 text-opacity-80 rounded-md"
                 role="menuitem"
               >
                 {marca}

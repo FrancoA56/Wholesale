@@ -5,6 +5,7 @@ import AcercaDe from "./components/acercaDe";
 import Ooni from "./components/ooni";
 import EmileHenry from "./components/emileHenry";
 import Mauviel from "./components/mauviel";
+import Boj from "./components/boj";
 import "./App.css";
 import { Route, Routes } from "react-router-dom";
 import Nav from "./components/nav";
@@ -21,6 +22,7 @@ function App() {
         <Route path="/ooni" element={<Ooni />} />
         <Route path="/emileHenry" element={<EmileHenry />} />
         <Route path="/mauviel1830" element={<Mauviel />} />
+        <Route path="/boj" element={<Boj />} />
       </Routes>
       <Footer />
     </div>

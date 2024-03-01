@@ -103,7 +103,7 @@ function Emile() {
                 </Slide>
               </Slider>
               <div className="flex gap-8 justify-center mt-1">
-                <ButtonBack className="relative left-5 text-tono4 active:text-tono1 hover:scale-110 hover:text-tono3 transition duration-300 ease-in-out transform">
+                <ButtonBack className="relative left-5 sm:block hidden text-tono4 active:text-tono1 hover:scale-110 hover:text-tono3 transition duration-300 ease-in-out transform">
                   <i class="fa-solid fa-circle-left"></i>
                 </ButtonBack>
                 <div className="flex gap-2 text-tono4">
@@ -159,7 +159,7 @@ function Emile() {
                     <i class="fa-solid fa-circle active:text-tono1 hover:scale-110 hover:text-tono3 transition duration-300 ease-in-out transform"></i>
                   </Dot>
                 </div>
-                <ButtonNext className="relative right-5 text-tono4 active:text-tono1 hover:scale-110 hover:text-tono3 transition duration-300 ease-in-out transform">
+                <ButtonNext className="relative right-5 sm:block hidden text-tono4 active:text-tono1 hover:scale-110 hover:text-tono3 transition duration-300 ease-in-out transform">
                   <i class="fa-solid fa-circle-right"></i>
                 </ButtonNext>
               </div>

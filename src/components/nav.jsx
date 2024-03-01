@@ -6,9 +6,10 @@ import Dropdown from "./dropDown";
 import axios from "axios";
 import "../styles/navBar.css";
 
+
 function Nav() {
+  const url = process.env.URL
   const [isExpanded, setExpanded] = useState(false);
-  const [celOpen, setCelOpen] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
   const [isPopupOpen, setPopupOpen] = useState(false);
 
@@ -39,25 +40,29 @@ function Nav() {
     e.preventDefault();
 
     if (formData.user_email && formData.user_message) {
-      console.log("primer console log");
       const textParts = [];
-      if (formData.user_name) textParts.push(formData.user_name);
-      if (formData.user_lastname) textParts.push(formData.user_lastname);
-      if (formData.user_company) textParts.push(formData.user_company);
-      if (formData.user_email) textParts.push(formData.user_email);
-      if (formData.user_phone) textParts.push(formData.user_phone.toString());
-      if (formData.user_message) textParts.push(formData.user_message);
-      console.log("Form Data:", textParts);
+      if (formData.user_name) textParts.push(`Nombre: ${formData.user_name}`);
+      if (formData.user_lastname)
+        textParts.push(`Apellido: ${formData.user_lastname}`);
+      if (formData.user_company)
+        textParts.push(`Nombre de la Empresa: ${formData.user_company}`);
+      if (formData.user_email) textParts.push(`Email: ${formData.user_email}`);
+      if (formData.user_phone)
+        textParts.push(`Telefono: ${formData.user_phone.toString()}`);
+      if (formData.user_message)
+        textParts.push(`Mensaje: ${formData.user_message}`);
       try {
+        console.log("TextParts", textParts)
         const objetoBody = {
           to: "franco.adamoli@gmail.com",
           subject: "¡Quiero registrarme!",
-          text: textParts.join(" / "),
+          text: textParts.join("\n"),
         };
 
         const { data } = await axios.post(
-          `http://localhost:3001/api/registration`,
-          objetoBody
+          `${url}api/registration`,
+          objetoBody,
+          { headers: { "Content-Type": "Application/Json" } } // Configurar los encabezados
         );
         console.log("data", data);
         showSuccessAlert(data.message);
@@ -102,14 +107,14 @@ function Nav() {
       }}
     >
       <div className="flex py-2 px-3 w-screen justify-between">
-        <div className="flex justify-start sm:flex-row flex-col">
+        <a className="flex justify-start sm:flex-row flex-col" href="/">
           {/* Agregar la imagen a la izquierda */}
           <img
             className="w-12 hover:scale-125 transition duration-300 ease-in-out transform "
             src={wsBlanco}
             alt="wholesale logo"
           />
-        </div>
+        </a>
         <div className="sm:flex-row flex-col sm:contents hidden">
           {/* Elementos principales alineados a la derecha */}
           <div className="flex  gap-6 justify-end mt-1 ">

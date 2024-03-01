@@ -5,14 +5,9 @@ import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
 
 function Footer() {
-  const email = "hola@ws-dyr.com";
   const tel = "011-2305-3139";
   const wsp = "5491123053139";
 
-  const copiarEmail = () => {
-    navigator.clipboard.writeText(email);
-    toast.info("Correo copiado");
-  };
   const copiarTel = () => {
     navigator.clipboard.writeText(tel);
     toast.info("Número de telefono copiado");
@@ -40,14 +35,14 @@ function Footer() {
               <div className="flex relative right-8">Contáctanos en:</div>
               <a
                 href="mailto:hola@ws-dyr.com?subject=Solicitud%20de%20información&body=Hola%20equipo%20de%20nombre%20de%20tu%20empresa,%0D%0A%0D%0AQuisiera%20solicitar%20más%20información%20sobre%20sus%20servicios.%20Me%20interesa%20conocer%20sus%20métodos%20de%20trabajo,%20formas%20de%20pago%20disponibles%20y%20cualquier%20otra%20información%20relevante%20que%20puedan%20proporcionar.%0D%0A%0D%0AMuchas%20gracias%20por%20su%20atención.%0D%0A%0D%0ASaludos%20cordiales,%0D%0ATu%20nombre%20aquí"
-                className="flex"
+                className="flex hover:scale-110 transition duration-300 ease-in-out transform"
                 style={{ cursor: "pointer" }}
               >
                 <i class="fa-regular fa-envelope mr-2 mt-1"></i>
                 hola@ws-dyr.com
               </a>
               <a
-                className="flex"
+                className="flex hover:scale-110 transition duration-300 ease-in-out transform"
                 style={{ cursor: "pointer" }}
                 onClick={copiarTel}
                 href="tel:011-2305-3139"
@@ -56,7 +51,7 @@ function Footer() {
                 011-2305-3139
               </a>
               <button
-                className="flex"
+                className="flex hover:scale-110 transition duration-300 ease-in-out transform"
                 style={{ cursor: "pointer", border: 'none', background: 'none', padding: '0', margin: '0' }}
                 onClick={copiarWsp}
               >
@@ -68,7 +63,7 @@ function Footer() {
           <div className="flex-1 flex justify-center items-center text-parrafo">
             <div className="grid grid-col-1">
               <div className="flex grid-span-1 pl-4">Siguenos en:</div>
-              <div className="grid-span-1 items-start justify-start hover:scale-125 transition duration-300 ease-in-out transform ">
+              <div className="grid-span-1 items-start justify-start hover:scale-110 transition duration-300 ease-in-out transform ">
                 <div className="grid grid-cols-2 items-start justify-start">
                   <div className="grid-span-1 text-center justify-start">
                     <a
@@ -89,7 +84,7 @@ function Footer() {
                   </div>
                 </div>
               </div>
-              <div className="grid-span-1 items-start justify-start hover:scale-125 transition duration-300 ease-in-out transform">
+              <div className="grid-span-1 items-start justify-start hover:scale-110 transition duration-300 ease-in-out transform">
                 <div className="grid grid-cols-2 items-start justify-start">
                   <div className="grid-span-1 text-center justify-start">
                     <a
@@ -97,7 +92,8 @@ function Footer() {
                       target="_blank"
                       className="pl-4"
                     >
-                      <i className="fa-brands fa-instagram w-0"></i>
+                      <i className="fa-brands fa-instagram w-0 mr-0.5"></i>
+
                     </a>
                   </div>
                   <a
@@ -108,7 +104,7 @@ function Footer() {
                   </a>
                 </div>
               </div>
-              <div className="grid-span-1 items-start justify-start hover:scale-125 transition duration-300 ease-in-out transform">
+              <div className="grid-span-1 items-start justify-start hover:scale-110 transition duration-300 ease-in-out transform">
                 <div className="grid grid-cols-2 items-start justify-start">
                   <div className="grid-span-1 text-center justify-start">
                     <a
@@ -116,7 +112,7 @@ function Footer() {
                       target="_blank"
                       className="pl-4"
                     >
-                      <i class="fa-brands fa-linkedin w-0"></i>
+                      <i class="fa-brands fa-linkedin w-0 mr-0.5"></i>
                     </a>
                   </div>
                   <a
