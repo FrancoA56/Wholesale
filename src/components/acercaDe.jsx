@@ -39,7 +39,7 @@ function Contacto() {
             ¡Nuestras redes!
           </div>
           <div className="text-tono2 flex justify-center items-center my-1">
-            <i class="fa-solid fa-arrow-down-long"></i>
+            <i className="fa-solid fa-arrow-down-long"></i>
           </div>
         </div>
       </div>

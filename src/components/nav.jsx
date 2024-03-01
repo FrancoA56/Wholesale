@@ -147,6 +147,7 @@ function Nav() {
               className="hover:scale-110 transition pointer duration-300 ease-in-out transform"
               href="https://app.holded.com/login?lang=es"
               target="_blank"
+              rel="noreferrer"
             >
               Ingresar
             </a>
@@ -346,6 +347,7 @@ function Nav() {
                 className="hover:scale-110 transition duration-300 ease-in-out transform"
                 href="https://www.facebook.com/wholesale.dyr/"
                 target="_blank"
+                rel="noreferrer"
               >
                 <i className="fa-brands fa-facebook"></i>
               </a>
@@ -353,6 +355,7 @@ function Nav() {
                 className="hover:scale-110 transition duration-300 ease-in-out transform"
                 href="https://www.instagram.com/wholesale.dyr/"
                 target="_blank"
+                rel="noreferrer"
               >
                 <i className="fa-brands fa-instagram"></i>
               </a>
@@ -394,6 +397,7 @@ function Nav() {
               className="hover:scale-110 transition pointer duration-300 ease-in-out transform flex justify-end"
               href="https://app.holded.com/login?lang=es"
               target="_blank"
+              rel="noreferrer"
             >
               Ingresar
             </a>
@@ -591,6 +595,7 @@ function Nav() {
                 className="hover:scale-110 transition duration-300 ease-in-out transform flex justify-end"
                 href="https://www.facebook.com/wholesale.dyr/"
                 target="_blank"
+                rel="noreferrer"
               >
                 <i className="fa-brands fa-facebook"></i>
               </a>
@@ -598,6 +603,7 @@ function Nav() {
                 className="hover:scale-110 transition duration-300 ease-in-out transform flex justify-end"
                 href="https://www.instagram.com/wholesale.dyr/"
                 target="_blank"
+                rel="noreferrer"
               >
                 <i className="fa-brands fa-instagram"></i>
               </a>

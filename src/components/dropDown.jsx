@@ -25,7 +25,7 @@ const Dropdown = ({ isExpanded }) => {
       <div>
         {/* Icono de flecha izq */}
         {isOpen ? (
-          <i class="fa-solid fa-chevron-right sm:hidden absolute left-9 text-sm top-0.5"></i>
+          <i className="fa-solid fa-chevron-right sm:hidden absolute left-9 text-sm top-0.5"></i>
         ) : (
           <i className="fa-solid fa-chevron-left sm:hidden absolute left-9 text-sm top-0.5"></i>
         )}
@@ -40,7 +40,7 @@ const Dropdown = ({ isExpanded }) => {
           {/* Icono de flecha abajo */}
           <div className="ml-1">
             {isOpen ? (
-              <i class="fa-solid fa-chevron-up sm:contents hidden text-sm"></i>
+              <i className="fa-solid fa-chevron-up sm:contents hidden text-sm"></i>
             ) : (
               <i className="fa-solid fa-angle-down sm:contents hidden text-sm"></i>
             )}

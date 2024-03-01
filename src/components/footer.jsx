@@ -38,7 +38,7 @@ function Footer() {
                 className="flex hover:scale-110 transition duration-300 ease-in-out transform"
                 style={{ cursor: "pointer" }}
               >
-                <i class="fa-regular fa-envelope mr-2 mt-1"></i>
+                <i className="fa-regular fa-envelope mr-2 mt-1"></i>
                 hola@ws-dyr.com
               </a>
               <a
@@ -47,7 +47,7 @@ function Footer() {
                 onClick={copiarTel}
                 href="tel:011-2305-3139"
               >
-                <i class="fa-solid fa-phone mr-2 mt-1"></i>
+                <i className="fa-solid fa-phone mr-2 mt-1"></i>
                 011-2305-3139
               </a>
               <button
@@ -55,7 +55,7 @@ function Footer() {
                 style={{ cursor: "pointer", border: 'none', background: 'none', padding: '0', margin: '0' }}
                 onClick={copiarWsp}
               >
-                <i class="fa-brands fa-whatsapp mr-2 mt-1 text-subtitulo"></i>
+                <i className="fa-brands fa-whatsapp mr-2 mt-1 text-subtitulo"></i>
                 +54 9 11-2305-3139
               </button>
             </div>
@@ -69,6 +69,7 @@ function Footer() {
                     <a
                       href="https://www.facebook.com/wholesale.dyr/"
                       target="_blank"
+                      rel="noreferrer"
                     >
                       <i className="fa-brands fa-facebook w-0 ml-3"></i>
                     </a>
@@ -77,6 +78,7 @@ function Footer() {
                     <a
                       href="https://www.facebook.com/wholesale.dyr/"
                       target="_blank"
+                      rel="noreferrer"
                       className="flex justify-start"
                     >
                       Facebook
@@ -90,6 +92,7 @@ function Footer() {
                     <a
                       href="https://www.instagram.com/wholesale.dyr/"
                       target="_blank"
+                      rel="noreferrer"
                       className="pl-4"
                     >
                       <i className="fa-brands fa-instagram w-0 mr-0.5"></i>
@@ -99,6 +102,7 @@ function Footer() {
                   <a
                     href="https://www.instagram.com/wholesale.dyr/"
                     target="_blank"
+                    rel="noreferrer"
                   >
                     <div className=" grid-span-1">Instagram</div>
                   </a>
@@ -110,14 +114,16 @@ function Footer() {
                     <a
                       href="https://www.linkedin.com/company/wholesale-by-d-r/"
                       target="_blank"
+                      rel="noreferrer"
                       className="pl-4"
                     >
-                      <i class="fa-brands fa-linkedin w-0 mr-0.5"></i>
+                      <i className="fa-brands fa-linkedin w-0 mr-0.5"></i>
                     </a>
                   </div>
                   <a
                     href="https://www.linkedin.com/company/wholesale-by-d-r/"
                     target="_blank"
+                    rel="noreferrer"
                     className="flex justify-start"
                   >
                     <div className=" grid-span-1">Linkedin</div>

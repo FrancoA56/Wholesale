@@ -23,6 +23,8 @@ import emile10 from "../media/imagenes/emile/fuentePlana2.jpeg";
 import emile11 from "../media/imagenes/emile/panera.jpeg";
 import emile12 from "../media/imagenes/emile/ramekin.jpeg";
 import emile13 from "../media/imagenes/emile/tajine.jpeg";
+import "../styles/efectoLogo.css"
+
 
 function Emile() {
   return (
@@ -32,10 +34,10 @@ function Emile() {
           <img
             src={emileLogo}
             alt="wholesaleLogo"
-            className="sm:w-1/3 w-3/5 h-auto flex justify-center items-center hover:scale-125 transition duration-300 ease-in-out transform"
+            className="tracking-in-contract sm:w-1/3 w-3/5 h-auto flex justify-center items-center hover:scale-125 transition duration-300 ease-in-out transform"
           />
           <hr className="absolute bottom-20 text-tono5 w-11/12" />
-          <div className="absolute bottom-10 text-parrafo font-gothamB text-tono5 ">
+          <div className="tracking-in-contract absolute bottom-10 text-parrafo font-gothamB text-tono5 ">
             Borgoña - Francia
           </div>
         </div>
@@ -104,63 +106,63 @@ function Emile() {
               </Slider>
               <div className="flex gap-8 justify-center mt-1">
                 <ButtonBack className="relative left-5 sm:block hidden text-tono4 active:text-tono1 hover:scale-110 hover:text-tono3 transition duration-300 ease-in-out transform">
-                  <i class="fa-solid fa-circle-left"></i>
+                  <i className="fa-solid fa-circle-left"></i>
                 </ButtonBack>
                 <div className="flex gap-2 text-tono4">
                   <Dot slide={0}>
-                    <i class="fa-solid fa-circle active:text-tono1 hover:scale-110 hover:text-tono3 transition duration-300 ease-in-out transform"></i>
+                    <i className="fa-solid fa-circle active:text-tono1 hover:scale-110 hover:text-tono3 transition duration-300 ease-in-out transform"></i>
                   </Dot>
                   <Dot slide={1}>
                     {" "}
-                    <i class="fa-solid fa-circle active:text-tono1 hover:scale-110 hover:text-tono3 transition duration-300 ease-in-out transform"></i>
+                    <i className="fa-solid fa-circle active:text-tono1 hover:scale-110 hover:text-tono3 transition duration-300 ease-in-out transform"></i>
                   </Dot>
                   <Dot slide={2}>
                     {" "}
-                    <i class="fa-solid fa-circle active:text-tono1 hover:scale-110 hover:text-tono3 transition duration-300 ease-in-out transform"></i>
+                    <i className="fa-solid fa-circle active:text-tono1 hover:scale-110 hover:text-tono3 transition duration-300 ease-in-out transform"></i>
                   </Dot>
                   <Dot slide={3}>
                     {" "}
-                    <i class="fa-solid fa-circle active:text-tono1 hover:scale-110 hover:text-tono3 transition duration-300 ease-in-out transform"></i>
+                    <i className="fa-solid fa-circle active:text-tono1 hover:scale-110 hover:text-tono3 transition duration-300 ease-in-out transform"></i>
                   </Dot>
                   <Dot slide={4}>
                     {" "}
-                    <i class="fa-solid fa-circle active:text-tono1 hover:scale-110 hover:text-tono3 transition duration-300 ease-in-out transform"></i>
+                    <i className="fa-solid fa-circle active:text-tono1 hover:scale-110 hover:text-tono3 transition duration-300 ease-in-out transform"></i>
                   </Dot>
                   <Dot slide={5}>
                     {" "}
-                    <i class="fa-solid fa-circle active:text-tono1 hover:scale-110 hover:text-tono3 transition duration-300 ease-in-out transform"></i>
+                    <i className="fa-solid fa-circle active:text-tono1 hover:scale-110 hover:text-tono3 transition duration-300 ease-in-out transform"></i>
                   </Dot>
                   <Dot slide={6}>
                     {" "}
-                    <i class="fa-solid fa-circle active:text-tono1 hover:scale-110 hover:text-tono3 transition duration-300 ease-in-out transform"></i>
+                    <i className="fa-solid fa-circle active:text-tono1 hover:scale-110 hover:text-tono3 transition duration-300 ease-in-out transform"></i>
                   </Dot>
                   <Dot slide={7}>
                     {" "}
-                    <i class="fa-solid fa-circle active:text-tono1 hover:scale-110 hover:text-tono3 transition duration-300 ease-in-out transform"></i>
+                    <i className="fa-solid fa-circle active:text-tono1 hover:scale-110 hover:text-tono3 transition duration-300 ease-in-out transform"></i>
                   </Dot>
                   <Dot slide={8}>
                     {" "}
-                    <i class="fa-solid fa-circle active:text-tono1 hover:scale-110 hover:text-tono3 transition duration-300 ease-in-out transform"></i>
+                    <i className="fa-solid fa-circle active:text-tono1 hover:scale-110 hover:text-tono3 transition duration-300 ease-in-out transform"></i>
                   </Dot>
                   <Dot slide={9}>
                     {" "}
-                    <i class="fa-solid fa-circle active:text-tono1 hover:scale-110 hover:text-tono3 transition duration-300 ease-in-out transform"></i>
+                    <i className="fa-solid fa-circle active:text-tono1 hover:scale-110 hover:text-tono3 transition duration-300 ease-in-out transform"></i>
                   </Dot>
                   <Dot slide={10}>
                     {" "}
-                    <i class="fa-solid fa-circle active:text-tono1 hover:scale-110 hover:text-tono3 transition duration-300 ease-in-out transform"></i>
+                    <i className="fa-solid fa-circle active:text-tono1 hover:scale-110 hover:text-tono3 transition duration-300 ease-in-out transform"></i>
                   </Dot>
                   <Dot slide={11}>
                     {" "}
-                    <i class="fa-solid fa-circle active:text-tono1 hover:scale-110 hover:text-tono3 transition duration-300 ease-in-out transform"></i>
+                    <i className="fa-solid fa-circle active:text-tono1 hover:scale-110 hover:text-tono3 transition duration-300 ease-in-out transform"></i>
                   </Dot>
                   <Dot slide={12}>
                     {" "}
-                    <i class="fa-solid fa-circle active:text-tono1 hover:scale-110 hover:text-tono3 transition duration-300 ease-in-out transform"></i>
+                    <i className="fa-solid fa-circle active:text-tono1 hover:scale-110 hover:text-tono3 transition duration-300 ease-in-out transform"></i>
                   </Dot>
                 </div>
                 <ButtonNext className="relative right-5 sm:block hidden text-tono4 active:text-tono1 hover:scale-110 hover:text-tono3 transition duration-300 ease-in-out transform">
-                  <i class="fa-solid fa-circle-right"></i>
+                  <i className="fa-solid fa-circle-right"></i>
                 </ButtonNext>
               </div>
             </div>

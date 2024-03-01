@@ -69,8 +69,8 @@ function Resumen() {
                 width="560"
                 height="315"
                 title="Ooni video presentacion"
-                frameborder="0"
-                allowfullscreen=""
+                frameBorder="0"
+                allowFullScreen={true}
                 className="rounded-xl sm:mx-0 mx-4"
               ></iframe>
             </div>
@@ -136,8 +136,8 @@ function Resumen() {
                 src="https://www.youtube.com/embed/O_QxcX-ja-4"
                 width="560"
                 height="315"
-                frameborder="0"
-                allowfullscreen=""
+                frameBorder="0"
+                allowFullScreen={true}
                 title="EmileHenry video presentacion"
                 className="rounded-xl sm:mx-0 mx-4"
               ></iframe>
@@ -160,8 +160,8 @@ function Resumen() {
                 width="560"
                 height="315"
                 title="Mauviel video presentacion"
-                frameborder="0"
-                allowfullscreen=""
+                frameBorder="0"
+                allowFullScreen={true}
                 className="rounded-xl sm:mx-0 mx-4"
               ></iframe>
             </div>
@@ -226,8 +226,8 @@ function Resumen() {
                 src="https://www.youtube.com/embed/ud4j2ppruJ8"
                 width="560"
                 height="315"
-                frameborder="0"
-                allowfullscreen=""
+                frameBorder="0"
+                allowFullScreen={true}
                 title="EmileHenry video presentacion"
                 className="rounded-xl sm:mx-0 mx-4"
               ></iframe>
