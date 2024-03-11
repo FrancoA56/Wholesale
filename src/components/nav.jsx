@@ -139,7 +139,7 @@ function Nav() {
                 className="hover:scale-110 transition duration-300 ease-in-out transform"
                 href="/acercaDe"
               >
-                Acerca de
+                Nosotros
               </a>
             )}
             <Dropdown isExpanded={isExpanded} />
@@ -389,7 +389,7 @@ function Nav() {
                 className="hover:scale-110 transition duration-300 ease-in-out transform flex justify-end"
                 href="/acercaDe"
               >
-                Acerca de
+                Nosotros
               </a>
             )}
             <Dropdown />

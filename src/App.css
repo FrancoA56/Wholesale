@@ -1,8 +1,8 @@
 .App {
   text-align: center;
-  overflow-x: scroll;
-  scrollbar-width: none;
-  scrollbar-color: transparent transparent;
+  overflow-x: hidden;
+  overflow-y: hidden; /* Oculta la barra de desplazamiento vertical */
+  scrollbar-width: none; /* Elimina el aspecto de la barra de desplazamiento */
 }
 
 .App-logo {

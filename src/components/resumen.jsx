@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import ooniLogo from "../media/imagenes/Ooni-logo negro png.png";
 import EmileHenry from "../media/imagenes/EmileHenry-02.png";
 import mauvile from "../media/imagenes/logoMauvielNegro.png";
-import boj from "../media/imagenes/logo boj negro.jpg";
+import boj from "../media/imagenes/logo boj negro.png";
 import "../styles/resumen.css";
 
 function Resumen() {
@@ -52,7 +52,7 @@ function Resumen() {
           Nuestras marcas
         </div>
         <div className="text-gray-700 font-gothamBI flex text-subtitulo justify-center items-center sm:text-start text-center sm:mx-0 mx-4">
-          Representamos y distribuimos las marcas premium
+          Representamos y distribuimos marcas premium.
         </div>
       </div>
 
@@ -93,8 +93,8 @@ function Resumen() {
                 <hr className="border-black w-full" />
 
                 <div className="text-gray-700 font-gothamB text-subtitulo pt-6 pb-4 ">
-                  Ooni se especializa en hornos de pizza al aire libre de alta
-                  temperatura para clientes residenciales.
+                  Desde Escocia creando hornos de pizza para las mejores pizzas
+                  Napolitanas, revolucionando la cocina al aire libre.
                 </div>
               </div>
             </div>
@@ -124,8 +124,9 @@ function Resumen() {
                 </a>
                 <hr className="sm:ml-28  sm:mr-0 border-black w-full ml-4 mr-4" />
                 <div className="text-gray-700 font-gothamB text-subtitulo pt-6 sm:ml-28 ml-4 mr-4 sm:mr-0">
-                  Emile Henry es un fabricante francés de hornos de cerámica,
-                  vajilla y utensilios de cocina.
+                  Mas de 6 generaciones transmitiendo la pasión por la cerámica
+                  de calidad, hecha a mano en los talleres de borgoña, Francia.
+                  Encontrando desde fuentes, cacerolas y el tradicional Tajine.
                 </div>
               </div>
             </div>
@@ -184,8 +185,8 @@ function Resumen() {
                 <hr className="sm:mx-12 mx-4 border-black" />
 
                 <div className="text-gray-700 font-gothamB text-subtitulo pt-6 pb-4">
-                  Lorem ipsum dolor sit consectetuer adipiscing elit sed diam
-                  nonummy nibh euismod tincidunt.
+                  Desde 1830, fabricado en Normandia haciendo piezas unicas
+                  artesanalmente y presente en mas 100 paises.
                 </div>
               </div>
             </div>
@@ -199,7 +200,7 @@ function Resumen() {
           isVisibleBoj ? "slide-in-right" : ""
         }`}
       >
-        <div className="sm:grid sm:grid-cols-2 flex flex-col justify-center sm:h-96 h-auto pt-6 mt-6">
+        <div className="sm:grid sm:grid-cols-2 flex flex-col justify-center sm:h-96 h-auto my-8">
           <div className="sm:col-span-1 flex flex-col justify-center items-center ">
             <div className="sm:grid sm:grid-rows-2 flex justify-center items-center">
               <div className="flex flex-col justify-center items-center mx-4">
@@ -215,7 +216,9 @@ function Resumen() {
                 </a>
                 <hr className="sm:ml-28  sm:mr-0 border-black w-full ml-4 mr-4" />
                 <div className="text-gray-700 font-gothamB text-subtitulo pt-6 sm:ml-28 ml-4 mr-4 sm:mr-0">
-                Lorem ipsum dolor sit consectetuer adipiscing elit sed diam nonummy nibh euismod tincidunt.
+                  Desde 1905 en españa, especializandose en la fabricación de
+                  abrelatas, sacacorchos y otros utensilios de menaje con los
+                  estandares mas altos.
                 </div>
               </div>
             </div>
@@ -229,7 +232,7 @@ function Resumen() {
                 frameBorder="0"
                 allowFullScreen={true}
                 title="EmileHenry video presentacion"
-                className="rounded-xl sm:mx-0 mx-4"
+                className="rounded-xl sm:mx-0 mx-4 mt-8"
               ></iframe>
             </div>
           </div>
