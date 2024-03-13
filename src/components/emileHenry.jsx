@@ -10,19 +10,18 @@ import {
   ButtonNext,
   Dot,
 } from "pure-react-carousel";
+import { useMediaQuery } from "react-responsive";
 import emile1 from "../media/imagenes/emile/bowl.jpeg";
 import emile2 from "../media/imagenes/emile/budinera.jpeg";
 import emile3 from "../media/imagenes/emile/corazon.jpeg";
-import emile4 from "../media/imagenes/emile/fondue.jpeg";
 import emile5 from "../media/imagenes/emile/fuente.jpeg";
 import emile6 from "../media/imagenes/emile/fuenteCebolla.jpeg";
 import emile7 from "../media/imagenes/emile/fuenteOnda.jpeg";
-import emile8 from "../media/imagenes/emile/fuenteOndulada.jpeg";
-import emile9 from "../media/imagenes/emile/fuentePlana.jpeg";
 import emile10 from "../media/imagenes/emile/fuentePlana2.jpeg";
 import emile11 from "../media/imagenes/emile/panera.jpeg";
 import emile12 from "../media/imagenes/emile/ramekin.jpeg";
 import emile13 from "../media/imagenes/emile/tajine.jpeg";
+import banner from "../media/imagenes/emile/banner.jpeg";
 import "../styles/efectoLogo.css";
 import emileCuality1 from "../media/imagenes/emile/cualidades/garantia.png";
 import emileCuality2 from "../media/imagenes/emile/cualidades/ceramica-calidad.png";
@@ -32,26 +31,32 @@ import emileCuality4 from "../media/imagenes/emile/cualidades/producto-artesanal
 function Emile() {
   const [activeSlide, setActiveSlide] = useState(0);
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      const nextIndex = activeSlide === 12 ? 0 : activeSlide + 1;
-      setActiveSlide(nextIndex);
-    }, 3000);
+  const isDesktopOrLaptop = useMediaQuery({
+    query: "(min-device-width: 640px)",
+  });
 
-    return () => clearTimeout(timer);
-  }, [activeSlide]);
+  useEffect(() => {
+    if (isDesktopOrLaptop) {
+      const timer = setTimeout(() => {
+        const nextIndex = activeSlide === 9 ? 0 : activeSlide + 1;
+        setActiveSlide(nextIndex);
+      }, 3000);
+
+      return () => clearTimeout(timer);
+    }
+  }, [activeSlide, isDesktopOrLaptop]);
 
   const handleSlideChange = (slideIndex) => {
     setActiveSlide(slideIndex);
   };
 
   const handlePreviousSlide = () => {
-    const previousIndex = activeSlide === 0 ? 12 : activeSlide - 1;
+    const previousIndex = activeSlide === 0 ? 9 : activeSlide - 1;
     setActiveSlide(previousIndex);
   };
 
   const handleNextSlide = () => {
-    const nextIndex = activeSlide === 12 ? 0 : activeSlide + 1;
+    const nextIndex = activeSlide === 9 ? 0 : activeSlide + 1;
     setActiveSlide(nextIndex);
   };
 
@@ -75,7 +80,7 @@ function Emile() {
           <CarouselProvider
             naturalSlideHeight={33}
             naturalSlideWidth={52}
-            totalSlides={13}
+            totalSlides={10}
             currentSlide={activeSlide}
           >
             <div>
@@ -94,7 +99,7 @@ function Emile() {
                 </Slide>
                 <Slide index={3}>
                   {" "}
-                  <img src={emile4} alt="emile henry" />{" "}
+                  <img src={emile11} alt="emile henry" />{" "}
                 </Slide>
                 <Slide index={4}>
                   {" "}
@@ -110,38 +115,26 @@ function Emile() {
                 </Slide>
                 <Slide index={7}>
                   {" "}
-                  <img src={emile8} alt="emile henry" />{" "}
+                  <img src={emile1} alt="emile henry" />{" "}
                 </Slide>
                 <Slide index={8}>
                   {" "}
-                  <img src={emile9} alt="emile henry" />{" "}
+                  <img src={emile12} alt="emile henry" />{" "}
                 </Slide>
                 <Slide index={9}>
                   {" "}
                   <img src={emile10} alt="emile henry" />{" "}
                 </Slide>
-                <Slide index={10}>
-                  {" "}
-                  <img src={emile11} alt="emile henry" />{" "}
-                </Slide>
-                <Slide index={11}>
-                  {" "}
-                  <img src={emile12} alt="emile henry" />{" "}
-                </Slide>
-                <Slide index={12}>
-                  {" "}
-                  <img src={emile1} alt="emile henry" />{" "}
-                </Slide>
               </Slider>
               <div className="flex gap-8 justify-center mt-1">
                 <ButtonBack
                   onClick={handlePreviousSlide}
-                  className="relative left-5 sm:block hidden text-tono4 active:text-tono1 hover:scale-110 hover:text-tono3 focus:text-tono1 transition duration-300 ease-in-out transform"
+                  className="relative left-5 block text-tono4 sm:mr-0 mr-4 active:text-tono1 hover:scale-110 hover:text-tono3 focus:text-tono1 transition duration-300 ease-in-out transform"
                 >
                   <i className="fa-solid fa-circle-left"></i>
                 </ButtonBack>
-                <div className="flex gap-2 text-tono4">
-                  {[...Array(13)].map((_, index) => (
+                <div className="sm:inline-flex hidden gap-2 text-tono4">
+                  {[...Array(10)].map((_, index) => (
                     <Dot
                       key={index}
                       slide={index}
@@ -158,7 +151,7 @@ function Emile() {
                 </div>
                 <ButtonNext
                   onClick={handleNextSlide}
-                  className="relative right-5 text-tono4 sm:block hidden active:text-tono1 hover:scale-110 hover:text-tono3 focus:text-tono1 transition duration-300 ease-in-out transform"
+                  className="relative right-5 text-tono4 block sm:ml-0 ml-4 active:text-tono1 hover:scale-110 hover:text-tono3 focus:text-tono1 transition duration-300 ease-in-out transform"
                 >
                   <i className="fa-solid fa-circle-right"></i>
                 </ButtonNext>
@@ -241,6 +234,9 @@ function Emile() {
           </div>
         </div>
       </div>
+    <div>
+      <img src={banner} alt="bannerEmile" className="w-full mb-12"/>
+    </div>
     </>
   );
 }

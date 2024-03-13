@@ -5,7 +5,6 @@ import gifOoni from "../media/imagenes/ooni/gif/Fyra 12_Flame Loop_Transparent.g
 
 
 function AcercaDe() {
-  const url = process.env.URL
 
   // ? FUNCIONES PARA USAR EMAIL JS
   const form = useRef();
@@ -34,7 +33,7 @@ function AcercaDe() {
           text: textParts.join("\n"), // Concatenar los elementos con un salto de linea
         };
         const { data } = await axios.post(
-          `${url}api/message`,
+          `https://wholesale-api.onrender.com/api/message`,
           objetoBody,
           { headers: { "Content-Type": "Application/Json" } } // Configurar los encabezados
         );

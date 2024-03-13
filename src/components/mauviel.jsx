@@ -10,11 +10,13 @@ import {
   ButtonNext,
   Dot,
 } from "pure-react-carousel";
+import { useMediaQuery } from "react-responsive";
 import image1 from "../media/imagenes/mauviel/1.jpg";
-import image2 from "../media/imagenes/mauviel/2.jpg";
+import image2 from "../media/imagenes/mauviel/2.jpeg";
 import image3 from "../media/imagenes/mauviel/3.jpg";
-import image4 from "../media/imagenes/mauviel/4.jpg";
+import image4 from "../media/imagenes/mauviel/4.jpeg";
 import image5 from "../media/imagenes/mauviel/5.jpg";
+import banner from "../media/imagenes/mauviel/banner.jpg";
 import mauvielCuality1 from "../media/imagenes/mauviel/cualitys/1.png";
 import mauvielCuality2 from "../media/imagenes/mauviel/cualitys/2.png";
 import mauvielCuality3 from "../media/imagenes/mauviel/cualitys/3.png";
@@ -24,14 +26,20 @@ import "../styles/efectoLogo.css";
 function Mauviel() {
   const [activeSlide, setActiveSlide] = useState(0);
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      const nextIndex = activeSlide === 4 ? 0 : activeSlide + 1;
-      setActiveSlide(nextIndex);
-    }, 3000);
+  const isDesktopOrLaptop = useMediaQuery({
+    query: "(min-device-width: 640px)",
+  });
 
-    return () => clearTimeout(timer);
-  }, [activeSlide]);
+  useEffect(() => {
+    if (isDesktopOrLaptop) {
+      const timer = setTimeout(() => {
+        const nextIndex = activeSlide === 4 ? 0 : activeSlide + 1;
+        setActiveSlide(nextIndex);
+      }, 3000);
+
+      return () => clearTimeout(timer);
+    }
+  }, [activeSlide, isDesktopOrLaptop]);
 
   const handleSlideChange = (slideIndex) => {
     setActiveSlide(slideIndex);
@@ -63,7 +71,7 @@ function Mauviel() {
         </div>
       </div>
       <div className="sm:grid sm:grid-cols-5 flex flex-col mb-12">
-        <div className="sm:w-7/12 w-11/12 sm:ml-20 sm:mr-0 ml-4 mr-4 mt-12 col-span-2">
+        <div className="sm:w-8/12 w-11/12 sm:ml-20 sm:mr-0 ml-4 mr-4 mt-12 col-span-2">
           <CarouselProvider
             naturalSlideHeight={46}
             naturalSlideWidth={33}
@@ -92,16 +100,15 @@ function Mauviel() {
                   {" "}
                   <img src={image5} alt="emile henry" />{" "}
                 </Slide>
-              
               </Slider>
-              <div className="flex gap-8 justify-center mt-1">
+              <div className="gap-8 justify-center mt-1 flex">
                 <ButtonBack
                   onClick={handlePreviousSlide}
-                  className="relative left-5 sm:block hidden text-tono4 active:text-tono1 hover:scale-110 hover:text-tono3 focus:text-tono1 transition duration-300 ease-in-out transform"
+                  className="relative left-5 block text-tono4 sm:mr-0 mr-4 active:text-tono1 hover:scale-110 hover:text-tono3 focus:text-tono1 transition duration-300 ease-in-out transform"
                 >
                   <i className="fa-solid fa-circle-left"></i>
                 </ButtonBack>
-                <div className="flex gap-2 text-tono4">
+                <div className="sm:inline-flex hidden gap-2 text-tono4">
                   {[...Array(5)].map((_, index) => (
                     <Dot
                       key={index}
@@ -119,7 +126,7 @@ function Mauviel() {
                 </div>
                 <ButtonNext
                   onClick={handleNextSlide}
-                  className="relative right-5 text-tono4 sm:block hidden active:text-tono1 hover:scale-110 hover:text-tono3 focus:text-tono1 transition duration-300 ease-in-out transform"
+                  className="relative right-5 text-tono4 block sm:ml-0 ml-4 active:text-tono1 hover:scale-110 hover:text-tono3 focus:text-tono1 transition duration-300 ease-in-out transform"
                 >
                   <i className="fa-solid fa-circle-right"></i>
                 </ButtonNext>
@@ -132,7 +139,7 @@ function Mauviel() {
             <img
               src={logoMauvielNegro}
               alt="logoMauvielNegro"
-              className="w-3/4 mx-auto "
+              className="sm:w-3/5 w-3/4 mx-auto sm:mb-12 mb-0"
             />
             <hr className="border-tono3 mb-12 sm:hidden grid mt-12 sm:mt-0 mx-6" />
             <div className="text-gray-700 sm:mb-0 mb-8 sm:mx-0  mx-6 indent-8 font-gothamB">
@@ -153,6 +160,7 @@ function Mauviel() {
           </div>
         </div>
       </div>
+
       <div className="sm:grid sm:grid-cols-4 sm:mr-6 mr-0 mb-12">
         <div className="flex flex-col justify-center items-center text-center gap-4 mx-4 mb-8 sm:grid sm:grid-rows-4">
           <img
@@ -205,6 +213,9 @@ function Mauviel() {
             La mas alta calidad para los chefs mas exigentes.
           </div>
         </div>
+      </div>
+      <div>
+        <img src={banner} alt="bannerMauviel" className="w-full mb-12" />
       </div>
     </>
   );

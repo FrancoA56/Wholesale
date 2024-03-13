@@ -10,12 +10,19 @@ import {
   ButtonNext,
   Dot,
 } from "pure-react-carousel";
-import boj1 from "../media/imagenes/boj/0.jpeg";
-import boj2 from "../media/imagenes/boj/1.jpg";
-import boj3 from "../media/imagenes/boj/2.jpg";
-import boj4 from "../media/imagenes/boj/3.jpg";
+import { useMediaQuery } from "react-responsive";
+import boj1 from "../media/imagenes/boj/0.jpg";
+import boj2 from "../media/imagenes/boj/1.jpeg";
+import boj3 from "../media/imagenes/boj/2.jpeg";
+import boj4 from "../media/imagenes/boj/3.jpeg";
 import boj5 from "../media/imagenes/boj/4.jpg";
 import boj6 from "../media/imagenes/boj/5.jpg";
+import boj7 from "../media/imagenes/boj/6.jpg";
+import boj8 from "../media/imagenes/boj/7.jpg";
+import boj9 from "../media/imagenes/boj/8.jpg";
+import boj10 from "../media/imagenes/boj/9.jpg";
+import boj11 from "../media/imagenes/boj/10.jpg";
+import banner from "../media/imagenes/boj/banner.jpeg";
 import gojCuality1 from "../media/imagenes/boj/cualitys/1.png";
 import gojCuality2 from "../media/imagenes/boj/cualitys/2.png";
 import gojCuality3 from "../media/imagenes/boj/cualitys/3.png";
@@ -25,26 +32,32 @@ import "../styles/efectoLogo.css";
 function Mauviel() {
   const [activeSlide, setActiveSlide] = useState(0);
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      const nextIndex = activeSlide === 5 ? 0 : activeSlide + 1;
-      setActiveSlide(nextIndex);
-    }, 3000);
+  const isDesktopOrLaptop = useMediaQuery({
+    query: "(min-device-width: 640px)",
+  });
 
-    return () => clearTimeout(timer);
-  }, [activeSlide]);
+  useEffect(() => {
+    if (isDesktopOrLaptop) {
+      const timer = setTimeout(() => {
+        const nextIndex = activeSlide === 10 ? 0 : activeSlide + 1;
+        setActiveSlide(nextIndex);
+      }, 3000);
+
+      return () => clearTimeout(timer);
+    }
+  }, [activeSlide, isDesktopOrLaptop]);
 
   const handleSlideChange = (slideIndex) => {
     setActiveSlide(slideIndex);
   };
 
   const handlePreviousSlide = () => {
-    const previousIndex = activeSlide === 0 ? 5 : activeSlide - 1;
+    const previousIndex = activeSlide === 0 ? 10 : activeSlide - 1;
     setActiveSlide(previousIndex);
   };
 
   const handleNextSlide = () => {
-    const nextIndex = activeSlide === 5 ? 0 : activeSlide + 1;
+    const nextIndex = activeSlide === 10 ? 0 : activeSlide + 1;
     setActiveSlide(nextIndex);
   };
 
@@ -68,7 +81,7 @@ function Mauviel() {
           <CarouselProvider
             naturalSlideHeight={46}
             naturalSlideWidth={33}
-            totalSlides={6}
+            totalSlides={11}
             currentSlide={activeSlide}
           >
             <div>
@@ -97,44 +110,36 @@ function Mauviel() {
                   {" "}
                   <img src={boj6} alt="emile henry" />{" "}
                 </Slide>
-                {/*<Slide index={6}>
+                <Slide index={6}>
                   {" "}
-                  <img src={emile7} alt="emile henry" />{" "}
+                  <img src={boj7} alt="emile henry" />{" "}
                 </Slide>
                 <Slide index={7}>
                   {" "}
-                  <img src={emile8} alt="emile henry" />{" "}
+                  <img src={boj8} alt="emile henry" />{" "}
                 </Slide>
                 <Slide index={8}>
                   {" "}
-                  <img src={emile9} alt="emile henry" />{" "}
+                  <img src={boj9} alt="emile henry" />{" "}
                 </Slide>
                 <Slide index={9}>
                   {" "}
-                  <img src={emile10} alt="emile henry" />{" "}
+                  <img src={boj10} alt="emile henry" />{" "}
                 </Slide>
                 <Slide index={10}>
                   {" "}
-                  <img src={emile11} alt="emile henry" />{" "}
+                  <img src={boj11} alt="emile henry" />{" "}
                 </Slide>
-                <Slide index={11}>
-                  {" "}
-                  <img src={emile12} alt="emile henry" />{" "}
-                </Slide>
-                <Slide index={12}>
-                  {" "}
-                  <img src={emile1} alt="emile henry" />{" "}
-                </Slide> */}
               </Slider>
               <div className="flex gap-8 justify-center mt-1">
                 <ButtonBack
                   onClick={handlePreviousSlide}
-                  className="relative left-5 sm:block hidden text-tono4 active:text-tono1 hover:scale-110 hover:text-tono3 focus:text-tono1 transition duration-300 ease-in-out transform"
+                  className="relative left-5 block text-tono4 sm:mr-0 mr-4 active:text-tono1 hover:scale-110 hover:text-tono3 focus:text-tono1 transition duration-300 ease-in-out transform"
                 >
                   <i className="fa-solid fa-circle-left"></i>
                 </ButtonBack>
-                <div className="flex gap-2 text-tono4">
-                  {[...Array(6)].map((_, index) => (
+                <div className="sm:inline-flex hidden gap-2 text-tono4">
+                  {[...Array(11)].map((_, index) => (
                     <Dot
                       key={index}
                       slide={index}
@@ -151,7 +156,7 @@ function Mauviel() {
                 </div>
                 <ButtonNext
                   onClick={handleNextSlide}
-                  className="relative right-5 text-tono4 sm:block hidden active:text-tono1 hover:scale-110 hover:text-tono3 focus:text-tono1 transition duration-300 ease-in-out transform"
+                  className="relative right-5 text-tono4 block sm:ml-0 ml-4 active:text-tono1 hover:scale-110 hover:text-tono3 focus:text-tono1 transition duration-300 ease-in-out transform"
                 >
                   <i className="fa-solid fa-circle-right"></i>
                 </ButtonNext>
@@ -169,8 +174,8 @@ function Mauviel() {
             <hr className="border-tono3 mb-12 sm:hidden grid" />
             <div className="text-gray-700 sm:mb-0 mb-8 indent-8 font-gothamB">
               Desde 1905 especializandose en la fabricacion de abrelatas,
-              sacacorchos y otros utensilios Cada producto esta meticulosamente
-              diseñado y fabricado con los mas altos estandares de calidad . La
+              sacacorchos y otros utensilios. Cada producto esta meticulosamente
+              diseñado y fabricado con los mas altos estandares de calidad. La
               empresa se enorgullece de su historia y del legado de calidad que
               ha construido durante más de un siglo. Esto ha permitido que los
               valores y la visión se mantengan intactos a lo largo de 3
@@ -236,6 +241,9 @@ function Mauviel() {
             altos estándares de calidad.
           </div>
         </div>
+      </div>
+      <div>
+        <img src={banner} alt="bannerBoj" className="w-full mb-12" />
       </div>
     </>
   );

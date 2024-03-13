@@ -10,19 +10,19 @@ import {
   ButtonNext,
   Dot,
 } from "pure-react-carousel";
+import { useMediaQuery } from "react-responsive";
 import imagen1 from "../media/imagenes/ooni/funda.jpeg";
 import imagen2 from "../media/imagenes/ooni/balanza.jpeg";
-import imagen3 from "../media/imagenes/ooni/fullKit.jpeg";
-import imagen4 from "../media/imagenes/ooni/hornoAbierto.jpeg";
+import imagen4 from "../media/imagenes/ooni/pizzaCruda.jpg";
 import imagen5 from "../media/imagenes/ooni/hornoConPala.jpeg";
 import imagen6 from "../media/imagenes/ooni/hornoConPizza.jpeg";
 import imagen7 from "../media/imagenes/ooni/hornoInterperie.jpeg";
-import imagen8 from "../media/imagenes/ooni/hornosHilera.jpeg";
 import imagen9 from "../media/imagenes/ooni/hornoSinPizza.jpeg";
 import imagen10 from "../media/imagenes/ooni/juntada.jpeg";
 import imagen11 from "../media/imagenes/ooni/ollitas.jpeg";
 import imagen12 from "../media/imagenes/ooni/utensillos1.jpeg";
 import imagen13 from "../media/imagenes/ooni/utensillos2.jpeg";
+import banner from "../media/imagenes/ooni/banner.jpeg";
 import ooniCuality1 from "../media/imagenes/ooni/cualitys/1.png";
 import ooniCuality2 from "../media/imagenes/ooni/cualitys/2.png";
 import ooniCuality3 from "../media/imagenes/ooni/cualitys/3.png";
@@ -32,26 +32,32 @@ import "../styles/efectoLogo.css";
 function Ooni() {
   const [activeSlide, setActiveSlide] = useState(0);
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      const nextIndex = activeSlide === 12 ? 0 : activeSlide + 1;
-      setActiveSlide(nextIndex);
-    }, 3000);
+  const isDesktopOrLaptop = useMediaQuery({
+    query: "(min-device-width: 640px)",
+  });
 
-    return () => clearTimeout(timer);
-  }, [activeSlide]);
+  useEffect(() => {
+    if (isDesktopOrLaptop) {
+      const timer = setTimeout(() => {
+        const nextIndex = activeSlide === 10 ? 0 : activeSlide + 1;
+        setActiveSlide(nextIndex);
+      }, 3000);
+
+      return () => clearTimeout(timer);
+    }
+  }, [activeSlide, isDesktopOrLaptop]);
 
   const handleSlideChange = (slideIndex) => {
     setActiveSlide(slideIndex);
   };
 
   const handlePreviousSlide = () => {
-    const previousIndex = activeSlide === 0 ? 12 : activeSlide - 1;
+    const previousIndex = activeSlide === 0 ? 10 : activeSlide - 1;
     setActiveSlide(previousIndex);
   };
 
   const handleNextSlide = () => {
-    const nextIndex = activeSlide === 12 ? 0 : activeSlide + 1;
+    const nextIndex = activeSlide === 10 ? 0 : activeSlide + 1;
     setActiveSlide(nextIndex);
   };
 
@@ -75,7 +81,7 @@ function Ooni() {
           <CarouselProvider
             naturalSlideHeight={34}
             naturalSlideWidth={52}
-            totalSlides={13}
+            totalSlides={11}
             currentSlide={activeSlide}
           >
             {" "}
@@ -87,64 +93,57 @@ function Ooni() {
                 </Slide>
                 <Slide index={1}>
                   {" "}
-                  <img src={imagen3} alt="Ooni" />{" "}
+                  <img src={imagen2} alt="Ooni" />{" "}
                 </Slide>
                 <Slide index={2}>
                   {" "}
-                  <img src={imagen2} alt="Ooni" />{" "}
+                  <img src={imagen4} alt="Ooni" />{" "}
                 </Slide>
                 <Slide index={3}>
                   {" "}
-                  <img src={imagen4} alt="Ooni" />{" "}
+                  <img src={imagen5} alt="Ooni" />{" "}
                 </Slide>
                 <Slide index={4}>
                   {" "}
-                  <img src={imagen5} alt="Ooni" />{" "}
+                  <img src={imagen1} alt="Ooni" />{" "}
                 </Slide>
                 <Slide index={5}>
                   {" "}
-                  <img src={imagen1} alt="Ooni" />{" "}
+                  <img src={imagen6} alt="Ooni" />{" "}
                 </Slide>
+
                 <Slide index={6}>
                   {" "}
-                  <img src={imagen6} alt="Ooni" />{" "}
+                  <img src={imagen13} alt="Ooni" />{" "}
                 </Slide>
                 <Slide index={7}>
                   {" "}
-                  <img src={imagen8} alt="Ooni" />{" "}
+                  <img src={imagen10} alt="Ooni" />{" "}
                 </Slide>
                 <Slide index={8}>
                   {" "}
-                  <img src={imagen9} alt="Ooni" />{" "}
+                  <img src={imagen11} alt="Ooni" />{" "}
                 </Slide>
                 <Slide index={9}>
                   {" "}
-                  <img src={imagen10} alt="Ooni" />{" "}
+                  <img src={imagen12} alt="Ooni" />{" "}
                 </Slide>
                 <Slide index={10}>
                   {" "}
-                  <img src={imagen11} alt="Ooni" />{" "}
-                </Slide>
-                <Slide index={11}>
-                  {" "}
-                  <img src={imagen12} alt="Ooni" />{" "}
-                </Slide>
-                <Slide index={12}>
-                  {" "}
-                  <img src={imagen13} alt="Ooni" />{" "}
+                  <img src={imagen9} alt="Ooni" />{" "}
                 </Slide>
               </Slider>
 
               <div className="flex gap-8 justify-center mt-1">
                 <ButtonBack
                   onClick={handlePreviousSlide}
-                  className="relative left-5 sm:block hidden text-tono4 active:text-tono1 hover:scale-110 hover:text-tono3 focus:text-tono1 transition duration-300 ease-in-out transform"
+                  className="relative left-5 sm:mr-0 mr-4 block text-tono4 active:text-tono1 hover:scale-110 hover:text-tono3 focus:text-tono1 transition duration-300 ease-in-out transform"
                 >
                   {" "}
                   <i className="fa-solid fa-circle-left"></i>
                 </ButtonBack>
-                <div className="flex gap-2 text-tono4">
-                  {[...Array(13)].map((_, index) => (
+                <div className="sm:inline-flex hidden gap-2 text-tono4">
+                  {[...Array(11)].map((_, index) => (
                     <Dot
                       key={index}
                       slide={index}
@@ -161,7 +160,7 @@ function Ooni() {
                 </div>
                 <ButtonNext
                   onClick={handleNextSlide}
-                  className="relative right-5 text-tono4 sm:block hidden active:text-tono1 hover:scale-110 hover:text-tono3 focus:text-tono1 transition duration-300 ease-in-out transform"
+                  className="relative right-5 text-tono4 sm:ml-0 ml-4 block active:text-tono1 hover:scale-110 hover:text-tono3 focus:text-tono1 transition duration-300 ease-in-out transform"
                 >
                   <i className="fa-solid fa-circle-right"></i>
                 </ButtonNext>
@@ -216,7 +215,7 @@ function Ooni() {
           />
           <div className="flex justify-center font-gothamBI">PRODUCTOS</div>
           <div className="flex justify-center self-start font-gothamB">
-            El Mejor Horno de Pizza segun WIRED y nuestros clientes.
+            Diseñamos, fabricamos y vendemos hornos para pizza increíbles.
           </div>
         </div>
         <div className="flex flex-col justify-center items-center text-center gap-4 mx-4 mb-8 sm:grid sm:grid-rows-4">
@@ -229,7 +228,7 @@ function Ooni() {
             MADE IN SCOTLAND
           </div>
           <div className="flex justify-center self-start font-gothamB">
-            Diseñamos, fabricamos y vendemos hornos para pizza increíbles.{" "}
+            Reconocimiento internacional en el mercado.
           </div>
         </div>
         <div className="flex flex-col justify-center items-center text-center gap-4 mx-4 mb-8 sm:grid sm:grid-rows-4">
@@ -242,9 +241,12 @@ function Ooni() {
             PRODUCTOS DE CALIDAD
           </div>
           <div className="flex justify-center self-start font-gothamB">
-            La calidad excepcional de los productos de Ooni es insuperable.
+            El Mejor Horno de Pizza segun WIRED y nuestros clientes.
           </div>
         </div>
+      </div>
+      <div>
+        <img src={banner} alt="bannerooni" className="w-full mb-12" />
       </div>
     </>
   );

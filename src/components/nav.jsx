@@ -8,7 +8,6 @@ import "../styles/navBar.css";
 
 
 function Nav() {
-  const url = process.env.URL
   const [isExpanded, setExpanded] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
   const [isPopupOpen, setPopupOpen] = useState(false);
@@ -60,7 +59,7 @@ function Nav() {
         };
 
         const { data } = await axios.post(
-          `${url}api/registration`,
+          `https://wholesale-api.onrender.com/api/registration`,
           objetoBody,
           { headers: { "Content-Type": "Application/Json" } } // Configurar los encabezados
         );
@@ -333,7 +332,7 @@ function Nav() {
                           onClick={() => setPopupOpen(false)}
                           className="font-gothamB mt-2 mb-2 h-10 w-11/12 inline-block bg-gray-300 text-black md:w-2/3 rounded-md md:px-2 md:m-1 text-sm font-medium uppercase leading-normal hover:text-white shadow-[0_4px_9px_-4px_#000000] transition duration-150 ease-in-out hover:bg-[#303030] hover:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.3),0_4px_18px_0_rgba(0,0,0,0.2)]"
                         >
-                          Cerrar
+                          Cancelar
                         </button>
                       </div>
                     </div>
@@ -581,7 +580,7 @@ function Nav() {
                           onClick={() => setPopupOpen(false)}
                           className="mt-2 mb-2 h-10 w-11/12 inline-block bg-gray-300 text-black md:w-2/3 rounded-md md:px-2 md:m-1 text-sm font-medium uppercase leading-normal hover:text-white shadow-[0_4px_9px_-4px_#000000] transition duration-150 ease-in-out hover:bg-[#303030] hover:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.3),0_4px_18px_0_rgba(0,0,0,0.2)]"
                         >
-                          Cerrar
+                          Cancelar
                         </button>
                       </div>
                     </div>
