@@ -192,7 +192,7 @@ function Nav() {
                         {/* Nombre */}
                         <div className=" flex flex-col items-start pl-5 pr-1 py-0.5">
                           <label
-                            for="first-name"
+                            htmlFor="first-name"
                             className="text-sm font-gothamBI text-tono2 px-2"
                           >
                             {" "}
@@ -201,8 +201,8 @@ function Nav() {
                           <input
                             name="user_name"
                             id="user_name"
-                            autocomplete="Nombre"
-                            // autocomplete="off"
+                            autoComplete="Nombre"
+                            // autoComplete="off"
                             type="text"
                             placeholder="Pedro"
                             onChange={handleChange}
@@ -214,7 +214,7 @@ function Nav() {
                         {/* Apellido */}
                         <div className="flex flex-col items-start pr-5 pl-1 py-0.5">
                           <label
-                            for="last-name"
+                            htmlFor="last-name"
                             className="text-sm font-gothamBI text-tono2 px-2"
                           >
                             {" "}
@@ -224,9 +224,9 @@ function Nav() {
                             type="text"
                             name="user_lastname"
                             id="user_lastname"
-                            autocomplete="Apellido"
+                            autoComplete="Apellido"
                             placeholder="Alfonso"
-                            // autocomplete="off"
+                            // autoComplete="off"
                             onChange={handleChange}
                             required
                             // value={formData.lastname}
@@ -237,7 +237,7 @@ function Nav() {
                       {/* name (company name)*/}
                       <div className=" flex flex-col items-start px-5 py-0.5">
                         <label
-                          for="name"
+                          htmlFor="name"
                           className="text-sm font-gothamBI text-tono2 px-2"
                         >
                           {" "}
@@ -247,9 +247,9 @@ function Nav() {
                           type="text"
                           name="user_company"
                           id="user_company"
-                          autocomplete="organization"
+                          autoComplete="organization"
                           placeholder="Wholesale"
-                          // autocomplete="off"
+                          // autoComplete="off"
                           onChange={handleChange}
                           required
                           className="appearance-none border-b-2 border-tono2 focus:outline-none focus:border-tono3 w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none"
@@ -258,7 +258,7 @@ function Nav() {
                       {/* phone (phone number)*/}
                       <div className=" flex flex-col items-start px-5 py-0.5">
                         <label
-                          for="phone"
+                          htmlFor="phone"
                           className="text-sm font-gothamBI text-tono2 px-2"
                         >
                           {" "}
@@ -268,9 +268,9 @@ function Nav() {
                           type="number"
                           name="user_phone"
                           id="user_phone"
-                          autocomplete="Teléfono"
+                          autoComplete="Teléfono"
                           placeholder="011-2305-3139"
-                          // autocomplete="off"
+                          // autoComplete="off"
                           onChange={handleChange}
                           required
                           className="appearance-none border-b-2 border-tono2 focus:outline-none focus:border-tono3 w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none"
@@ -279,7 +279,7 @@ function Nav() {
                       {/* email */}
                       <div className=" flex flex-col items-start px-5 py-0.5">
                         <label
-                          for="email"
+                          htmlFor="email"
                           className="text-sm font-gothamBI text-tono2 px-2"
                         >
                           {" "}
@@ -289,9 +289,9 @@ function Nav() {
                           type="email"
                           name="user_email"
                           id="user_email"
-                          autocomplete="email"
+                          autoComplete="email"
                           placeholder="hola@ws-dyr.com"
-                          // autocomplete="off"
+                          // autoComplete="off"
                           onChange={handleChange}
                           required
                           value={formData.user_email}
@@ -301,7 +301,7 @@ function Nav() {
                       {/* message */}
                       <div className=" flex flex-col items-start px-5 py-0.5">
                         <label
-                          for="message"
+                          htmlFor="message"
                           className="text-sm font-gothamBI text-tono2 px-2"
                         >
                           {" "}
@@ -441,7 +441,7 @@ function Nav() {
                       {/* Nombre */}
                       <div className=" flex flex-col items-start pr-5 py-0.5">
                         <label
-                          for="first-name"
+                          htmlFor="first-name"
                           className="text-sm font-gothamBI text-tono2 px-2"
                         >
                           {" "}
@@ -450,8 +450,8 @@ function Nav() {
                         <input
                           name="user_name"
                           id="user_name"
-                          autocomplete="Nombre"
-                          // autocomplete="off"
+                          autoComplete="Nombre"
+                          // autoComplete="off"
                           type="text"
                           placeholder="Pedro"
                           onChange={handleChange}
@@ -463,7 +463,7 @@ function Nav() {
                       {/* Apellido */}
                       <div className=" flex flex-col items-start pr-5 py-0.5">
                         <label
-                          for="last-name"
+                          htmlFor="last-name"
                           className="text-sm font-gothamBI text-tono2 px-2"
                         >
                           {" "}
@@ -473,9 +473,9 @@ function Nav() {
                           type="text"
                           name="user_lastname"
                           id="user_lastname"
-                          autocomplete="Apellido"
+                          autoComplete="Apellido"
                           placeholder="Alfonso"
-                          // autocomplete="off"
+                          // autoComplete="off"
                           onChange={handleChange}
                           required
                           // value={formData.lastname}
@@ -485,7 +485,7 @@ function Nav() {
                       {/* name (company name)*/}
                       <div className=" flex flex-col items-start pr-5 py-0.5">
                         <label
-                          for="name"
+                          htmlFor="name"
                           className="text-sm font-gothamBI text-tono2 px-2"
                         >
                           {" "}
@@ -495,9 +495,9 @@ function Nav() {
                           type="text"
                           name="user_company"
                           id="user_company"
-                          autocomplete="organization"
+                          autoComplete="organization"
                           placeholder="Wholesale"
-                          // autocomplete="off"
+                          // autoComplete="off"
                           onChange={handleChange}
                           required
                           className="appearance-none border-b-2 border-tono2 focus:outline-none focus:border-tono3 w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none"
@@ -506,7 +506,7 @@ function Nav() {
                       {/* phone (phone number)*/}
                       <div className=" flex flex-col items-start pr-5 py-0.5">
                         <label
-                          for="phone"
+                          htmlFor="phone"
                           className="text-sm font-gothamBI text-tono2 px-2"
                         >
                           {" "}
@@ -516,9 +516,9 @@ function Nav() {
                           type="number"
                           name="user_phone"
                           id="user_phone"
-                          autocomplete="Teléfono"
+                          autoComplete="Teléfono"
                           placeholder="011-2305-3139"
-                          // autocomplete="off"
+                          // autoComplete="off"
                           onChange={handleChange}
                           required
                           className="appearance-none border-b-2 border-tono2 focus:outline-none focus:border-tono3 w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none"
@@ -527,7 +527,7 @@ function Nav() {
                       {/* email */}
                       <div className=" flex flex-col items-start pr-5 py-0.5">
                         <label
-                          for="email"
+                          htmlFor="email"
                           className="text-sm font-gothamBI text-tono2 px-2"
                         >
                           {" "}
@@ -537,9 +537,9 @@ function Nav() {
                           type="email"
                           name="user_email"
                           id="user_email"
-                          autocomplete="email"
+                          autoComplete="email"
                           placeholder="hola@ws-dyr.com"
-                          // autocomplete="off"
+                          // autoComplete="off"
                           onChange={handleChange}
                           required
                           value={formData.user_email}
@@ -549,7 +549,7 @@ function Nav() {
                       {/* message */}
                       <div className=" flex flex-col items-start pr-5 py-0.5">
                         <label
-                          for="message"
+                          htmlFor="message"
                           className="text-sm font-gothamBI text-tono2 px-2"
                         >
                           {" "}

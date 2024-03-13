@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Home from "./components/home";
 import Contact from "./components/contact";
 import AcercaDe from "./components/acercaDe";
@@ -10,8 +10,26 @@ import "./App.css";
 import { Route, Routes } from "react-router-dom";
 import Nav from "./components/nav";
 import Footer from "./components/footer";
+import axios from "axios"
 
 function App() {
+  const [start, setStart] = useState(false);
+  
+  useEffect(() => {
+    if(!start) {
+      const startServer = async () => {
+        try {
+          const {data} = await axios.get("https://wholesale-api.onrender.com/api/start")
+          if(data.message === "ok") {
+            setStart(true)
+          }
+        } catch (error) {
+          console.log("error", error)
+        }
+      };
+      startServer();
+    }
+  }, [start, setStart]);
 
   return (
     <div className="App">
