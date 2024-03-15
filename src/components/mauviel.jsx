@@ -169,10 +169,8 @@ function Mauviel() {
             className="w-1/2 sm:row-span-2 mx-auto"
           />
           <div className="flex justify-center font-gothamBI ">
-            10 AÑOS DE GARANTÍA
           </div>
           <div className="flex justify-center self-start sm:mx-0 mx-auto font-gothamB">
-            Tus compras garantizadas por 10 años.
           </div>
         </div>
         <div className="flex flex-col justify-center items-center text-center gap-4 mx-4 mb-8 sm:grid sm:grid-rows-4">
