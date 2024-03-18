@@ -65,11 +65,18 @@ function Ooni() {
     <>
       <div className="bg-fondoOoni bg-cover bg-center h-screen flex justify-center items-center">
         <div className="bg-tono1b h-screen w-screen flex justify-center items-center">
-          <img
-            src={ooniLogo}
-            alt="wholesaleLogo"
-            className="tracking-in-contract sm:w-1/5 w-3/5 h-auto flex justify-center items-center hover:scale-125 transition duration-300 ease-in-out transform"
-          />
+          <a
+            href="https://ooni.com/"
+            className="flex justify-center"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img
+              src={ooniLogo}
+              alt="wholesaleLogo"
+              className="tracking-in-contract sm:w-1/5 w-3/5 h-auto flex justify-center items-center hover:scale-125 transition duration-300 ease-in-out transform"
+            />
+          </a>
           <hr className="absolute bottom-20 text-tono5 w-11/12" />
           <div className="tracking-in-contract absolute bottom-10 text-parrafo font-gothamB text-tono5 ">
             Edimburgo - Escocia
@@ -170,11 +177,18 @@ function Ooni() {
         </div>
         <div className="sm:col-span-2 flex text-justify items-center sm:mr-28 mr-6 sm:mr-0 ml-6 sm:ml-0 sm:mt-0 mt-12">
           <div className="flex flex-col sm:mt-6 mt-0">
-            <img
-              src={ooniLogoGris}
-              alt="ooniLogoGris"
-              className="w-5/12 mx-auto sm:mt-12 mt-10 mb-2 bottom-12 relative"
-            />
+            <a
+              href="https://ooni.com/"
+              className="flex justify-center"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img
+                src={ooniLogoGris}
+                alt="ooniLogoGris"
+                className="w-5/12 mx-auto sm:mt-12 mt-10 mb-2 bottom-12 relative"
+              />
+            </a>
             <hr className="border-tono3 mb-12 sm:hidden grid" />
             <div className="text-gray-700 sm:mb-0 mb-8 indent-8 font-gothamB">
               Ooni comenzó con la búsqueda de pizza auténtica, del tipo que

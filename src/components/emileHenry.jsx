@@ -64,11 +64,18 @@ function Emile() {
     <>
       <div className="bg-fondoEmile bg-cover bg-center h-screen flex justify-center items-center">
         <div className="bg-tono1b h-screen w-screen flex justify-center items-center">
-          <img
-            src={emileLogo}
-            alt="wholesaleLogo"
-            className="tracking-in-contract sm:w-1/3 w-3/5 h-auto flex justify-center items-center hover:scale-125 transition duration-300 ease-in-out transform"
-          />
+          <a
+            href="https://www.emilehenry.com/en/"
+            className="flex justify-center"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img
+              src={emileLogo}
+              alt="wholesaleLogo"
+              className="tracking-in-contract sm:w-1/3 w-3/5 h-auto flex justify-center items-center hover:scale-125 transition duration-300 ease-in-out transform"
+            />
+          </a>
           <hr className="absolute bottom-20 text-tono5 w-11/12" />
           <div className="tracking-in-contract absolute bottom-10 text-parrafo font-gothamB text-tono5 ">
             Borgoña - Francia
@@ -161,11 +168,18 @@ function Emile() {
         </div>
         <div className="sm:col-span-2 flex text-justify items-center sm:mr-16 sm:ml-0 mr-4 ml-4">
           <div className="flex flex-col mt-16 sm:mt-0">
-            <img
-              src={emileLogoRojo}
-              alt="emileLogoRojo"
-              className="w-3/5 mx-auto sm:mt-12 mt-8 mb-2 bottom-12 relative"
-            />
+            <a
+              href="https://www.emilehenry.com/en/"
+              className="flex justify-center"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img
+                src={emileLogoRojo}
+                alt="emileLogoRojo"
+                className="w-3/5 mx-auto sm:mt-12 mt-8 mb-2 bottom-12 relative"
+              />
+            </a>
             <hr className="border-tono3 mb-12 sm:hidden grid" />
             <div className="text-gray-700 sm:mb-0 mb-4 indent-8 font-gothamB">
               Desde hace 6 generaciones, Emile Henry transmite la pasión por la
@@ -234,9 +248,9 @@ function Emile() {
           </div>
         </div>
       </div>
-    <div>
-      <img src={banner} alt="bannerEmile" className="w-full mb-12"/>
-    </div>
+      <div>
+        <img src={banner} alt="bannerEmile" className="w-full mb-12" />
+      </div>
     </>
   );
 }

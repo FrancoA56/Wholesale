@@ -59,11 +59,18 @@ function Mauviel() {
     <>
       <div className="bg-fondoMauviel bg-cover bg-center h-screen flex justify-center items-center">
         <div className="bg-tono1b h-screen w-screen flex justify-center items-center">
-          <img
-            src={mauvielLogo}
-            alt="wholesaleLogo"
-            className="tracking-in-contract sm:w-1/3 w-4/5 h-auto flex justify-center items-center hover:scale-125 transition duration-300 ease-in-out transform"
-          />
+          <a
+            href="https://www.mauviel.com/en/"
+            className="flex justify-center"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img
+              src={mauvielLogo}
+              alt="wholesaleLogo"
+              className="tracking-in-contract sm:w-11/12 w-4/5 h-auto flex justify-center items-center hover:scale-125 transition duration-300 ease-in-out transform"
+            />
+          </a>
           <hr className="absolute bottom-20 text-tono5 w-11/12" />
           <div className="tracking-in-contract absolute bottom-10 text-parrafo font-gothamB text-tono5 ">
             Normandia - Francia
@@ -136,11 +143,18 @@ function Mauviel() {
         </div>
         <div className="col-span-3 flex text-justify items-center sm:mr-20 mr-0 ">
           <div className="flex flex-col sm:mt-0 mt-8">
-            <img
-              src={logoMauvielNegro}
-              alt="logoMauvielNegro"
-              className="sm:w-3/5 w-3/4 mx-auto sm:mb-12 mb-0"
-            />
+            <a
+              href="https://www.mauviel.com/en/"
+              className="flex justify-center"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img
+                src={logoMauvielNegro}
+                alt="logoMauvielNegro"
+                className="sm:w-3/5 w-3/4 mx-auto sm:mb-12 mb-0"
+              />
+            </a>
             <hr className="border-tono3 mb-12 sm:hidden grid mt-12 sm:mt-0 mx-6" />
             <div className="text-gray-700 sm:mb-0 mb-8 sm:mx-0  mx-6 indent-8 font-gothamB">
               En 1830, Ernest Mauviel fundó la empresa de utensilios de cocina
@@ -168,10 +182,8 @@ function Mauviel() {
             alt="mauvielCuality1"
             className="w-1/2 sm:row-span-2 mx-auto"
           />
-          <div className="flex justify-center font-gothamBI ">
-          </div>
-          <div className="flex justify-center self-start sm:mx-0 mx-auto font-gothamB">
-          </div>
+          <div className="flex justify-center font-gothamBI "></div>
+          <div className="flex justify-center self-start sm:mx-0 mx-auto font-gothamB"></div>
         </div>
         <div className="flex flex-col justify-center items-center text-center gap-4 mx-4 mb-8 sm:grid sm:grid-rows-4">
           <img

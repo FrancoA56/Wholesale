@@ -65,11 +65,18 @@ function Mauviel() {
     <>
       <div className="bg-fondoBoj bg-cover bg-center h-screen flex justify-center items-center">
         <div className="bg-tono1b h-screen w-screen flex justify-center items-center">
-          <img
-            src={bojLogoBlanco}
-            alt="bojLogoBlanco"
-            className="tracking-in-contract sm:w-1/5 w-3/5 h-auto flex justify-center items-center hover:scale-125 transition duration-300 ease-in-out transform"
-          />
+          <a
+            href="https://bojglobal.com/"
+            className="flex justify-center"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img
+              src={bojLogoBlanco}
+              alt="bojLogoBlanco"
+              className="tracking-in-contract sm:w-4/5 w-3/5 h-auto flex justify-center items-center hover:scale-125 transition duration-300 ease-in-out transform"
+            />
+          </a>
           <hr className="absolute bottom-20 text-tono5 w-11/12" />
           <div className="tracking-in-contract absolute bottom-10 text-parrafo font-gothamB text-tono5 ">
             Éibar, España
@@ -166,11 +173,18 @@ function Mauviel() {
         </div>
         <div className="col-span-3 flex text-justify items-center sm:mr-16 mr-6 ml-6 sm:ml-0">
           <div className="flex flex-col">
-            <img
-              src={bojLogo}
-              alt="bojLogo"
-              className="sm:w-2/5 w-3/5 mx-auto mb-12 sm:mt-0 mt-12"
-            />
+            <a
+              href="https://bojglobal.com/"
+              className="flex justify-center"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img
+                src={bojLogo}
+                alt="bojLogo"
+                className="sm:w-2/5 w-3/5 mx-auto mb-12 sm:mt-0 mt-12"
+              />
+            </a>
             <hr className="border-tono3 mb-12 sm:hidden grid" />
             <div className="text-gray-700 sm:mb-0 mb-8 indent-8 font-gothamB">
               Desde 1905 especializandose en la fabricacion de abrelatas,
@@ -195,10 +209,8 @@ function Mauviel() {
             alt="gojCuality1"
             className="w-1/2 sm:row-span-2 mx-auto"
           />
-          <div className="flex justify-center font-gothamBI ">
-          </div>
-          <div className="flex justify-center self-start sm:mx-0 mx-auto font-gothamB">
-          </div>
+          <div className="flex justify-center font-gothamBI "></div>
+          <div className="flex justify-center self-start sm:mx-0 mx-auto font-gothamB"></div>
         </div>
         <div className="flex flex-col justify-center items-center text-center gap-4 mx-4 mb-8 sm:grid sm:grid-rows-4">
           <img
