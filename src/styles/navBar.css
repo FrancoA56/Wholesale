@@ -1,12 +1,21 @@
 .navbar {
-    /* Estilos de tu NavBar */
-    /* Por ejemplo: */
-    transition: height 0.8s ease;
-    height: 50px; /* Altura inicial */
-    overflow: hidden;
-  }
-  
+  /* Estilos de tu NavBar */
+  /* Por ejemplo: */
+  transition: height 0.8s ease;
+  height: 50px; /* Altura inicial */
+  overflow: hidden;
+}
+
+/* Estilos para dispositivos de escritorio */
+@media (min-width: 768px) {
   .navbar.expanded {
-    height: 300px; /* Altura expandida */
+      height: 300px; /* Altura expandida para dispositivos de escritorio */
   }
-  
+}
+
+/* Estilos para dispositivos móviles */
+@media (max-width: 767px) {
+  .navbar.expanded {
+      height: 325px; /* Altura expandida para dispositivos móviles */
+  }
+}

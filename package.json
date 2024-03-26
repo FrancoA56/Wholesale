@@ -1,5 +1,5 @@
 {
-  "name": "portfolio",
+  "name": "ws-dyr.com",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -20,6 +20,7 @@
     "sweetalert2": "^11.10.5",
     "web-vitals": "^2.1.4"
   },
+  "homepage": "http://ws-dyr.com",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",

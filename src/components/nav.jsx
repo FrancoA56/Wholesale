@@ -6,10 +6,8 @@ import Dropdown from "./dropDown";
 import axios from "axios";
 import "../styles/navBar.css";
 
-
 function Nav() {
   const [isExpanded, setExpanded] = useState(false);
-  const [isHovered, setIsHovered] = useState(false);
   const [isPopupOpen, setPopupOpen] = useState(false);
 
   const location = useLocation();
@@ -51,19 +49,16 @@ function Nav() {
       if (formData.user_message)
         textParts.push(`Mensaje: ${formData.user_message}`);
       try {
-        console.log("TextParts", textParts)
         const objetoBody = {
-          to: "franco.adamoli@gmail.com",
+          to: "pamela.v@ws-dyr.com",
           subject: "¡Quiero registrarme!",
           text: textParts.join("\n"),
         };
-
         const { data } = await axios.post(
           `https://wholesale-api.onrender.com/api/registration`,
           objetoBody,
           { headers: { "Content-Type": "Application/Json" } } // Configurar los encabezados
         );
-        console.log("data", data);
         showSuccessAlert(data.message);
         setPopupOpen(false);
       } catch (error) {
@@ -98,12 +93,11 @@ function Nav() {
       } sm:bg-pizita bg-pizitaCel text-tono5 font-gothamBI fixed w-screen z-30 pr-3 flex items-start`}
       onMouseEnter={() => {
         setExpanded(true);
-        setIsHovered(true);
       }}
       onMouseLeave={() => {
         setExpanded(false);
-        setIsHovered(false);
       }}
+      onClick={()=>setExpanded(true)}
     >
       <div className="flex py-2 px-3 w-screen justify-between">
         <a className="flex justify-start sm:flex-row flex-col" href="/">
@@ -364,9 +358,15 @@ function Nav() {
         <div className="flex-col contents sm:hidden">
           {/* Elementos principales alineados a la derecha */}
           <div className="flex flex-col gap-6 justify-end mt-1 ">
-            {!isHovered && (
-              <i className="fa-solid fa-grip-lines flex justify-center ml-12 mt-1"></i>
-            )}
+            <i
+              className="fa-solid fa-grip-lines flex justify-center ml-12 mt-1"
+              onClick={() => {
+                // Agrega una función para manejar el clic en el icono
+                // Aquí puedes expandir o contraer la barra de navegación según el estado actual
+                setExpanded(!isExpanded);
+              }}
+            ></i>
+        
             {location.pathname !== "/" && (
               <a
                 className="hover:scale-110 transition duration-300 ease-in-out transform flex justify-end"
