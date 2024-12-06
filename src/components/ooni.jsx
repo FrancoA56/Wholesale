@@ -11,18 +11,18 @@ import {
   Dot,
 } from "pure-react-carousel";
 import { useMediaQuery } from "react-responsive";
-import imagen1 from "../media/imagenes/ooni/funda.jpeg";
-import imagen2 from "../media/imagenes/ooni/balanza.jpeg";
-import imagen4 from "../media/imagenes/ooni/pizzaCruda.jpg";
-import imagen5 from "../media/imagenes/ooni/hornoConPala.jpeg";
-import imagen6 from "../media/imagenes/ooni/hornoConPizza.jpeg";
-import imagen7 from "../media/imagenes/ooni/hornoInterperie.jpeg";
-import imagen9 from "../media/imagenes/ooni/hornoSinPizza.jpeg";
-import imagen10 from "../media/imagenes/ooni/juntada.jpeg";
-import imagen11 from "../media/imagenes/ooni/ollitas.jpeg";
-import imagen12 from "../media/imagenes/ooni/utensillos1.jpeg";
-import imagen13 from "../media/imagenes/ooni/utensillos2.jpeg";
-import banner from "../media/imagenes/ooni/banner.jpeg";
+import imagen1 from "../media/imagenes/ooni/funda.webp";
+import imagen2 from "../media/imagenes/ooni/balanza.webp";
+import imagen4 from "../media/imagenes/ooni/pizzaCruda.webp";
+import imagen5 from "../media/imagenes/ooni/hornoConPala.webp";
+import imagen6 from "../media/imagenes/ooni/hornoConPizza.webp";
+import imagen7 from "../media/imagenes/ooni/hornoInterperie.webp";
+import imagen9 from "../media/imagenes/ooni/hornoSinPizza.webp";
+import imagen10 from "../media/imagenes/ooni/juntada.webp";
+import imagen11 from "../media/imagenes/ooni/ollitas.webp";
+import imagen12 from "../media/imagenes/ooni/utensillos1.webp";
+import imagen13 from "../media/imagenes/ooni/utensillos2.webp";
+import banner from "../media/imagenes/ooni/banner.webp";
 import ooniCuality1 from "../media/imagenes/ooni/cualitys/1.png";
 import ooniCuality2 from "../media/imagenes/ooni/cualitys/2.png";
 import ooniCuality3 from "../media/imagenes/ooni/cualitys/3.png";
@@ -67,13 +67,14 @@ function Ooni() {
         <div className="bg-tono1b h-screen w-screen flex justify-center items-center">
           <a
             href="https://ooni.com/"
+            title="Argentina venta mayorista wholesale dyr ooni"
             className="flex justify-center"
             target="_blank"
             rel="noreferrer"
           >
             <img
               src={ooniLogo}
-              alt="wholesaleLogo"
+              alt="Argentina venta mayorista wholesale dyr ooni"
               className="tracking-in-contract sm:w-1/5 w-3/5 h-auto flex justify-center items-center hover:scale-125 transition duration-300 ease-in-out transform"
             />
           </a>
@@ -96,48 +97,48 @@ function Ooni() {
               <Slider className="rounded-xl">
                 <Slide index={0}>
                   {" "}
-                  <img src={imagen7} alt="Ooni" />{" "}
+                  <img src={imagen7} alt="Argentina venta mayorista wholesale dyr ooni" />{" "}
                 </Slide>
                 <Slide index={1}>
                   {" "}
-                  <img src={imagen2} alt="Ooni" />{" "}
+                  <img src={imagen2} alt="Argentina venta mayorista wholesale dyr ooni" />{" "}
                 </Slide>
                 <Slide index={2}>
                   {" "}
-                  <img src={imagen4} alt="Ooni" />{" "}
+                  <img src={imagen4} alt="Argentina venta mayorista wholesale dyr ooni" />{" "}
                 </Slide>
                 <Slide index={3}>
                   {" "}
-                  <img src={imagen5} alt="Ooni" />{" "}
+                  <img src={imagen5} alt="Argentina venta mayorista wholesale dyr ooni" />{" "}
                 </Slide>
                 <Slide index={4}>
                   {" "}
-                  <img src={imagen1} alt="Ooni" />{" "}
+                  <img src={imagen1} alt="Argentina venta mayorista wholesale dyr ooni" />{" "}
                 </Slide>
                 <Slide index={5}>
                   {" "}
-                  <img src={imagen6} alt="Ooni" />{" "}
+                  <img src={imagen6} alt="Argentina venta mayorista wholesale dyr ooni" />{" "}
                 </Slide>
 
                 <Slide index={6}>
                   {" "}
-                  <img src={imagen13} alt="Ooni" />{" "}
+                  <img src={imagen13} alt="Argentina venta mayorista wholesale dyr ooni" />{" "}
                 </Slide>
                 <Slide index={7}>
                   {" "}
-                  <img src={imagen10} alt="Ooni" />{" "}
+                  <img src={imagen10} alt="Argentina venta mayorista wholesale dyr ooni" />{" "}
                 </Slide>
                 <Slide index={8}>
                   {" "}
-                  <img src={imagen11} alt="Ooni" />{" "}
+                  <img src={imagen11} alt="Argentina venta mayorista wholesale dyr ooni" />{" "}
                 </Slide>
                 <Slide index={9}>
                   {" "}
-                  <img src={imagen12} alt="Ooni" />{" "}
+                  <img src={imagen12} alt="Argentina venta mayorista wholesale dyr ooni" />{" "}
                 </Slide>
                 <Slide index={10}>
                   {" "}
-                  <img src={imagen9} alt="Ooni" />{" "}
+                  <img src={imagen9} alt="Argentina venta mayorista wholesale dyr ooni" />{" "}
                 </Slide>
               </Slider>
 
@@ -175,34 +176,33 @@ function Ooni() {
             </div>
           </CarouselProvider>
         </div>
-        <div className="sm:col-span-2 flex text-justify items-center sm:mr-28 mr-6 sm:mr-0 ml-6 sm:ml-0 sm:mt-0 mt-12">
+        <div className="sm:col-span-2 flex text-justify items-center sm:mr-28 mr-6 ml-6 sm:ml-0 sm:mt-0 mt-12">
           <div className="flex flex-col sm:mt-6 mt-0">
             <a
               href="https://ooni.com/"
               className="flex justify-center"
+              title="Argentina venta mayorista wholesale dyr ooni"
               target="_blank"
               rel="noreferrer"
             >
               <img
                 src={ooniLogoGris}
-                alt="ooniLogoGris"
+                alt="Argentina venta mayorista wholesale dyr ooni"
                 className="w-5/12 mx-auto sm:mt-12 mt-10 mb-2 bottom-12 relative"
               />
             </a>
             <hr className="border-tono3 mb-12 sm:hidden grid" />
             <div className="text-gray-700 sm:mb-0 mb-8 indent-8 font-gothamB">
-              Ooni comenzó con la búsqueda de pizza auténtica, del tipo que
-              tiene aderezos cocidos al fuego y una corteza con manchas de
-              leopardo. Desde 2012, diseñan, fabrican y venden hornos para pizza
-              INCREÍBLES. Son tan INCREÍBLES que los adjetivos en minúsculas
-              simplemente no les hacen justicia. Una pizza verdaderamente
-              excelente necesita calor alto, es por eso que todos los hornos
-              para pizza con fuego real de Ooni se calientan muchísimo (es
-              decir, 500 °C/950 °F) y cocinar una pizza increíble en solo 60
-              segundos. Antes de Ooni, si querías una pizza tan buena tenías que
-              ir a un restaurante o gastar en un horno de pizza tradicional.
-              Ahora, todo lo que tienes que hacer es elegir el horno Ooni
-              adecuado para ti.
+              <h1 className="inline text-gray-700 font-gothamB">Ooni</h1> fue
+              fundada en 2012 con la misión de hacer accesible la auténtica
+              pizza artesanal en cualquier hogar. Sus hornos para pizza alcanzan
+              temperaturas de hasta 500 °C (950 °F), permitiendo cocinar pizzas
+              perfectas en sólo 60 segundos. Inspirados en las técnicas
+              tradicionales de cocción al fuego, los productos de Ooni ofrecen
+              una calidad que antes solo se encontraba en restaurantes o
+              costosos hornos especializados. La marca combina diseño innovador
+              y practicidad, redefiniendo la experiencia de disfrutar una pizza
+              de calidad profesional en casa.
             </div>
           </div>
         </div>
@@ -211,7 +211,7 @@ function Ooni() {
         <div className="flex flex-col justify-center items-center text-center gap-4 mx-4 mb-8 sm:grid sm:grid-rows-4">
           <img
             src={ooniCuality1}
-            alt="ooniCuality1"
+            alt="Argentina venta mayorista wholesale dyr ooni"
             className="w-1/2 sm:row-span-2 mx-auto"
           />
           <div className="flex justify-center font-gothamBI ">
@@ -224,7 +224,7 @@ function Ooni() {
         <div className="flex flex-col justify-center items-center text-center gap-4 mx-4 mb-8 sm:grid sm:grid-rows-4">
           <img
             src={ooniCuality2}
-            alt="ooniCuality2"
+            alt="Argentina venta mayorista wholesale dyr ooni"
             className="w-1/2 sm:row-span-2 mx-auto"
           />
           <div className="flex justify-center font-gothamBI">PRODUCTOS</div>
@@ -235,7 +235,7 @@ function Ooni() {
         <div className="flex flex-col justify-center items-center text-center gap-4 mx-4 mb-8 sm:grid sm:grid-rows-4">
           <img
             src={ooniCuality3}
-            alt="ooniCuality3"
+            alt="Argentina venta mayorista wholesale dyr ooni"
             className="w-1/2 sm:row-span-2 mx-auto"
           />
           <div className="flex justify-center font-gothamBI">
@@ -248,7 +248,7 @@ function Ooni() {
         <div className="flex flex-col justify-center items-center text-center gap-4 mx-4 mb-8 sm:grid sm:grid-rows-4">
           <img
             src={ooniCuality4}
-            alt="ooniCuality4"
+            alt="Argentina venta mayorista wholesale dyr ooni"
             className="w-1/2 sm:row-span-2 mx-auto"
           />
           <div className="flex justify-center font-gothamBI">
@@ -260,7 +260,11 @@ function Ooni() {
         </div>
       </div>
       <div>
-        <img src={banner} alt="bannerooni" className="w-full mb-12" />
+        <img
+          src={banner}
+          alt="banner Argentina venta mayorista wholesale dyr ooni"
+          className="w-full mb-12"
+        />
       </div>
     </>
   );

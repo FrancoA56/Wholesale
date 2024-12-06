@@ -11,13 +11,12 @@ import {
   Dot,
 } from "pure-react-carousel";
 import { useMediaQuery } from "react-responsive";
-import image1 from "../media/imagenes/mauviel/1.jpg";
-import image2 from "../media/imagenes/mauviel/2.jpeg";
-import image3 from "../media/imagenes/mauviel/3.jpg";
-import image4 from "../media/imagenes/mauviel/4.jpeg";
-import image5 from "../media/imagenes/mauviel/5.jpg";
-import banner from "../media/imagenes/mauviel/banner.jpg";
-import mauvielCuality1 from "../media/imagenes/mauviel/cualitys/1.png";
+import image1 from "../media/imagenes/mauviel/1.webp";
+import image2 from "../media/imagenes/mauviel/2.webp";
+import image3 from "../media/imagenes/mauviel/3.webp";
+import image4 from "../media/imagenes/mauviel/4.webp";
+import image5 from "../media/imagenes/mauviel/5.webp";
+import banner from "../media/imagenes/mauviel/banner.webp";
 import mauvielCuality2 from "../media/imagenes/mauviel/cualitys/2.png";
 import mauvielCuality3 from "../media/imagenes/mauviel/cualitys/3.png";
 import mauvielCuality4 from "../media/imagenes/mauviel/cualitys/4.png";
@@ -63,11 +62,12 @@ function Mauviel() {
             href="https://www.mauviel.com/en/"
             className="flex justify-center"
             target="_blank"
+            title="argentina wholesale dyr venta mayorista mauviel1830"
             rel="noreferrer"
           >
             <img
               src={mauvielLogo}
-              alt="wholesaleLogo"
+              alt="argentina wholesale dyr venta mayorista mauviel1830"
               className="tracking-in-contract sm:w-11/12 w-4/5 h-auto flex justify-center items-center hover:scale-125 transition duration-300 ease-in-out transform"
             />
           </a>
@@ -89,23 +89,23 @@ function Mauviel() {
               <Slider className="rounded-xl">
                 <Slide index={0}>
                   {" "}
-                  <img src={image1} alt="emile henry" />{" "}
+                  <img src={image1} alt="argentina wholesale dyr venta mayorista mauviel1830" />{" "}
                 </Slide>
                 <Slide index={1}>
                   {" "}
-                  <img src={image2} alt="emile henry" />{" "}
+                  <img src={image2} alt="argentina wholesale dyr venta mayorista mauviel1830" />{" "}
                 </Slide>
                 <Slide index={2}>
                   {" "}
-                  <img src={image3} alt="emile henry" />{" "}
+                  <img src={image3} alt="argentina wholesale dyr venta mayorista mauviel1830" />{" "}
                 </Slide>
                 <Slide index={3}>
                   {" "}
-                  <img src={image4} alt="emile henry" />{" "}
+                  <img src={image4} alt="argentina wholesale dyr venta mayorista mauviel1830" />{" "}
                 </Slide>
                 <Slide index={4}>
                   {" "}
-                  <img src={image5} alt="emile henry" />{" "}
+                  <img src={image5} alt="argentina wholesale dyr venta mayorista mauviel1830" />{" "}
                 </Slide>
               </Slider>
               <div className="gap-8 justify-center mt-1 flex">
@@ -145,51 +145,42 @@ function Mauviel() {
           <div className="flex flex-col sm:mt-0 mt-8">
             <a
               href="https://www.mauviel.com/en/"
+              title="Mauviel1830 Argentina DYR"
               className="flex justify-center"
               target="_blank"
               rel="noreferrer"
             >
               <img
                 src={logoMauvielNegro}
-                alt="logoMauvielNegro"
+                alt="argentina wholesale dyr venta mayorista mauviel1830"
                 className="sm:w-3/5 w-3/4 mx-auto sm:mb-12 mb-0"
               />
             </a>
             <hr className="border-tono3 mb-12 sm:hidden grid mt-12 sm:mt-0 mx-6" />
             <div className="text-gray-700 sm:mb-0 mb-8 sm:mx-0  mx-6 indent-8 font-gothamB">
-              En 1830, Ernest Mauviel fundó la empresa de utensilios de cocina
-              que lleva su mismo nombre en Villedieu-les-Poêles, en Normandía.
-              El pueblo tenía una larga historia de excelente trabajo en metal;
-              los lugareños eran considerados expertos en el oficio. Hoy en día,
-              gran parte de la fabricación todavía se realiza a mano utilizando
-              procesos tradicionales transmitidos de generación en generación de
-              fabricantes de cobre. Fiel a la rica historia culinaria de
-              Francia, Mauviel 1830 es uno de los favoritos en las cocinas
-              profesionales, donde la conductividad térmica rápida y uniforme
-              del cobre es esencial para preparar salsas delicadas y otros
-              clásicos franceses. Mauviel ahora también ofrece colecciones de
-              acero inoxidable elaboradas con la misma atención al detalle que
-              sus tradicionales utensilios de cocina de cobre.
+              Fundada en 1830 en Villedieu-les-Poêles, Normandía,{" "}
+              <h1 className="inline text-gray-700 font-gothamB">Mauviel</h1> es
+              sinónimo de calidad y artesanía en utensilios de cocina. En este
+              histórico pueblo, conocido por su maestría en el trabajo con
+              metales, nació una marca que hoy sigue utilizando procesos
+              tradicionales transmitidos de generación en generación. Reconocida
+              por su rápida conductividad térmica, sus utensilios de cobre son
+              esenciales en cocinas profesionales, ideales para preparar salsas
+              delicadas y platos clásicos. Además, Mauviel 1830 ha ampliado su
+              oferta con colecciones de acero inoxidable, creadas con la misma
+              atención al detalle que sus piezas de cobre, manteniendo su legado
+              y excelencia en cada producto.
             </div>
           </div>
         </div>
       </div>
 
-      <div className="sm:grid sm:grid-cols-4 sm:mr-6 mr-0 mb-12">
-        <div className="flex flex-col justify-center items-center text-center gap-4 mx-4 mb-8 sm:grid sm:grid-rows-4">
-          <img
-            src={mauvielCuality1}
-            alt="mauvielCuality1"
-            className="w-1/2 sm:row-span-2 mx-auto"
-          />
-          <div className="flex justify-center font-gothamBI "></div>
-          <div className="flex justify-center self-start sm:mx-0 mx-auto font-gothamB"></div>
-        </div>
-        <div className="flex flex-col justify-center items-center text-center gap-4 mx-4 mb-8 sm:grid sm:grid-rows-4">
+      <div className="sm:grid sm:grid-cols-3 sm:mr-6 mr-0 mb-12">
+        <div className="flex flex-col justify-center items-center text-center gap-2 mx-4 mb-8 sm:grid sm:grid-rows-4">
           <img
             src={mauvielCuality2}
-            alt="mauvielCuality2"
-            className="w-1/2 sm:row-span-2 mx-auto"
+            alt="argentina wholesale dyr venta mayorista mauviel1830"
+            className="w-1/3 sm:row-span-2 mx-auto"
           />
           <div className="flex justify-center font-gothamBI">PRODUCTOS</div>
           <div className="flex justify-center self-start font-gothamB">
@@ -197,11 +188,11 @@ function Mauviel() {
             propósitos culinarios específicos.
           </div>
         </div>
-        <div className="flex flex-col justify-center items-center text-center gap-4 mx-4 mb-8 sm:grid sm:grid-rows-4">
+        <div className="flex flex-col justify-center items-center text-center gap-2 mx-4 mb-8 sm:grid sm:grid-rows-4">
           <img
             src={mauvielCuality3}
-            alt="mauvielCuality3"
-            className="w-1/2 sm:row-span-2 mx-auto"
+            alt="argentina wholesale dyr venta mayorista mauviel1830"
+            className="w-1/3 sm:row-span-2 mx-auto"
           />
           <div className="flex justify-center font-gothamBI">
             MADE IN FRANCE
@@ -210,11 +201,11 @@ function Mauviel() {
             La empresa emblemática de la bahía del Mont St Michel{" "}
           </div>
         </div>
-        <div className="flex flex-col justify-center items-center text-center gap-4 mx-4 mb-8 sm:grid sm:grid-rows-4">
+        <div className="flex flex-col justify-center items-center text-center gap-2 mx-4 mb-8 sm:grid sm:grid-rows-4">
           <img
             src={mauvielCuality4}
-            alt="mauvielCuality4"
-            className="w-1/2 sm:row-span-2 mx-auto"
+            alt="argentina wholesale dyr venta mayorista mauviel1830"
+            className="w-1/3 sm:row-span-2 mx-auto"
           />
           <div className="flex justify-center font-gothamBI">
             PRODUCTOS DE CALIDAD
@@ -225,7 +216,11 @@ function Mauviel() {
         </div>
       </div>
       <div>
-        <img src={banner} alt="bannerMauviel" className="w-full mb-12" />
+        <img
+          src={banner}
+          alt="banner Mauviel1830 Argentina DYR"
+          className="w-full mb-12"
+        />
       </div>
     </>
   );

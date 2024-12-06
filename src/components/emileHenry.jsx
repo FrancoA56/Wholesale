@@ -11,17 +11,17 @@ import {
   Dot,
 } from "pure-react-carousel";
 import { useMediaQuery } from "react-responsive";
-import emile1 from "../media/imagenes/emile/bowl.jpeg";
-import emile2 from "../media/imagenes/emile/budinera.jpeg";
-import emile3 from "../media/imagenes/emile/corazon.jpeg";
-import emile5 from "../media/imagenes/emile/fuente.jpeg";
-import emile6 from "../media/imagenes/emile/fuenteCebolla.jpeg";
-import emile7 from "../media/imagenes/emile/fuenteOnda.jpeg";
-import emile10 from "../media/imagenes/emile/fuentePlana2.jpeg";
-import emile11 from "../media/imagenes/emile/panera.jpeg";
-import emile12 from "../media/imagenes/emile/ramekin.jpeg";
-import emile13 from "../media/imagenes/emile/tajine.jpeg";
-import banner from "../media/imagenes/emile/banner.jpeg";
+import emile1 from "../media/imagenes/emile/bowl.webp";
+import emile2 from "../media/imagenes/emile/budinera.webp";
+import emile3 from "../media/imagenes/emile/corazon.webp";
+import emile5 from "../media/imagenes/emile/fuente.webp";
+import emile6 from "../media/imagenes/emile/fuenteCebolla.webp";
+import emile7 from "../media/imagenes/emile/fuenteOnda.webp";
+import emile10 from "../media/imagenes/emile/fuentePlana2.webp";
+import emile11 from "../media/imagenes/emile/panera.webp";
+import emile12 from "../media/imagenes/emile/ramekin.webp";
+import emile13 from "../media/imagenes/emile/tajine.webp";
+import banner from "../media/imagenes/emile/banner.webp";
 import "../styles/efectoLogo.css";
 import emileCuality1 from "../media/imagenes/emile/cualidades/garantia.png";
 import emileCuality2 from "../media/imagenes/emile/cualidades/ceramica-calidad.png";
@@ -66,13 +66,14 @@ function Emile() {
         <div className="bg-tono1b h-screen w-screen flex justify-center items-center">
           <a
             href="https://www.emilehenry.com/en/"
+            title="Emile Henry Argentina wholesale dyr venta mayorista"
             className="flex justify-center"
             target="_blank"
             rel="noreferrer"
           >
             <img
               src={emileLogo}
-              alt="wholesaleLogo"
+              alt="Emile Henry Argentina wholesale dyr venta mayorista"
               className="tracking-in-contract sm:w-1/3 w-3/5 h-auto flex justify-center items-center hover:scale-125 transition duration-300 ease-in-out transform"
             />
           </a>
@@ -94,43 +95,73 @@ function Emile() {
               <Slider className="rounded-xl">
                 <Slide index={0}>
                   {" "}
-                  <img src={emile13} alt="emile henry" />{" "}
+                  <img
+                    src={emile13}
+                    alt="Emile Henry Argentina wholesale dyr venta mayorista"
+                  />{" "}
                 </Slide>
                 <Slide index={1}>
                   {" "}
-                  <img src={emile2} alt="emile henry" />{" "}
+                  <img
+                    src={emile2}
+                    alt="Emile Henry Argentina wholesale dyr venta mayorista"
+                  />{" "}
                 </Slide>
                 <Slide index={2}>
                   {" "}
-                  <img src={emile3} alt="emile henry" />{" "}
+                  <img
+                    src={emile3}
+                    alt="Emile Henry Argentina wholesale dyr venta mayorista"
+                  />{" "}
                 </Slide>
                 <Slide index={3}>
                   {" "}
-                  <img src={emile11} alt="emile henry" />{" "}
+                  <img
+                    src={emile11}
+                    alt="Emile Henry Argentina wholesale dyr venta mayorista"
+                  />{" "}
                 </Slide>
                 <Slide index={4}>
                   {" "}
-                  <img src={emile5} alt="emile henry" />{" "}
+                  <img
+                    src={emile5}
+                    alt="Emile Henry Argentina wholesale dyr venta mayorista"
+                  />{" "}
                 </Slide>
                 <Slide index={5}>
                   {" "}
-                  <img src={emile6} alt="emile henry" />{" "}
+                  <img
+                    src={emile6}
+                    alt="Emile Henry Argentina wholesale dyr venta mayorista"
+                  />{" "}
                 </Slide>
                 <Slide index={6}>
                   {" "}
-                  <img src={emile7} alt="emile henry" />{" "}
+                  <img
+                    src={emile7}
+                    alt="Emile Henry Argentina wholesale dyr venta mayorista"
+                  />{" "}
                 </Slide>
                 <Slide index={7}>
                   {" "}
-                  <img src={emile1} alt="emile henry" />{" "}
+                  <img
+                    src={emile1}
+                    alt="Emile Henry Argentina wholesale dyr venta mayorista"
+                  />{" "}
                 </Slide>
                 <Slide index={8}>
                   {" "}
-                  <img src={emile12} alt="emile henry" />{" "}
+                  <img
+                    src={emile12}
+                    alt="Emile Henry Argentina wholesale dyr venta mayorista"
+                  />{" "}
                 </Slide>
                 <Slide index={9}>
                   {" "}
-                  <img src={emile10} alt="emile henry" />{" "}
+                  <img
+                    src={emile10}
+                    alt="Emile Henry Argentina wholesale dyr venta mayorista"
+                  />{" "}
                 </Slide>
               </Slider>
               <div className="flex gap-8 justify-center mt-1">
@@ -170,13 +201,14 @@ function Emile() {
           <div className="flex flex-col mt-16 sm:mt-0">
             <a
               href="https://www.emilehenry.com/en/"
+              title="Emile Henry Argentina DYR venta mayorista"
               className="flex justify-center"
               target="_blank"
               rel="noreferrer"
             >
               <img
                 src={emileLogoRojo}
-                alt="emileLogoRojo"
+                alt="Emile Henry Argentina wholesale dyr venta mayorista"
                 className="w-3/5 mx-auto sm:mt-12 mt-8 mb-2 bottom-12 relative"
               />
             </a>
@@ -197,7 +229,7 @@ function Emile() {
         <div className="flex flex-col justify-center items-center text-center gap-4 mx-4 mb-8 sm:grid sm:grid-rows-4">
           <img
             src={emileCuality1}
-            alt="emileCuality"
+            alt="Emile Henry Argentina wholesale dyr venta mayorista"
             className="w-1/2 sm:row-span-2 mx-auto"
           />
           <div className="flex justify-center font-gothamBI ">
@@ -210,7 +242,7 @@ function Emile() {
         <div className="flex flex-col justify-center items-center text-center gap-4 mx-4 mb-8 sm:grid sm:grid-rows-4">
           <img
             src={emileCuality2}
-            alt="emileCuality"
+            alt="Emile Henry Argentina wholesale dyr venta mayorista"
             className="w-1/2 sm:row-span-2 mx-auto"
           />
           <div className="flex justify-center font-gothamBI">
@@ -224,7 +256,7 @@ function Emile() {
         <div className="flex flex-col justify-center items-center text-center gap-4 mx-4 mb-8 sm:grid sm:grid-rows-4">
           <img
             src={emileCuality3}
-            alt="emileCuality"
+            alt="Emile Henry Argentina wholesale dyr venta mayorista"
             className="w-1/2 sm:row-span-2 mx-auto"
           />
           <div className="flex justify-center font-gothamBI">
@@ -237,7 +269,7 @@ function Emile() {
         <div className="flex flex-col justify-center items-center text-center gap-4 mx-4 mb-8 sm:grid sm:grid-rows-4">
           <img
             src={emileCuality4}
-            alt="emileCuality"
+            alt="Emile Henry Argentina wholesale dyr venta mayorista"
             className="w-1/2 sm:row-span-2 mx-auto"
           />
           <div className="flex justify-center font-gothamBI">
@@ -249,7 +281,11 @@ function Emile() {
         </div>
       </div>
       <div>
-        <img src={banner} alt="bannerEmile" className="w-full mb-12" />
+        <img
+          src={banner}
+          alt="Banner Emile Henry Argentina DYR wholesale venta mayorista"
+          className="w-full mb-12"
+        />
       </div>
     </>
   );

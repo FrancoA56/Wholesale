@@ -9,9 +9,10 @@ function Contacto() {
       <div className="sm:grid sm:grid-cols-5 flex-row">
         <div className="col-span-3 sm:pr-28 pr-12 pl-12">
           <div className="flex justify-center items-center text-gray-700 font-gothamB text-semititulo mt-6">
-            ¿Quienes somos?
+            ¿Quiénes somos?
           </div>
-          <div className="items-center justify-center text-justify items-center flex  text-gray-700 font-gothamB py-4 text-parrafo indent-8">
+          <h1 className="flex justify-center items-center text-gray-700 font-gothamB text-subtitulo ">Wholesale DyR</h1>
+          <div className="items-center justify-center text-justify flex  text-gray-700 font-gothamB py-4 text-parrafo indent-8">
             Somos una empresa con especial enfoque en la representación de
             marcas internacionales y distribución de mercancías dentro de la
             región sudamericana. Estamos ubicados en la cosmopolita ciudad de
@@ -43,7 +44,7 @@ function Contacto() {
                 Calidad
               </div>
               <div className="text-gray-700 font-gothamB text-parrafo">
-                Traemos a la Argentina, productos importados de primera calidad.
+                Traemos a la Argentina productos importados de primera calidad.
               </div>
             </div>
             <div className="flex flex-col">
@@ -67,7 +68,8 @@ function Contacto() {
           />
         </div>
       </div>
-      <div className="sm:grid sm:grid-cols-3 flex justify-center">
+      <div className="sm:grid sm:grid-cols-4 flex justify-center">
+        <div></div>
         <div></div>
         <div></div>
         <div>

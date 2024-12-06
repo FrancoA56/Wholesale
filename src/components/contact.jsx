@@ -1,11 +1,9 @@
 import React, { useState, useRef } from "react";
 import Swal from "sweetalert2";
 import axios from "axios";
-import gifOoni from "../media/imagenes/ooni/gif/Fyra 12_Flame Loop_Transparent.gif";
-
+import hornoOoni from "../media/imagenes/ooni/gif/Fyra 12_Flame Loop_Transparent.webp";
 
 function AcercaDe() {
-
   // ? FUNCIONES PARA USAR EMAIL JS
   const form = useRef();
 
@@ -22,9 +20,11 @@ function AcercaDe() {
     if (formData.email && formData.message) {
       const textParts = [];
       if (formData.name) textParts.push(`Nombre y Apellido: ${formData.name}`);
-      if (formData.companyName) textParts.push(`Nombre de la Empresa: ${formData.companyName}`);
+      if (formData.companyName)
+        textParts.push(`Nombre de la Empresa: ${formData.companyName}`);
       if (formData.email) textParts.push(`Email: ${formData.email}`);
-      if (formData.phone) textParts.push(`Telefono: ${formData.phone.toString()}`);
+      if (formData.phone)
+        textParts.push(`Telefono: ${formData.phone.toString()}`);
       if (formData.message) textParts.push(`Mensaje: ${formData.message}`);
       try {
         const objetoBody = {
@@ -76,7 +76,7 @@ function AcercaDe() {
     <div className="font-gothamB pt-16">
       <div className="sm:grid sm:grid-cols-5 flex flex-col pt-6< ">
         <div className="flex col-span-2 justify-end items-center">
-          <img src={gifOoni} alt="gifOoni" />
+          <img src={hornoOoni} alt="Ooni Argentina wholesale dyr venta mayorista" />
         </div>
         <div className="flex flex-col col-span-3 justify-center">
           <div className="flex justify-center items-center text-gray-700 font-gothamB text-semititulo mt-6 ">
@@ -99,7 +99,7 @@ function AcercaDe() {
                   required
                   value={formData.name}
                   onChange={handleChange}
-                  className="appearance-none border-b-2 border-tono2 focus:outline-none focus:border-tono3 w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none"
+                  className="appearance-none border-b-2 border-tono2 focus:border-tono3 w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none"
                   placeholder="Pedro Alfonso"
                 />
               </div>
@@ -118,7 +118,7 @@ function AcercaDe() {
                   name="companyName"
                   value={formData.companyName}
                   onChange={handleChange}
-                  className="appearance-none border-b-2 border-tono2 focus:outline-none focus:border-tono3 w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none"
+                  className="appearance-none border-b-2 border-tono2 focus:border-tono3 w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none"
                   placeholder="Wholesale"
                 />
               </div>
@@ -137,7 +137,7 @@ function AcercaDe() {
                   required
                   autocomplete="Teléfono"
                   onChange={handleChange}
-                  className="appearance-none border-b-2 border-tono2 focus:outline-none focus:border-tono3 w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none"
+                  className="appearance-none border-b-2 border-tono2 focus:border-tono3 w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none"
                   placeholder="011-2305-3139"
                 />
               </div>
@@ -156,7 +156,7 @@ function AcercaDe() {
                   required
                   onChange={handleChange}
                   autocomplete="email"
-                  className="appearance-none border-b-2 border-tono2 focus:outline-none focus:border-tono3 w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none"
+                  className="appearance-none border-b-2 border-tono2 focus:border-tono3 w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none"
                   placeholder="hola@ws-dyr.com"
                 />
               </div>
@@ -173,8 +173,8 @@ function AcercaDe() {
                   value={formData.message}
                   required
                   onChange={handleChange}
-                  className="appearance-none border-b-2 border-tono2 focus:outline-none focus:border-tono3 w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none"
-                  placeholder="¡Estoy interesado en sus productos! Quisiera saber mas."
+                  className="appearance-none border-b-2 border-tono2 focus:border-tono3 w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none"
+                  placeholder="¡Estoy interesado en sus productos! Quisiera saber más."
                   rows="4"
                 ></textarea>
               </div>
@@ -190,11 +190,18 @@ function AcercaDe() {
           </div>
         </div>
       </div>
-      <div className="flex justify-center items-center text-gray-700 font-gothamB text-subtitulo mt-6">
-        Otros medios de comunicación
-      </div>
-      <div className="text-tono2">
-        <i class="fa-solid fa-arrow-down-long"></i>{" "}
+      <div className="grid grid-cols-4">
+        <div></div>
+        <div>
+          <div className="flex justify-center items-center text-gray-700 font-gothamB text-subtitulo mt-6">
+            Otros medios de comunicación
+          </div>
+          <div className="text-tono2">
+            <i class="fa-solid fa-arrow-down-long"></i>{" "}
+          </div>
+        </div>
+        <div></div>
+        <div></div>
       </div>
     </div>
   );

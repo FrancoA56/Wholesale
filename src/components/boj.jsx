@@ -11,19 +11,18 @@ import {
   Dot,
 } from "pure-react-carousel";
 import { useMediaQuery } from "react-responsive";
-import boj1 from "../media/imagenes/boj/0.jpg";
-import boj2 from "../media/imagenes/boj/1.jpeg";
-import boj3 from "../media/imagenes/boj/2.jpeg";
-import boj4 from "../media/imagenes/boj/3.jpeg";
-import boj5 from "../media/imagenes/boj/4.jpg";
-import boj6 from "../media/imagenes/boj/5.jpg";
-import boj7 from "../media/imagenes/boj/6.jpg";
-import boj8 from "../media/imagenes/boj/7.jpg";
-import boj9 from "../media/imagenes/boj/8.jpg";
-import boj10 from "../media/imagenes/boj/9.jpg";
-import boj11 from "../media/imagenes/boj/10.jpg";
-import banner from "../media/imagenes/boj/banner.jpeg";
-import gojCuality1 from "../media/imagenes/boj/cualitys/1.png";
+import boj1 from "../media/imagenes/boj/0.webp";
+import boj2 from "../media/imagenes/boj/1.webp";
+import boj3 from "../media/imagenes/boj/2.webp";
+import boj4 from "../media/imagenes/boj/3.webp";
+import boj5 from "../media/imagenes/boj/4.webp";
+import boj6 from "../media/imagenes/boj/5.webp";
+import boj7 from "../media/imagenes/boj/6.webp";
+import boj8 from "../media/imagenes/boj/7.webp";
+import boj9 from "../media/imagenes/boj/8.webp";
+import boj10 from "../media/imagenes/boj/9.webp";
+import boj11 from "../media/imagenes/boj/10.webp";
+import banner from "../media/imagenes/boj/banner.webp";
 import gojCuality2 from "../media/imagenes/boj/cualitys/2.png";
 import gojCuality3 from "../media/imagenes/boj/cualitys/3.png";
 import gojCuality4 from "../media/imagenes/boj/cualitys/4.png";
@@ -67,13 +66,14 @@ function Mauviel() {
         <div className="bg-tono1b h-screen w-screen flex justify-center items-center">
           <a
             href="https://bojglobal.com/"
+            title="Boj Argentina wholesale dyr venta mayorista"
             className="flex justify-center"
             target="_blank"
             rel="noreferrer"
           >
             <img
               src={bojLogoBlanco}
-              alt="bojLogoBlanco"
+              alt="Boj Argentina wholesale dyr venta mayorista"
               className="tracking-in-contract sm:w-4/5 w-3/5 h-auto flex justify-center items-center hover:scale-125 transition duration-300 ease-in-out transform"
             />
           </a>
@@ -95,47 +95,47 @@ function Mauviel() {
               <Slider className="rounded-xl">
                 <Slide index={0}>
                   {" "}
-                  <img src={boj1} alt="emile henry" />{" "}
+                  <img src={boj1} alt="Boj Argentina wholesale dyr venta mayorista" />{" "}
                 </Slide>
                 <Slide index={1}>
                   {" "}
-                  <img src={boj2} alt="emile henry" />{" "}
+                  <img src={boj2} alt="Boj Argentina wholesale dyr venta mayorista" />{" "}
                 </Slide>
                 <Slide index={2}>
                   {" "}
-                  <img src={boj3} alt="emile henry" />{" "}
+                  <img src={boj3} alt="Boj Argentina wholesale dyr venta mayorista" />{" "}
                 </Slide>
                 <Slide index={3}>
                   {" "}
-                  <img src={boj4} alt="emile henry" />{" "}
+                  <img src={boj4} alt="Boj Argentina wholesale dyr venta mayorista" />{" "}
                 </Slide>
                 <Slide index={4}>
                   {" "}
-                  <img src={boj5} alt="emile henry" />{" "}
+                  <img src={boj5} alt="Boj Argentina wholesale dyr venta mayorista" />{" "}
                 </Slide>
                 <Slide index={5}>
                   {" "}
-                  <img src={boj6} alt="emile henry" />{" "}
+                  <img src={boj6} alt="Boj Argentina wholesale dyr venta mayorista" />{" "}
                 </Slide>
                 <Slide index={6}>
                   {" "}
-                  <img src={boj7} alt="emile henry" />{" "}
+                  <img src={boj7} alt="Boj Argentina wholesale dyr venta mayorista" />{" "}
                 </Slide>
                 <Slide index={7}>
                   {" "}
-                  <img src={boj8} alt="emile henry" />{" "}
+                  <img src={boj8} alt="Boj Argentina wholesale dyr venta mayorista" />{" "}
                 </Slide>
                 <Slide index={8}>
                   {" "}
-                  <img src={boj9} alt="emile henry" />{" "}
+                  <img src={boj9} alt="Boj Argentina wholesale dyr venta mayorista" />{" "}
                 </Slide>
                 <Slide index={9}>
                   {" "}
-                  <img src={boj10} alt="emile henry" />{" "}
+                  <img src={boj10} alt="Boj Argentina wholesale dyr venta mayorista" />{" "}
                 </Slide>
                 <Slide index={10}>
                   {" "}
-                  <img src={boj11} alt="emile henry" />{" "}
+                  <img src={boj11} alt="Boj Argentina wholesale dyr venta mayorista" />{" "}
                 </Slide>
               </Slider>
               <div className="flex gap-8 justify-center mt-1">
@@ -176,47 +176,40 @@ function Mauviel() {
             <a
               href="https://bojglobal.com/"
               className="flex justify-center"
+              title="Boj Argentina wholesale dyr venta mayorista"
               target="_blank"
               rel="noreferrer"
             >
               <img
                 src={bojLogo}
-                alt="bojLogo"
+                alt="Boj Argentina wholesale dyr venta mayorista"
                 className="sm:w-2/5 w-3/5 mx-auto mb-12 sm:mt-0 mt-12"
               />
             </a>
             <hr className="border-tono3 mb-12 sm:hidden grid" />
             <div className="text-gray-700 sm:mb-0 mb-8 indent-8 font-gothamB">
-              Desde 1905 especializandose en la fabricacion de abrelatas,
-              sacacorchos y otros utensilios. Cada producto esta meticulosamente
-              diseñado y fabricado con los mas altos estandares de calidad. La
-              empresa se enorgullece de su historia y del legado de calidad que
-              ha construido durante más de un siglo. Esto ha permitido que los
-              valores y la visión se mantengan intactos a lo largo de 3
-              generaciones, lo que ha contribuido en gran medida a afianzar su
-              reputación en la industria. Actualmente, BOJ mira hacia el futuro
-              con la misma pasión y determinación que caracterizan a la marca
-              desde los inicios, afrontando con confianza los desafíos y
-              perpetuando su compromiso con la excelencia.
+              Desde 1905,{" "}
+              <h1 className="inline text-gray-700 font-gothamB">Boj</h1> ha
+              liderado la fabricación de abrelatas, sacacorchos y una amplia
+              variedad de utensilios de cocina, fusionando tradición e
+              innovación. Cada pieza es diseñada y bajo los más altos estándares
+              de calidad, reflejando el compromiso de la marca con la excelencia
+              en cada detalle. Con más de un siglo de historia y tres
+              generaciones preservando su legado, Boj se ha consolidado como un
+              referente en el sector de menaje. Hoy, la empresa enfrenta el
+              futuro con la misma pasión que definió sus inicios, renovando su
+              compromiso con la calidad y afrontando nuevos desafíos con
+              determinación.
             </div>
           </div>
         </div>
       </div>
-      <div className="sm:grid sm:grid-cols-4 sm:mr-6 mr-0 mb-12">
-        <div className="flex flex-col justify-center items-center text-center gap-4 mx-4 mb-8 sm:grid sm:grid-rows-4">
-          <img
-            src={gojCuality1}
-            alt="gojCuality1"
-            className="w-1/2 sm:row-span-2 mx-auto"
-          />
-          <div className="flex justify-center font-gothamBI "></div>
-          <div className="flex justify-center self-start sm:mx-0 mx-auto font-gothamB"></div>
-        </div>
-        <div className="flex flex-col justify-center items-center text-center gap-4 mx-4 mb-8 sm:grid sm:grid-rows-4">
+      <div className="sm:grid sm:grid-cols-3 sm:mr-6 mr-0 mb-12">
+        <div className="flex flex-col justify-center items-center text-center gap-2 mx-4 mb-8 sm:grid sm:grid-rows-4">
           <img
             src={gojCuality2}
-            alt="gojCuality2"
-            className="w-1/2 sm:row-span-2 mx-auto"
+            alt="Boj Argentina wholesale dyr venta mayorista"
+            className="w-1/3 sm:row-span-2 mx-auto"
           />
           <div className="flex justify-center font-gothamBI">PRODUCTOS</div>
           <div className="flex justify-center self-start font-gothamB">
@@ -224,11 +217,11 @@ function Mauviel() {
             sacacorchos y otros utensilios de menaje relacionados.
           </div>
         </div>
-        <div className="flex flex-col justify-center items-center text-center gap-4 mx-4 mb-8 sm:grid sm:grid-rows-4">
+        <div className="flex flex-col justify-center items-center text-center gap-2 mx-4 mb-8 sm:grid sm:grid-rows-4">
           <img
             src={gojCuality3}
-            alt="gojCuality3"
-            className="w-1/2 sm:row-span-2 mx-auto"
+            alt="Boj Argentina wholesale dyr venta mayorista"
+            className="w-1/3 sm:row-span-2 mx-auto"
           />
           <div className="flex justify-center font-gothamBI">
             HECHO EN ESPAÑA
@@ -237,11 +230,11 @@ function Mauviel() {
             Desde 1905. Una historia que nos hace fuertes.
           </div>
         </div>
-        <div className="flex flex-col justify-center items-center text-center gap-4 mx-4 mb-8 sm:grid sm:grid-rows-4">
+        <div className="flex flex-col justify-center items-center text-center gap-2 mx-4 mb-8 sm:grid sm:grid-rows-4">
           <img
             src={gojCuality4}
-            alt="gojCuality4"
-            className="w-1/2 sm:row-span-2 mx-auto"
+            alt="Boj Argentina wholesale dyr venta mayorista"
+            className="w-1/3 sm:row-span-2 mx-auto"
           />
           <div className="flex justify-center font-gothamBI">
             PRODUCTOS DE CALIDAD
@@ -253,7 +246,7 @@ function Mauviel() {
         </div>
       </div>
       <div>
-        <img src={banner} alt="bannerBoj" className="w-full mb-12" />
+        <img src={banner} alt="Boj Argentina wholesale dyr venta mayorista" className="w-full mb-12" />
       </div>
     </>
   );

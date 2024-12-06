@@ -47,12 +47,10 @@ function Resumen() {
 
   return (
     <>
-      <div className="grid grid-rows-2 py-3">
-        <div className="font-gothamB text-gray-700 text-semititulo flex justify-center items-center text-start">
-          Nuestras marcas
-        </div>
+      <div className="py-6">
         <div className="text-gray-700 font-gothamBI flex text-subtitulo justify-center items-center sm:text-start text-center sm:mx-0 mx-4">
-          Representamos y distribuimos marcas premium.
+          Representamos y distribuimos marcas premium reconocidas por su calidad
+          y diseño excepcional.{" "}
         </div>
       </div>
 
@@ -68,7 +66,7 @@ function Resumen() {
                 src="https://www.youtube.com/embed/nweqeRpTUiE"
                 width="560"
                 height="315"
-                title="Ooni video presentacion"
+                title="Ooni video presentacion Argentina DYR"
                 frameBorder="0"
                 allowFullScreen={true}
                 className="rounded-xl sm:mx-0 mx-4"
@@ -80,21 +78,26 @@ function Resumen() {
               <div className="flex justify-center items-center mb-6">
                 <a
                   href="/ooni"
+                  title="Argentina venta mayorista wholesale dyr emile henry ooni boj mauviel1830"
                   className="sm:w-1/4 w-1/3 justify-center text-center sm:mr-12 mr-0"
                 >
                   <img
                     src={ooniLogo}
-                    alt="ooniLogo"
+                    alt="Argentina venta mayorista wholesale dyr ooni"
                     className="hover:scale-125  transition duration-300 ease-in-out transform sm:mt-0 mt-8"
                   />
                 </a>
               </div>
               <div className="sm:mr-12 sm:ml-0 flex flex-col justify-center mr-4 ml-4">
                 <hr className="border-black w-full" />
-
-                <div className="text-gray-700 font-gothamB text-subtitulo pt-6 pb-4 ">
-                  Desde Escocia creando hornos de pizza para las mejores pizzas
-                  Napolitanas, revolucionando la cocina al aire libre.
+                <div className="text-gray-700 font-gothamB text-subtitulo pt-6 pb-4">
+                  Desde Escocia,{" "}
+                  <h1 className="inline text-gray-700 font-gothamB text-subtitulo">
+                    Ooni
+                  </h1>{" "}
+                  revoluciona la cocina al aire libre con hornos para pizza que
+                  alcanzan los 500°C, perfectos para pizzas napolitanas en
+                  minutos.
                 </div>
               </div>
             </div>
@@ -114,19 +117,23 @@ function Resumen() {
               <div className="flex flex-col justify-center items-center mx-4">
                 <a
                   href="/emileHenry "
+                  title="Argentina venta mayorista wholesale dyr emile henry ooni boj mauviel1830"
                   className="sm:w-1/3 w-1/2 justify-center text-center sm:ml-28 ml-4 sm:mr-0 mr-4 pb-4"
                 >
                   <img
                     src={EmileHenry}
-                    alt="EmileHenry"
+                    alt="Argentina venta mayorista wholesale dyr emile henry ooni boj mauviel1830"
                     className="hover:scale-125 transition duration-300 ease-in-out transform"
                   />
                 </a>
                 <hr className="sm:ml-28  sm:mr-0 border-black w-full ml-4 mr-4" />
                 <div className="text-gray-700 font-gothamB text-subtitulo pt-6 sm:ml-28 ml-4 mr-4 sm:mr-0">
-                  Mas de 6 generaciones transmitiendo la pasión por la cerámica
-                  de calidad, hecha a mano en los talleres de borgoña, Francia.
-                  Encontrando desde fuentes, cacerolas y el tradicional Tajine.
+                  Con más de 6 generaciones de experiencia,{" "}
+                  <h1 className="inline text-gray-700 font-gothamB text-subtitulo">
+                    Emile Henry
+                  </h1>{" "}
+                  crea cerámica artesanal en Borgoña, Francia, ideal para
+                  fuentes, cacerolas y tajines.
                 </div>
               </div>
             </div>
@@ -139,7 +146,7 @@ function Resumen() {
                 height="315"
                 frameBorder="0"
                 allowFullScreen={true}
-                title="EmileHenry video presentacion"
+                title="EmileHenry video presentacion Argentina DYR"
                 className="rounded-xl sm:mx-0 mx-4"
               ></iframe>
             </div>
@@ -160,7 +167,7 @@ function Resumen() {
                 src="https://www.youtube.com/embed/9pU8luInGtw"
                 width="560"
                 height="315"
-                title="Mauviel video presentacion"
+                title="Mauviel video presentacion Argentina DYR"
                 frameBorder="0"
                 allowFullScreen={true}
                 className="rounded-xl sm:mx-0 mx-4"
@@ -172,11 +179,12 @@ function Resumen() {
               <div className="flex justify-center items-center sm:mb-6 h-40">
                 <a
                   href="/mauviel1830"
+                  title="Argentina venta mayorista wholesale dyr emile henry ooni boj mauviel1830"
                   className="sm:w-1/2 w-2/3 justify-center text-center sm:mr-12 mr-0"
                 >
                   <img
                     src={mauvile}
-                    alt="mauvile"
+                    alt="Argentina venta mayorista wholesale dyr emile henry ooni boj mauviel1830"
                     className="hover:scale-125 transition duration-300 ease-in-out transform"
                   />
                 </a>
@@ -185,8 +193,13 @@ function Resumen() {
                 <hr className="sm:mx-12 mx-4 border-black" />
 
                 <div className="text-gray-700 font-gothamB text-subtitulo pt-6 pb-4">
-                  Desde 1830, fabricado en Normandia haciendo piezas unicas
-                  artesanalmente y presente en mas 100 paises.
+                  Desde 1830,{" "}
+                  <h1 className="inline text-gray-700 font-gothamB text-subtitulo">
+                    Mauviel
+                  </h1>{" "}
+                  fabrica utensilios de cocina artesanales en Normandía,
+                  presentes en más de 100 países y reconocidos por su alta
+                  calidad.
                 </div>
               </div>
             </div>
@@ -210,15 +223,18 @@ function Resumen() {
                 >
                   <img
                     src={boj}
-                    alt="boj"
+                    alt="Boj Argentina DYR"
                     className="hover:scale-125 transition duration-300 ease-in-out transform"
                   />
                 </a>
                 <hr className="sm:ml-28  sm:mr-0 border-black w-full ml-4 mr-4" />
                 <div className="text-gray-700 font-gothamB text-subtitulo pt-6 sm:ml-28 ml-4 mr-4 sm:mr-0">
-                  Desde 1905 en españa, especializandose en la fabricación de
-                  abrelatas, sacacorchos y otros utensilios de menaje con los
-                  estandares mas altos.
+                  Fundada en España en 1905,{" "}
+                  <h1 className="inline text-gray-700 font-gothamB text-subtitulo">
+                    Boj
+                  </h1>{" "}
+                  se especializa en la creación de abrelatas, sacacorchos y
+                  utensilios de cocina de alta calidad y durabilidad.
                 </div>
               </div>
             </div>
@@ -231,7 +247,7 @@ function Resumen() {
                 height="315"
                 frameBorder="0"
                 allowFullScreen={true}
-                title="EmileHenry video presentacion"
+                title="Boj video presentacion Argentina DYR"
                 className="rounded-xl sm:mx-0 mx-4 mt-8"
               ></iframe>
             </div>

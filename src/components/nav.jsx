@@ -100,12 +100,12 @@ function Nav() {
       onClick={()=>setExpanded(true)}
     >
       <div className="flex py-2 px-3 w-screen justify-between">
-        <a className="flex justify-start sm:flex-row flex-col" href="/">
+        <a className="flex justify-start sm:flex-row flex-col" href="/" title="Argentina venta mayorista wholesale dyr ooni emile henry boj mauviel1830">
           {/* Agregar la imagen a la izquierda */}
           <img
             className="w-12 hover:scale-125 transition duration-300 ease-in-out transform "
             src={wsBlanco}
-            alt="wholesale logo"
+            alt="Argentina venta mayorista wholesale dyr ooni emile henry boj mauviel1830"
           />
         </a>
         <div className="sm:flex-row flex-col sm:contents hidden">
@@ -115,6 +115,7 @@ function Nav() {
               <a
                 className="hover:scale-110 transition duration-300 ease-in-out transform"
                 href="/"
+                title="Argentina venta mayorista wholesale dyr ooni emile henry boj mauviel1830"
               >
                 Inicio
               </a>
@@ -123,6 +124,7 @@ function Nav() {
               <a
                 className="hover:scale-110 transition duration-300 ease-in-out transform"
                 href="/contacto"
+                title="Argentina venta mayorista wholesale dyr ooni emile henry boj mauviel1830"
               >
                 Contacto
               </a>
@@ -131,6 +133,7 @@ function Nav() {
               <a
                 className="hover:scale-110 transition duration-300 ease-in-out transform"
                 href="/acercaDe"
+                title="Argentina venta mayorista wholesale dyr ooni emile henry boj mauviel1830"
               >
                 Nosotros
               </a>
@@ -140,6 +143,7 @@ function Nav() {
               className="hover:scale-110 transition pointer duration-300 ease-in-out transform"
               href="https://app.holded.com/login?lang=es"
               target="_blank"
+              title="Argentina venta mayorista wholesale dyr ooni emile henry boj mauviel1830"
               rel="noreferrer"
             >
               Ingresar
@@ -202,7 +206,7 @@ function Nav() {
                             onChange={handleChange}
                             value={formData.user_name}
                             required
-                            className="appearance-none border-b-2 border-tono2 focus:outline-none focus:border-tono3 w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none"
+                            className="appearance-none border-b-2 border-tono2 focus:border-tono3 w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none"
                           />
                         </div>
                         {/* Apellido */}
@@ -224,7 +228,7 @@ function Nav() {
                             onChange={handleChange}
                             required
                             // value={formData.lastname}
-                            className="appearance-none border-b-2 border-tono2 focus:outline-none focus:border-tono3 w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none"
+                            className="appearance-none border-b-2 border-tono2 focus:border-tono3 w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none"
                           />
                         </div>
                       </div>
@@ -246,7 +250,7 @@ function Nav() {
                           // autoComplete="off"
                           onChange={handleChange}
                           required
-                          className="appearance-none border-b-2 border-tono2 focus:outline-none focus:border-tono3 w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none"
+                          className="appearance-none border-b-2 border-tono2 focus:border-tono3 w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none"
                         />
                       </div>
                       {/* phone (phone number)*/}
@@ -267,7 +271,7 @@ function Nav() {
                           // autoComplete="off"
                           onChange={handleChange}
                           required
-                          className="appearance-none border-b-2 border-tono2 focus:outline-none focus:border-tono3 w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none"
+                          className="appearance-none border-b-2 border-tono2 focus:border-tono3 w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none"
                         />
                       </div>
                       {/* email */}
@@ -289,7 +293,7 @@ function Nav() {
                           onChange={handleChange}
                           required
                           value={formData.user_email}
-                          className="appearance-none border-b-2 border-tono2 focus:outline-none focus:border-tono3 w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none"
+                          className="appearance-none border-b-2 border-tono2 focus:border-tono3 w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none"
                         />
                       </div>
                       {/* message */}
@@ -309,7 +313,7 @@ function Nav() {
                           required
                           value={formData.message}
                           placeholder="¡Estoy interesado en sus productos! Quisiera registrarme."
-                          className="appearance-none border-b-2 border-tono2 focus:outline-none focus:border-tono3 w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none"
+                          className="appearance-none border-b-2 border-tono2 focus:border-tono3 w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none"
                         />
                       </div>
                       {/* Botones */}
@@ -341,6 +345,7 @@ function Nav() {
                 href="https://www.facebook.com/wholesale.dyr/"
                 target="_blank"
                 rel="noreferrer"
+                title="Argentina venta mayorista wholesale dyr ooni emile henry boj mauviel1830"
               >
                 <i className="fa-brands fa-facebook"></i>
               </a>
@@ -348,6 +353,7 @@ function Nav() {
                 className="hover:scale-110 transition duration-300 ease-in-out transform"
                 href="https://www.instagram.com/wholesale.dyr/"
                 target="_blank"
+                title="Argentina venta mayorista wholesale dyr ooni emile henry boj mauviel1830"
                 rel="noreferrer"
               >
                 <i className="fa-brands fa-instagram"></i>
@@ -371,6 +377,7 @@ function Nav() {
               <a
                 className="hover:scale-110 transition duration-300 ease-in-out transform flex justify-end"
                 href="/"
+                title="Argentina venta mayorista wholesale dyr ooni emile henry boj mauviel1830"
               >
                 Inicio
               </a>
@@ -379,6 +386,7 @@ function Nav() {
               <a
                 className="hover:scale-110 transition duration-300 ease-in-out transform flex justify-end"
                 href="/contacto"
+                title="Argentina venta mayorista wholesale dyr ooni emile henry boj mauviel1830"
               >
                 Contacto
               </a>
@@ -387,6 +395,7 @@ function Nav() {
               <a
                 className="hover:scale-110 transition duration-300 ease-in-out transform flex justify-end"
                 href="/acercaDe"
+                title="Argentina venta mayorista wholesale dyr ooni emile henry boj mauviel1830"
               >
                 Nosotros
               </a>
@@ -397,6 +406,7 @@ function Nav() {
               href="https://app.holded.com/login?lang=es"
               target="_blank"
               rel="noreferrer"
+              title="Argentina venta mayorista wholesale dyr ooni emile henry boj mauviel1830"
             >
               Ingresar
             </a>
@@ -457,7 +467,7 @@ function Nav() {
                           onChange={handleChange}
                           value={formData.user_name}
                           required
-                          className="appearance-none border-b-2 border-tono2 focus:outline-none focus:border-tono3 w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none"
+                          className="appearance-none border-b-2 border-tono2 focus:border-tono3 w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none"
                         />
                       </div>
                       {/* Apellido */}
@@ -479,7 +489,7 @@ function Nav() {
                           onChange={handleChange}
                           required
                           // value={formData.lastname}
-                          className="appearance-none border-b-2 border-tono2 focus:outline-none focus:border-tono3 w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none"
+                          className="appearance-none border-b-2 border-tono2 focus:border-tono3 w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none"
                         />
                       </div>
                       {/* name (company name)*/}
@@ -500,7 +510,7 @@ function Nav() {
                           // autoComplete="off"
                           onChange={handleChange}
                           required
-                          className="appearance-none border-b-2 border-tono2 focus:outline-none focus:border-tono3 w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none"
+                          className="appearance-none border-b-2 border-tono2 focus:border-tono3 w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none"
                         />
                       </div>
                       {/* phone (phone number)*/}
@@ -521,7 +531,7 @@ function Nav() {
                           // autoComplete="off"
                           onChange={handleChange}
                           required
-                          className="appearance-none border-b-2 border-tono2 focus:outline-none focus:border-tono3 w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none"
+                          className="appearance-none border-b-2 border-tono2 focus:border-tono3 w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none"
                         />
                       </div>
                       {/* email */}
@@ -543,7 +553,7 @@ function Nav() {
                           onChange={handleChange}
                           required
                           value={formData.user_email}
-                          className="appearance-none border-b-2 border-tono2 focus:outline-none focus:border-tono3 w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none"
+                          className="appearance-none border-b-2 border-tono2 focus:border-tono3 w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none"
                         />
                       </div>
                       {/* message */}
@@ -563,7 +573,7 @@ function Nav() {
                           required
                           value={formData.message}
                           placeholder="¡Estoy interesado en sus productos! Quisiera registrarme."
-                          className="appearance-none border-b-2 border-tono2 focus:outline-none focus:border-tono3 w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none"
+                          className="appearance-none border-b-2 border-tono2 focus:border-tono3 w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none"
                         />
                       </div>
                       {/* Botones */}
@@ -595,6 +605,7 @@ function Nav() {
                 href="https://www.facebook.com/wholesale.dyr/"
                 target="_blank"
                 rel="noreferrer"
+                title="Argentina venta mayorista wholesale dyr ooni emile henry boj mauviel1830"
               >
                 <i className="fa-brands fa-facebook"></i>
               </a>
@@ -603,6 +614,7 @@ function Nav() {
                 href="https://www.instagram.com/wholesale.dyr/"
                 target="_blank"
                 rel="noreferrer"
+                title="Argentina venta mayorista wholesale dyr ooni emile henry boj mauviel1830"
               >
                 <i className="fa-brands fa-instagram"></i>
               </a>
