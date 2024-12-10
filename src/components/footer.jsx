@@ -38,7 +38,6 @@ function Footer() {
               <a
                 href="mailto:hola@ws-dyr.com?subject=Solicitud%20de%20información&body=Hola%20equipo%20de%20nombre%20de%20tu%20empresa,%0D%0A%0D%0AQuisiera%20solicitar%20más%20información%20sobre%20sus%20servicios.%20Me%20interesa%20conocer%20sus%20métodos%20de%20trabajo,%20formas%20de%20pago%20disponibles%20y%20cualquier%20otra%20información%20relevante%20que%20puedan%20proporcionar.%0D%0A%0D%0AMuchas%20gracias%20por%20su%20atención.%0D%0A%0D%0ASaludos%20cordiales,%0D%0ATu%20nombre%20aquí"
                 className="flex hover:scale-110 transition duration-300 ease-in-out transform"
-                title="envio de email a wholesale dyr venta mayorista ooni emile henry boj mauviel1830"
                 style={{ cursor: "pointer" }}
               >
                 <i className="fa-regular fa-envelope mr-2 mt-1"></i>
@@ -48,7 +47,6 @@ function Footer() {
                 className="flex hover:scale-110 transition duration-300 ease-in-out transform"
                 style={{ cursor: "pointer" }}
                 onClick={copiarTel}
-                title="llamar a wholesale dyr venta mayorista ooni emile henry boj mauviel1830"
                 href="tel:011-2305-3139"
               >
                 <i className="fa-solid fa-phone mr-2 mt-1"></i>
@@ -77,7 +75,6 @@ function Footer() {
                 className="flex hover:scale-110 transition duration-300 ease-in-out transform"
                 style={{ cursor: "pointer" }}
                 href="https://maps.app.goo.gl/YJHHCsze2H1Dqo4r5"
-                title="mapa de wholesale dyr venta mayorista ooni emile henry boj mauviel1830"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -86,7 +83,6 @@ function Footer() {
               </a>
               <a
                 className="flex hover:scale-110 transition duration-300 ease-in-out transform"
-                title="mapa de uruguay de wholesale dyr venta mayorista emile henry boj mauviel1830"
                 style={{
                   cursor: "pointer",
                   border: "none",
@@ -110,7 +106,6 @@ function Footer() {
                 className="flex hover:scale-110 transition duration-300 ease-in-out transform"
                 style={{ cursor: "pointer" }}
                 href="https://www.facebook.com/wholesale.dyr/"
-                title="facebook de wholesale dyr venta mayorista ooni emile henry boj mauviel1830"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -126,7 +121,6 @@ function Footer() {
                   padding: "0",
                   margin: "0",
                 }}
-                title="instagram de wholesale dyr venta mayorista ooni emile henry boj mauviel1830"
                 href="https://www.instagram.com/wholesale.dyr/"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -144,7 +138,6 @@ function Footer() {
                   margin: "0",
                 }}
                 href="https://www.linkedin.com/company/wholesale-by-d-r/"
-                title="linkedin de wholesale dyr venta mayorista ooni emile henry boj mauviel1830"
                 target="_blank"
                 rel="noopener noreferrer"
               >

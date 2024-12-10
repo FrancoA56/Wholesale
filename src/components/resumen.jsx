@@ -78,7 +78,7 @@ function Resumen() {
               <div className="flex justify-center items-center mb-6">
                 <a
                   href="/ooni"
-                  title="Argentina venta mayorista wholesale dyr emile henry ooni boj mauviel1830"
+                  title="Argentina venta mayorista wholesale dyr ooni"
                   className="sm:w-1/4 w-1/3 justify-center text-center sm:mr-12 mr-0"
                 >
                   <img
@@ -117,7 +117,7 @@ function Resumen() {
               <div className="flex flex-col justify-center items-center mx-4">
                 <a
                   href="/emileHenry "
-                  title="Argentina venta mayorista wholesale dyr emile henry ooni boj mauviel1830"
+                  title="Argentina venta mayorista wholesale dyr emile henry"
                   className="sm:w-1/3 w-1/2 justify-center text-center sm:ml-28 ml-4 sm:mr-0 mr-4 pb-4"
                 >
                   <img
@@ -179,7 +179,7 @@ function Resumen() {
               <div className="flex justify-center items-center sm:mb-6 h-40">
                 <a
                   href="/mauviel1830"
-                  title="Argentina venta mayorista wholesale dyr emile henry ooni boj mauviel1830"
+                  title="Argentina venta mayorista wholesale dyr mauviel1830"
                   className="sm:w-1/2 w-2/3 justify-center text-center sm:mr-12 mr-0"
                 >
                   <img
@@ -218,7 +218,9 @@ function Resumen() {
             <div className="sm:grid sm:grid-rows-2 flex justify-center items-center">
               <div className="flex flex-col justify-center items-center mx-4">
                 <a
-                  href="/boj "
+                  href="/boj"
+                  title="Argentina venta mayorista wholesale dyr boj"
+
                   className="sm:w-1/3 w-1/2 justify-center text-center sm:ml-28 ml-4 sm:mr-0 mr-4 pb-4"
                 >
                   <img

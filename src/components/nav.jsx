@@ -115,7 +115,6 @@ function Nav() {
               <a
                 className="hover:scale-110 transition duration-300 ease-in-out transform"
                 href="/"
-                title="Argentina venta mayorista wholesale dyr ooni emile henry boj mauviel1830"
               >
                 Inicio
               </a>
@@ -124,7 +123,6 @@ function Nav() {
               <a
                 className="hover:scale-110 transition duration-300 ease-in-out transform"
                 href="/contacto"
-                title="Argentina venta mayorista wholesale dyr ooni emile henry boj mauviel1830"
               >
                 Contacto
               </a>
@@ -133,7 +131,6 @@ function Nav() {
               <a
                 className="hover:scale-110 transition duration-300 ease-in-out transform"
                 href="/acercaDe"
-                title="Argentina venta mayorista wholesale dyr ooni emile henry boj mauviel1830"
               >
                 Nosotros
               </a>
@@ -143,7 +140,6 @@ function Nav() {
               className="hover:scale-110 transition pointer duration-300 ease-in-out transform"
               href="https://app.holded.com/login?lang=es"
               target="_blank"
-              title="Argentina venta mayorista wholesale dyr ooni emile henry boj mauviel1830"
               rel="noreferrer"
             >
               Ingresar
@@ -345,7 +341,6 @@ function Nav() {
                 href="https://www.facebook.com/wholesale.dyr/"
                 target="_blank"
                 rel="noreferrer"
-                title="Argentina venta mayorista wholesale dyr ooni emile henry boj mauviel1830"
               >
                 <i className="fa-brands fa-facebook"></i>
               </a>
@@ -353,7 +348,6 @@ function Nav() {
                 className="hover:scale-110 transition duration-300 ease-in-out transform"
                 href="https://www.instagram.com/wholesale.dyr/"
                 target="_blank"
-                title="Argentina venta mayorista wholesale dyr ooni emile henry boj mauviel1830"
                 rel="noreferrer"
               >
                 <i className="fa-brands fa-instagram"></i>
@@ -377,7 +371,6 @@ function Nav() {
               <a
                 className="hover:scale-110 transition duration-300 ease-in-out transform flex justify-end"
                 href="/"
-                title="Argentina venta mayorista wholesale dyr ooni emile henry boj mauviel1830"
               >
                 Inicio
               </a>
@@ -386,7 +379,6 @@ function Nav() {
               <a
                 className="hover:scale-110 transition duration-300 ease-in-out transform flex justify-end"
                 href="/contacto"
-                title="Argentina venta mayorista wholesale dyr ooni emile henry boj mauviel1830"
               >
                 Contacto
               </a>
@@ -395,7 +387,6 @@ function Nav() {
               <a
                 className="hover:scale-110 transition duration-300 ease-in-out transform flex justify-end"
                 href="/acercaDe"
-                title="Argentina venta mayorista wholesale dyr ooni emile henry boj mauviel1830"
               >
                 Nosotros
               </a>
@@ -406,7 +397,6 @@ function Nav() {
               href="https://app.holded.com/login?lang=es"
               target="_blank"
               rel="noreferrer"
-              title="Argentina venta mayorista wholesale dyr ooni emile henry boj mauviel1830"
             >
               Ingresar
             </a>
@@ -605,7 +595,6 @@ function Nav() {
                 href="https://www.facebook.com/wholesale.dyr/"
                 target="_blank"
                 rel="noreferrer"
-                title="Argentina venta mayorista wholesale dyr ooni emile henry boj mauviel1830"
               >
                 <i className="fa-brands fa-facebook"></i>
               </a>
@@ -614,7 +603,6 @@ function Nav() {
                 href="https://www.instagram.com/wholesale.dyr/"
                 target="_blank"
                 rel="noreferrer"
-                title="Argentina venta mayorista wholesale dyr ooni emile henry boj mauviel1830"
               >
                 <i className="fa-brands fa-instagram"></i>
               </a>
