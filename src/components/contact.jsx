@@ -74,8 +74,10 @@ function AcercaDe() {
 
   return (
     <div className="font-gothamB pt-16">
-      <div className=" flex flex-col pt-6< ">
-       
+      <div className="sm:grid sm:grid-cols-5 flex flex-col pt-6< ">
+        <div className="flex col-span-2 justify-end items-center">
+          <img src={hornoOoni} alt="Ooni Argentina wholesale dyr venta mayorista" />
+        </div>
         <div className="flex flex-col col-span-3 justify-center">
           <div className="flex justify-center items-center text-gray-700 font-gothamB text-semititulo mt-6 ">
             ¡Envíanos un mensaje!
