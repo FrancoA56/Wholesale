@@ -28,7 +28,7 @@ function AcercaDe() {
       if (formData.message) textParts.push(`Mensaje: ${formData.message}`);
       try {
         const objetoBody = {
-          to: "franco.a@castradeandco.com",
+          to: "ximena.r@ws-dyr.com",
           subject: "¡Quiero comunicarme con ustedes!",
           text: textParts.join("\n"), // Concatenar los elementos con un salto de linea
         };
