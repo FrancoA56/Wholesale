@@ -50,7 +50,7 @@ function Nav() {
         textParts.push(`Mensaje: ${formData.user_message}`);
       try {
         const objetoBody = {
-          to: "pamela.v@ws-dyr.com",
+          to: "ximena.r@ws-dyr.com",
           subject: "¡Quiero registrarme!",
           text: textParts.join("\n"),
         };
