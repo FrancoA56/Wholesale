@@ -64,7 +64,7 @@ function Ooni() {
   return (
     <>
       <div className="bg-fondoOoni bg-cover bg-center h-screen flex justify-center items-center">
-        <div className="bg-tono1b h-screen w-screen flex justify-center items-center">
+        <div className="bg-tonoblackb h-screen w-screen flex justify-center items-center">
           <a
             href="https://ooni.com/"
             title="Argentina venta mayorista wholesale dyr ooni"

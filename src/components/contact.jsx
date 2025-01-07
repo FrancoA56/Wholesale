@@ -3,7 +3,7 @@ import Swal from "sweetalert2";
 import axios from "axios";
 import hornoOoni from "../media/imagenes/ooni/gif/Fyra 12_Flame Loop_Transparent.webp";
 
-function AcercaDe() {
+function Contact() {
   // ? FUNCIONES PARA USAR EMAIL JS
   const form = useRef();
 
@@ -207,4 +207,4 @@ function AcercaDe() {
   );
 }
 
-export default AcercaDe;
+export default Contact;

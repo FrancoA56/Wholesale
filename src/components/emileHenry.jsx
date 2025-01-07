@@ -63,7 +63,7 @@ function Emile() {
   return (
     <>
       <div className="bg-fondoEmile bg-cover bg-center h-screen flex justify-center items-center">
-        <div className="bg-tono1b h-screen w-screen flex justify-center items-center">
+        <div className="bg-tonoblackb h-screen w-screen flex justify-center items-center">
           <a
             href="https://www.emilehenry.com/en/"
             title="Emile Henry Argentina wholesale dyr venta mayorista"

@@ -63,7 +63,7 @@ function Mauviel() {
   return (
     <>
       <div className="bg-fondoBoj bg-cover bg-center h-screen flex justify-center items-center">
-        <div className="bg-tono1b h-screen w-screen flex justify-center items-center">
+        <div className="bg-tonoblackb h-screen w-screen flex justify-center items-center">
           <a
             href="https://bojglobal.com/"
             title="Boj Argentina wholesale dyr venta mayorista"

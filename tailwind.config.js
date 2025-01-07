@@ -6,6 +6,7 @@ module.exports = {
       colors: {
         tono1: "#26455A",
         tono1b: 'rgb(38, 69, 90, 0.6)',
+        tonoblackb: 'rgb(0, 0, 0, 0.4)',
         tono2: "#335C78",
         tono3: "#5599BF",
         tono4: "#B2B2B2",

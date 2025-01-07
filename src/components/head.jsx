@@ -5,7 +5,7 @@ function Head() {
   return (
     <>
       <div className="bg-fondo bg-cover bg-center h-screen flex justify-center items-center">
-        <div className="bg-tono1b h-screen w-screen flex justify-center items-center">
+        <div className="bg-tonoblackb h-screen w-screen flex justify-center items-center">
           <img
             src={wholesaleLogo}
             alt="wholesale dyr venta mayorista ooni emile henry boj mauviel1830"
