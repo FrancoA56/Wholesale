@@ -4,6 +4,8 @@ import compromiso from "../media/imagenes/compromiso.png";
 import comunidad from "../media/imagenes/comunidad.png";
 
 function Nosotros() {
+  const idioma = localStorage.getItem("ubicacion");
+
   return (
     <div className="font-gothamB pt-16">
       <div className="sm:grid sm:grid-cols-5 flex-row">
@@ -11,13 +13,24 @@ function Nosotros() {
           <div className="flex justify-center items-center text-gray-700 font-gothamB text-semititulo mt-6">
             ¿Quiénes somos?
           </div>
-          <h1 className="flex justify-center items-center text-gray-700 font-gothamB text-subtitulo ">Wholesale DyR</h1>
-          <div className="items-center justify-center text-justify flex  text-gray-700 font-gothamB py-4 text-parrafo indent-8">
-            Somos una empresa con especial enfoque en la representación de
-            marcas internacionales y distribución de mercancías dentro de la
-            región sudamericana. Estamos ubicados en la cosmopolita ciudad de
-            Buenos Aires, Argentina.
-          </div>
+          <h1 className="flex justify-center items-center text-gray-700 font-gothamB text-subtitulo ">
+            Wholesale DyR
+          </h1>
+          {idioma === "ar" ? (
+            <div className="items-center justify-center text-justify flex  text-gray-700 font-gothamB py-4 text-parrafo indent-8">
+              Somos una empresa con especial enfoque en la representación de
+              marcas internacionales y distribución de mercancías dentro de la
+              región sudamericana. Estamos ubicados en la cosmopolita ciudad de
+              Buenos Aires, Argentina.
+            </div>
+          ) : (
+            <div className="items-center justify-center text-justify flex  text-gray-700 font-gothamB py-4 text-parrafo indent-8">
+              Somos una empresa con especial enfoque en la representación de
+              marcas internacionales y distribución de mercancías dentro de la
+              región sudamericana. Estamos ubicados en la cosmopolita ciudad de
+              Montevideo, Uruguay.
+            </div>
+          )}
           <div className="flex justify-center items-center text-gray-700 font-gothamB text-semititulo mt-6">
             Nuestros valores
           </div>
@@ -43,9 +56,17 @@ function Nosotros() {
               <div className="text-gray-700 font-gothamB text-subtitulo">
                 Calidad
               </div>
-              <div className="text-gray-700 font-gothamB text-parrafo">
-                Traemos a la Argentina productos importados de primera calidad.
-              </div>
+              {idioma === "ar" ? (
+                <div className="text-gray-700 font-gothamB text-parrafo">
+                  Traemos a la Argentina productos importados de primera
+                  calidad.
+                </div>
+              ) : (
+                <div className="text-gray-700 font-gothamB text-parrafo">
+                  Traemos a Uruguay productos importados de primera
+                  calidad.
+                </div>
+              )}
             </div>
             <div className="flex flex-col">
               <div className="flex justify-center items-center">
@@ -71,7 +92,6 @@ function Nosotros() {
       <div className="sm:grid sm:grid-cols-4 flex justify-center">
         <div></div>
         <div></div>
-        <div></div>
         <div>
           <div className="flex justify-center items-center text-gray-700 font-gothamB text-subtitulo mt-6">
             ¡Nuestras redes!
@@ -80,6 +100,7 @@ function Nosotros() {
             <i className="fa-solid fa-arrow-down-long"></i>
           </div>
         </div>
+        <div></div>
       </div>
     </div>
   );

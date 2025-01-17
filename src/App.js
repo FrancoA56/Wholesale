@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Route, Routes, useLocation } from "react-router-dom";
 import Home from "./components/home";
 import Contact from "./components/contact";
 import AcercaDe from "./components/nosotros";
@@ -6,12 +7,13 @@ import Ooni from "./components/ooni";
 import EmileHenry from "./components/emileHenry";
 import Mauviel from "./components/mauviel";
 import Boj from "./components/boj";
-import "./App.css";
-import { Route, Routes, useLocation } from "react-router-dom";
+import Idioma from "./components/idioma";
 import Nav from "./components/nav";
 import NavBar from "./components/navBar";
 import Footer from "./components/footer";
+import Preguntas from "./components/preguntas";
 import axios from "axios";
+import "./App.css";
 
 function App() {
   const [start, setStart] = useState(false);
@@ -28,28 +30,48 @@ function App() {
             setStart(true);
           }
         } catch (error) {
-          console.log("error", error);
+          console.error("Error starting the server:", error);
         }
       };
       startServer();
     }
-  }, [start, setStart]);
+  }, [start]);
+
+  // Determinar si mostrar NavBar y Footer
+  const shouldShowNavAndFooter = location.pathname !== "/";
+
+  // Determinar si mostrar Nav
+  const shouldShowNav = ![
+    "/ar/contacto",
+    "/uy/contacto",
+    "/ar/nosotros",
+    "/uy/nosotros",
+    "/uy/preguntas",
+    "/ar/preguntas",
+  ].includes(location.pathname);
 
   return (
     <div className="App">
-      <NavBar />
-      {location.pathname !== "/contacto" &&
-        location.pathname !== "/nosotros" && <Nav />}
+      {shouldShowNavAndFooter && <NavBar />}
+      {shouldShowNavAndFooter && shouldShowNav && <Nav />}
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/contacto" element={<Contact />} />
-        <Route path="/nosotros" element={<AcercaDe />} />
-        <Route path="/ooni" element={<Ooni />} />
-        <Route path="/emileHenry" element={<EmileHenry />} />
-        <Route path="/mauviel1830" element={<Mauviel />} />
-        <Route path="/boj" element={<Boj />} />
+        <Route path="/" element={<Idioma />} />
+        <Route path="/ar" element={<Home />} />
+        <Route path="/uy" element={<Home />} />
+        <Route path="/ar/contacto" element={<Contact />} />
+        <Route path="/uy/contacto" element={<Contact />} />
+        <Route path="/ar/nosotros" element={<AcercaDe />} />
+        <Route path="/uy/nosotros" element={<AcercaDe />} />
+        <Route path="/ar/preguntas" element={<Preguntas />} />
+        <Route path="/uy/preguntas" element={<Preguntas />} />
+        <Route path="/ar/ooni" element={<Ooni />} />
+        <Route path="/ar/emileHenry" element={<EmileHenry />} />
+        <Route path="/uy/emileHenry" element={<EmileHenry />} />
+        <Route path="/ar/mauviel1830" element={<Mauviel />} />
+        <Route path="/uy/mauviel1830" element={<Mauviel />} />
+        <Route path="/ar/boj" element={<Boj />} />
       </Routes>
-      <Footer />
+      {shouldShowNavAndFooter && <Footer />}
     </div>
   );
 }

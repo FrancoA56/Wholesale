@@ -11,6 +11,8 @@ module.exports = {
         tono3: "#5599BF",
         tono4: "#B2B2B2",
         tono5: "#FFFFFF",
+        negro: "rgb(0,0,0,0.6)",
+
       },
       fontSize: {
         parrafo: "1.2rem",
@@ -29,6 +31,7 @@ module.exports = {
       },
       backgroundImage: {
         "fondo": "url('/src/media/imagenes/fondoEmily3.webp')",
+        "fondoPrincipal": "url('/src/media/imagenes/PortadaPrincipal.webp')",
         "fondoOoni": "url('/src/media/imagenes/ooni/portada.webp')",
         "fondoEmile": "url('/src/media/imagenes/emile/portada.webp')",
         "fondoMauviel": "url('/src/media/imagenes/mauviel/portada.webp')",

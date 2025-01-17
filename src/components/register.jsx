@@ -4,12 +4,14 @@ import Swal from "sweetalert2";
 
 const PopupRegistro = ({ isOpen, isClose }) => {
   const form = useRef();
+  const idioma = localStorage.getItem("ubicacion");
 
   const [formData, setFormData] = useState({
     user_name: "",
     user_lastname: "",
     user_company: "",
     user_phone: "",
+    user_cuit: "",
     user_email: "",
     user_message: "",
   });
@@ -38,8 +40,11 @@ const PopupRegistro = ({ isOpen, isClose }) => {
       if (formData.user_email) textParts.push(`Email: ${formData.user_email}`);
       if (formData.user_phone)
         textParts.push(`Telefono: ${formData.user_phone.toString()}`);
+      if (formData.user_cuit)
+        textParts.push(`Cuit: ${formData.user_cuit.toString()}`);
       if (formData.user_message)
         textParts.push(`Mensaje: ${formData.user_message}`);
+      if (idioma) textParts.push(`Ubicacion: ${idioma}`);
       try {
         const objetoBody = {
           to: "ximena.r@ws-dyr.com",
@@ -81,7 +86,10 @@ const PopupRegistro = ({ isOpen, isClose }) => {
   };
 
   return (
-    <div className="fixed inset-0 bg-tono1 bg-opacity-80 z-50 flex items-center justify-center">
+    <div
+      onClick={isClose}
+      className="fixed inset-0 bg-tono1 bg-opacity-80 z-50 flex items-center justify-center"
+    >
       <form
         className="mt-1"
         ref={form}
@@ -89,21 +97,27 @@ const PopupRegistro = ({ isOpen, isClose }) => {
           handleSubmit(e);
         }}
       >
-        <div className="isolate w-auto h-auto bg-tono5 rounded-md px-6 sm:py-3 lg:px-3 ">
+        <div
+          onClick={(e) => e.stopPropagation()}
+          className="isolate w-auto h-auto bg-tono5 rounded-md px-6 sm:py-3 lg:px-3 "
+        >
           {/* Encabezado */}
           <div className="mx-auto flex flex-col items-center justify-center  max-w-xl border-b border-tono3">
-            <h2 className="text-3xl mt-6 font-BodoniB tracking-tight text-tono2 sm:text-4xl uppercase leading-normal mb-6">
-              ¡Contáctanos para registrarte!
+            <h2 className="text-3xl mt-6 font-BodoniB tracking-tight text-tono2 sm:text-4xl uppercase leading-normal ">
+              ¡Regístrate!
             </h2>
+            <div className=" mt-2 font-gothamB tracking-tight text-tono2 uppercase leading-normal mb-3">
+              Nos comunicaremos contigo a la brevedad
+            </div>
           </div>
 
           {/* Formulario */}
           <div className=" max-w-xl mt-5 p-5 sm:mx-5">
-            <div className="grid md:grid-rows-4 gap-4 content-center">
+            <div className="grid md:grid-rows-4 gap-3 content-center">
               {/* Nombre y Apellido en la misma fila */}
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <label className="text-sm font-gothamBI text-tono2 px-2">
+                  <label className="text-sm font-gothamBI text-tono2 px-2 justify-start flex">
                     Nombre
                   </label>
                   <input
@@ -113,11 +127,11 @@ const PopupRegistro = ({ isOpen, isClose }) => {
                     onChange={handleChange}
                     value={formData.user_name}
                     required
-                    className="appearance-none border-b-2 border-tono2 focus:border-tono3 w-full px-3 text-gray-300 leading-tight focus:outline-none"
+                    className="appearance-none border-b-2 border-tono2 focus:border-tono3 w-full px-3 text-gray-700 leading-tight focus:outline-none"
                   />
                 </div>
                 <div>
-                  <label className="text-sm font-gothamBI text-tono2 px-2">
+                  <label className="text-sm font-gothamBI text-tono2 px-2 justify-start flex">
                     Apellido
                   </label>
                   <input
@@ -125,8 +139,9 @@ const PopupRegistro = ({ isOpen, isClose }) => {
                     type="text"
                     placeholder="Alfonso"
                     onChange={handleChange}
+                    value={formData.user_lastname}
                     required
-                    className="appearance-none border-b-2 border-tono2 focus:border-tono3 w-full px-3 text-gray-300 leading-tight focus:outline-none"
+                    className="appearance-none border-b-2 border-tono2 focus:border-tono3 w-full px-3 text-gray-700 leading-tight focus:outline-none"
                   />
                 </div>
               </div>
@@ -134,7 +149,7 @@ const PopupRegistro = ({ isOpen, isClose }) => {
               {/* Empresa y Teléfono en la misma fila */}
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <label className="text-sm font-gothamBI text-tono2 px-2">
+                  <label className="text-sm font-gothamBI text-tono2 px-2 justify-start flex">
                     Empresa
                   </label>
                   <input
@@ -142,12 +157,13 @@ const PopupRegistro = ({ isOpen, isClose }) => {
                     type="text"
                     placeholder="Wholesale"
                     onChange={handleChange}
+                    value={formData.user_company}
                     required
-                    className="appearance-none border-b-2 border-tono2 focus:border-tono3 w-full px-3 text-gray-300 leading-tight focus:outline-none"
+                    className="appearance-none border-b-2 border-tono2 focus:border-tono3 w-full px-3 text-gray-700 leading-tight focus:outline-none"
                   />
                 </div>
                 <div>
-                  <label className="text-sm font-gothamBI text-tono2 px-2">
+                  <label className="text-sm font-gothamBI text-tono2 px-2 justify-start flex">
                     Teléfono
                   </label>
                   <input
@@ -155,31 +171,48 @@ const PopupRegistro = ({ isOpen, isClose }) => {
                     type="number"
                     placeholder="011-2305-3139"
                     onChange={handleChange}
+                    value={formData.user_phone}
                     required
-                    className="appearance-none border-b-2 border-tono2 focus:border-tono3 w-full  px-3 text-gray-300 leading-tight focus:outline-none"
+                    className="appearance-none border-b-2 border-tono2 focus:border-tono3 w-full  px-3 text-gray-700 leading-tight focus:outline-none"
                   />
                 </div>
               </div>
 
               {/* Email */}
-              <div>
-                <label className="text-sm font-gothamBI text-tono2 px-2">
-                  Email
-                </label>
-                <input
-                  name="user_email"
-                  type="email"
-                  placeholder="hola@ws-dyr.com"
-                  onChange={handleChange}
-                  value={formData.user_email}
-                  required
-                  className="appearance-none border-b-2 border-tono2 focus:border-tono3 w-full px-3 text-gray-300 leading-tight focus:outline-none"
-                />
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <label className="text-sm font-gothamBI text-tono2 px-2 justify-start flex">
+                    Email
+                  </label>
+                  <input
+                    name="user_email"
+                    type="email"
+                    placeholder="hola@ws-dyr.com"
+                    onChange={handleChange}
+                    value={formData.user_email}
+                    required
+                    className="appearance-none border-b-2 border-tono2 focus:border-tono3 w-full px-3 text-gray-700 leading-tight focus:outline-none"
+                  />
+                </div>
+                <div>
+                  <label className="text-sm font-gothamBI text-tono2 px-2 justify-start flex">
+                    Cuit
+                  </label>
+                  <input
+                    name="user_cuit"
+                    type="cuit"
+                    placeholder="20-12312312-2"
+                    onChange={handleChange}
+                    value={formData.user_cuit}
+                    required
+                    className="appearance-none border-b-2 border-tono2 focus:border-tono3 w-full px-3 text-gray-700 leading-tight focus:outline-none"
+                  />
+                </div>
               </div>
 
               {/* Mensaje */}
               <div>
-                <label className="text-sm font-gothamBI text-tono2 px-2">
+                <label className="text-sm font-gothamBI text-tono2 px-2 justify-start flex">
                   Mensaje
                 </label>
                 <textarea
@@ -189,7 +222,7 @@ const PopupRegistro = ({ isOpen, isClose }) => {
                   onChange={handleChange}
                   value={formData.user_message}
                   required
-                  className="appearance-none border-b-2 border-tono2 focus:border-tono3 w-full h-10 px-3 text-gray-300 leading-tight focus:outline-none"
+                  className="appearance-none border-b-2 border-tono2 focus:border-tono3 w-full h-10 px-3 text-gray-700 leading-tight focus:outline-none"
                 />
               </div>
             </div>

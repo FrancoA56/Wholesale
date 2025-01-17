@@ -1,43 +1,73 @@
 import { useLocation } from "react-router-dom";
 import React, { useState } from "react";
 import PopupRegistro from "./register";
+import argentina from "../media/imagenes/argentina.webp";
+import uruguay from "../media/imagenes/uruguay.webp";
 
 function NavBar() {
   const location = useLocation();
-
   const [popupOpen, setPopupOpen] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const idioma = localStorage.getItem("ubicacion");
 
   return (
-    <div className="fixed bg-tono1 text-white py-2 z-30 w-screen font-gothamBI pr-12">
-      <div className="flex justify-end items-center px-4">
+    <div className="fixed bg-tono1 text-white py-2 z-30 w-screen font-gothamB  pr-12">
+      <div className="flex justify-between items-center px-4">
+        <a href="/" className="ml-3">
+          {idioma === "ar" ? (
+            <img
+              src={argentina}
+              alt="Argentina Wholesale DYR"
+              className="w-1/3 mr-2 inline"
+            />
+          ) : (
+            <img
+              src={uruguay}
+              alt="Uruguay Wholesale DYR"
+              className="w-1/3 mr-2 inline rounded-sm "
+            />
+          )}
+        </a>
         {/* Logo o nombre de la empresa */}
         {/* Menú de navegación */}
         <div className="hidden sm:flex flex-row gap-6">
-          {location.pathname !== "/" && (
+          {location.pathname !== "/ar" && location.pathname !== "/uy" && (
             <a
               className="hover:scale-110 transition duration-300 ease-in-out transform"
-              href="/"
+              href={`/${idioma || "ar"}`}
             >
               Inicio
             </a>
           )}
-          {location.pathname !== "/contacto" && (
-            <a
-              className="hover:scale-110 transition duration-300 ease-in-out transform"
-              href="/contacto"
-            >
-              Contacto
-            </a>
-          )}
-          {location.pathname !== "/nosotros" && (
-            <a
-              className="hover:scale-110 transition duration-300 ease-in-out transform"
-              href="/nosotros"
-            >
-              Nosotros
-            </a>
-          )}
+          {location.pathname !== "/ar/contacto" &&
+            location.pathname !== "/uy/contacto" && (
+              <a
+                className="hover:scale-110 transition duration-300 ease-in-out transform"
+                href={`/${idioma || "ar"}/contacto`}
+              >
+                Contacto
+              </a>
+            )}
+          {location.pathname !== "/ar/nosotros" &&
+            location.pathname !== "/uy/nosotros" && (
+              <a
+                className="hover:scale-110 transition duration-300 ease-in-out transform"
+                href={`/${idioma || "ar"}/nosotros`}
+              >
+                Nosotros
+              </a>
+            )}
+
+          {location.pathname !== "/ar/preguntas" &&
+            location.pathname !== "/uy/preguntas" && (
+              <a
+                className="hover:scale-110 transition duration-300 ease-in-out transform"
+                href={`/${idioma || "ar"}/preguntas`}
+              >
+                FAQ
+              </a>
+            )}
+
           <a
             className="hover:scale-110 transition pointer duration-300 ease-in-out transform"
             href="https://app.holded.com/login?lang=es"
@@ -52,7 +82,6 @@ function NavBar() {
           >
             Registrarse
           </button>
-
           {/* Redes sociales */}
           <div className="flex gap-3">
             <a
@@ -84,31 +113,42 @@ function NavBar() {
 
       {/* Menú desplegable móvil */}
       {menuOpen && (
-        <div className="flex flex-col items-center gap-4 bg-tono1 text-white py-4 sm:hidden">
-          {location.pathname !== "/" && (
+        <div className="flex flex-col items-end gap-4 bg-tono1 text-white py-4 sm:hidden">
+          {location.pathname !== "/ar" && location.pathname !== "/uy" && (
             <a
               className="hover:scale-110 transition duration-300 ease-in-out transform"
-              href="/"
+              href={`/${idioma || "ar"}`}
             >
               Inicio
             </a>
           )}
-          {location.pathname !== "/contacto" && (
-            <a
-              className="hover:scale-110 transition duration-300 ease-in-out transform"
-              href="/contacto"
-            >
-              Contacto
-            </a>
-          )}
-          {location.pathname !== "/nosotros" && (
-            <a
-              className="hover:scale-110 transition duration-300 ease-in-out transform"
-              href="/nosotros"
-            >
-              Nosotros
-            </a>
-          )}
+          {location.pathname !== "/contacto" &&
+            location.pathname !== "/uy/preguntas" && (
+              <a
+                className="hover:scale-110 transition duration-300 ease-in-out transform"
+                href={`/${idioma || "ar"}/contacto`}
+              >
+                Contacto
+              </a>
+            )}
+          {location.pathname !== "/nosotros" &&
+            location.pathname !== "/uy/preguntas" && (
+              <a
+                className="hover:scale-110 transition duration-300 ease-in-out transform"
+                href={`/${idioma || "ar"}/nosotros`}
+              >
+                Nosotros
+              </a>
+            )}
+          {location.pathname !== "/preguntas" &&
+            location.pathname !== "/uy/preguntas" && (
+              <a
+                className="hover:scale-110 transition duration-300 ease-in-out transform"
+                href={`/${idioma || "ar"}/preguntas`}
+              >
+                FAQ
+              </a>
+            )}
           <a
             className="hover:scale-110 transition pointer duration-300 ease-in-out transform"
             href="https://app.holded.com/login?lang=es"
