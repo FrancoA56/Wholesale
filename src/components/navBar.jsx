@@ -122,8 +122,8 @@ function NavBar() {
               Inicio
             </a>
           )}
-          {location.pathname !== "/contacto" &&
-            location.pathname !== "/uy/preguntas" && (
+          {location.pathname !== "/ar/contacto" &&
+            location.pathname !== "/uy/contacto" && (
               <a
                 className="hover:scale-110 transition duration-300 ease-in-out transform"
                 href={`/${idioma || "ar"}/contacto`}
@@ -131,8 +131,8 @@ function NavBar() {
                 Contacto
               </a>
             )}
-          {location.pathname !== "/nosotros" &&
-            location.pathname !== "/uy/preguntas" && (
+          {location.pathname !== "/ar/nosotros" &&
+            location.pathname !== "/uy/nosotros" && (
               <a
                 className="hover:scale-110 transition duration-300 ease-in-out transform"
                 href={`/${idioma || "ar"}/nosotros`}
@@ -140,7 +140,7 @@ function NavBar() {
                 Nosotros
               </a>
             )}
-          {location.pathname !== "/preguntas" &&
+          {location.pathname !== "/ar/preguntas" &&
             location.pathname !== "/uy/preguntas" && (
               <a
                 className="hover:scale-110 transition duration-300 ease-in-out transform"

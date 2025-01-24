@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
+import ReactGA from "react-ga4";
 import Home from "./components/home";
 import Contact from "./components/contact";
 import AcercaDe from "./components/nosotros";
@@ -15,9 +16,17 @@ import Preguntas from "./components/preguntas";
 import axios from "axios";
 import "./App.css";
 
+// Inicializa Google Analytics una sola vez
+ReactGA.initialize("G-2XXT6JCP8P");
+
 function App() {
   const [start, setStart] = useState(false);
   const location = useLocation();
+
+  useEffect(() => {
+    // Envía un evento de "pageview" cada vez que cambia la ruta
+    ReactGA.send({ hitType: "pageview", page: location.pathname });
+  }, [location.pathname]);
 
   useEffect(() => {
     if (!start) {

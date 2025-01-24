@@ -40,12 +40,12 @@ function Contact() {
       if (idioma) textParts.push(`Ubicacion: ${idioma}`);
       try {
         const objetoBody = {
-          to: "ximena.r@ws-dyr.com",
+          to: "comunicaciones@ws-dyr.com",
           subject: "¡Quiero hablar!",
           text: textParts.join("\n"),
         };
         const { data } = await axios.post(
-          `https://localhost:3001/api/registration`,
+          `https://wholesale-api.onrender.com/api/registration`,
           objetoBody,
           { headers: { "Content-Type": "Application/Json" } } // Configurar los encabezados
         );
@@ -147,7 +147,7 @@ function Contact() {
           </div>
           <div className="col-span-4 w-full">
             <div className="flex flex-col">
-              <div className="text-center justify-center items-center indent-6 flex text-gray-700 font-gothamB pt-4 pb-2 text-parrafo">
+              <div className="text-center justify-center items-center flex text-gray-700 font-gothamB pt-4 pb-2 text-parrafo">
                 ¿Tienes preguntas sobre nuestros productos o servicios antes de
                 registrarte?
               </div>

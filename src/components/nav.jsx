@@ -93,7 +93,7 @@ function Nav() {
           >
             E M I L E &#8194;H E N R Y
           </a>{" "}
-          <hr />
+          {idioma === "ar" && <hr />}
           {idioma === "ar" && (
             <>
               <a
@@ -108,7 +108,7 @@ function Nav() {
               </a>
             </>
           )}{" "}
-          <hr />
+          {idioma === "ar" && <hr />}
           {idioma === "ar" && (
             <>
               <a

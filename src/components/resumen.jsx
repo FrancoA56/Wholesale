@@ -200,7 +200,7 @@ function Resumen() {
               <div className="sm:mr-12 mr-0">
                 <hr className="sm:mx-12 mx-4 border-black" />
 
-                <div className="text-gray-700 font-gothamB text-subtitulo pt-6 pb-4">
+                <div className="text-gray-700 font-gothamB text-subtitulo pt-6 pb-4 ml-4 mr-4">
                   Desde 1830,{" "}
                   <h1 className="inline text-gray-700 font-gothamB text-subtitulo">
                     Mauviel

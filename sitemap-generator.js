@@ -3,13 +3,21 @@ const fs = require("fs");
 
 const DOMAIN = "https://www.ws-dyr.com"; // Reemplaza con tu dominio
 const routes = [
-  { url: "/", changefreq: "daily", priority: 1.0 }, // Página de inicio
-  { url: "/contacto", changefreq: "monthly", priority: 0.8 }, // Página de contacto
-  { url: "/acercaDe", changefreq: "monthly", priority: 0.7 }, // Página acerca de
-  { url: "/ooni", changefreq: "weekly", priority: 0.9 }, // Página Ooni
-  { url: "/emileHenry", changefreq: "weekly", priority: 0.9 }, // Página Emile Henry
-  { url: "/mauviel1830", changefreq: "weekly", priority: 0.9 }, // Página Mauviel 1830
-  { url: "/boj", changefreq: "weekly", priority: 0.9 }, // Página Boj
+  { url: "/", changefreq: "monthly", priority: 1.0 }, // Página de inicio
+  { url: "/ar", changefreq: "daily", priority: 1.0 }, // Página de inicio
+  { url: "/uy", changefreq: "daily", priority: 1.0 }, // Página de inicio
+  { url: "/ar/contacto", changefreq: "monthly", priority: 0.8 }, // Página de contacto
+  { url: "/uy/contacto", changefreq: "monthly", priority: 0.8 }, // Página de contacto
+  { url: "/ar/preguntas", changefreq: "monthly", priority: 0.8 }, // Página de contacto
+  { url: "/uy/preguntas", changefreq: "monthly", priority: 0.8 }, // Página de contacto
+  { url: "/ar/nosotros", changefreq: "monthly", priority: 0.7 }, // Página acerca de
+  { url: "/uy/nosotros", changefreq: "monthly", priority: 0.7 }, // Página acerca de
+  { url: "/ar/ooni", changefreq: "monthly", priority: 1.0 }, // Página Ooni
+  { url: "/ar/emileHenry", changefreq: "monthly", priority: 1.0 }, // Página Emile Henry
+  { url: "/uy/emileHenry", changefreq: "monthly", priority: 1.0 }, // Página Emile Henry
+  { url: "/ar/mauviel1830", changefreq: "monthly", priority: 1.0 }, // Página Mauviel 1830
+  { url: "/uy/mauviel1830", changefreq: "monthly", priority: 1.0 }, // Página Mauviel 1830
+  { url: "/ar/boj", changefreq: "monthly", priority: 1.0 }, // Página Boj
 ];
 
 async function generateSitemap() {
@@ -23,4 +31,6 @@ async function generateSitemap() {
   console.log("Sitemap generado correctamente en ./public/sitemap.xml");
 }
 
-generateSitemap().catch((err) => console.error("Error al generar el sitemap:", err));
+generateSitemap().catch((err) =>
+  console.error("Error al generar el sitemap:", err)
+);
