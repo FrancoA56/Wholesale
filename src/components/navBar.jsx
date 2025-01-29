@@ -11,7 +11,7 @@ function NavBar() {
   const idioma = localStorage.getItem("ubicacion");
 
   return (
-    <div className="fixed bg-tono1 text-white py-2 z-30 w-screen font-gothamB  pr-12">
+    <div className="fixed bg-tono1 text-white py-2 z-30 w-screen font-gothamB pr-8">
       <div className="flex justify-between items-center px-4">
         <a href="/" className="ml-3">
           {idioma === "ar" ? (
@@ -104,11 +104,22 @@ function NavBar() {
         </div>
 
         {/* Menú móvil */}
-        <div className="sm:hidden flex items-center">
-          <button onClick={() => setMenuOpen(!menuOpen)}>
-            <i className="fa-solid fa-bars"></i>
-          </button>
-        </div>
+        {!menuOpen ? (
+          <div className="sm:hidden flex items-center">
+            <button onClick={() => setMenuOpen(!menuOpen)}>
+              <i className="fa-solid fa-bars"></i>
+            </button>
+          </div>
+        ) : (
+          <div className="sm:hidden flex items-center">
+            <button
+              className="font-bold"
+              onClick={() => setMenuOpen(!menuOpen)}
+            >
+              <i class="fa-solid fa-xmark"></i>{" "}
+            </button>
+          </div>
+        )}
       </div>
 
       {/* Menú desplegable móvil */}

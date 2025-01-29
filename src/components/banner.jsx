@@ -48,7 +48,7 @@ function Banner() {
     <div className="sm:mx-12 mx-4 mt-6">
       <CarouselProvider
         naturalSlideHeight={8}
-        naturalSlideWidth={52}
+        naturalSlideWidth={30}
         totalSlides={4}
         currentSlide={activeSlide}
       >

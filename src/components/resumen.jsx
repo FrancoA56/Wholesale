@@ -83,7 +83,7 @@ function Resumen() {
                 <div className="sm:grid sm:grid-rows-2 flex flex-col justify-center">
                   <div className="flex justify-center items-center mb-6">
                     <a
-                      href="/ooni"
+                      href="/ar/ooni"
                       title="Argentina venta mayorista wholesale dyr ooni"
                       className="sm:w-1/4 w-1/3 justify-center text-center sm:mr-12 mr-0"
                     >
