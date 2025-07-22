@@ -1,7 +1,7 @@
 import React, { useState, useRef } from "react";
 import PopupRegistro from "./register";
 import Swal from "sweetalert2";
-import axios from "axios";
+import ReactPixel from "react-facebook-pixel";
 
 function Contact() {
   const [popupOpen, setPopupOpen] = useState(false);
@@ -38,20 +38,39 @@ function Contact() {
       if (formData.user_message)
         textParts.push(`Mensaje: ${formData.user_message}`);
       if (idioma) textParts.push(`Ubicacion: ${idioma}`);
+
+      const formPayload = {
+        access_key: "fc4fd88f-5f36-44bb-adf5-c0fa126d8f50",
+        from_name: `${formData.user_name}`,
+        subject: "¡Quiero contactarme!",
+        message: textParts.join("\n"),
+        email: formData.user_email,
+        captcha: "true",
+      };
+
       try {
-        const objetoBody = {
-          to: "comunicaciones@ws-dyr.com",
-          subject: "¡Quiero hablar!",
-          text: textParts.join("\n"),
-        };
-        const { data } = await axios.post(
-          `https://wholesale-api.onrender.com/api/registration`,
-          objetoBody,
-          { headers: { "Content-Type": "Application/Json" } } // Configurar los encabezados
-        );
-        showSuccessAlert(data.message);
+        const res = await fetch("https://api.web3forms.com/submit", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(formPayload),
+        });
+
+        const data = await res.json();
+
+        if (data.success) {
+          ReactPixel.track("Contacto", {
+            method: "email",
+            name: formData.user_name,
+            company: formData.user_company,
+            email: formData.user_email,
+          });
+
+          showSuccessAlert("Formulario enviado con éxito.");
+        } else {
+          showErrorAlert("Error al enviar. Intenta nuevamente.");
+        }
       } catch (error) {
-        showErrorAlert(error.message);
+        showErrorAlert("Hubo un problema al enviar el formulario.");
       }
     } else {
       showErrorAlert(
@@ -137,7 +156,7 @@ function Contact() {
                 <div className="inline">hola@ws-dyr.com</div>
               </div>
             </div>
-            <hr className="block sm:hidden my-6"/>
+            <hr className="block sm:hidden my-6" />
             {popupOpen && (
               <PopupRegistro
                 isOpen={popupOpen}
@@ -156,7 +175,7 @@ function Contact() {
                 <form
                   onSubmit={(e) => handleSubmit(e)}
                   ref={form}
-                  className="w-screen p-5 sm:mx-5  flex flex-col justify-center items-center"
+                  className=" p-5 sm:mx-5  flex flex-col justify-center items-center"
                 >
                   <div className="w-full flex flex-col md:grid-rows-4  content-center">
                     {/* Nombre y Apellido en la misma fila */}
@@ -190,6 +209,13 @@ function Contact() {
                           value={formData.user_company}
                           required
                           className="appearance-none border-b-2 border-tono2 focus:border-tono3 w-full px-3 text-gray-700 leading-tight focus:outline-none"
+                        />
+                        <input
+                          type="text"
+                          name="honeypot"
+                          className="hidden"
+                          tabIndex="-1"
+                          autoComplete="off"
                         />
                       </div>
                     </div>

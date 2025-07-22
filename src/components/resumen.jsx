@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import { NavLink } from "react-router-dom"
 import ooniLogo from "../media/imagenes/Ooni-logo negro png.png";
 import EmileHenry from "../media/imagenes/EmileHenry-02.png";
 import mauvile from "../media/imagenes/logoMauvielNegro.png";
@@ -82,8 +83,8 @@ function Resumen() {
               <div className="col-span-1 flex justify-center items-center pb-6">
                 <div className="sm:grid sm:grid-rows-2 flex flex-col justify-center">
                   <div className="flex justify-center items-center mb-6">
-                    <a
-                      href="/ar/ooni"
+                    <NavLink
+                      to="/ar/ooni"
                       title="Argentina venta mayorista wholesale dyr ooni"
                       className="sm:w-1/4 w-1/3 justify-center text-center sm:mr-12 mr-0"
                     >
@@ -92,7 +93,7 @@ function Resumen() {
                         alt="Argentina venta mayorista wholesale dyr ooni"
                         className="hover:scale-125  transition duration-300 ease-in-out transform sm:mt-0 mt-8"
                       />
-                    </a>
+                    </NavLink>
                   </div>
                   <div className="sm:mr-12 sm:ml-0 flex flex-col justify-center mr-4 ml-4">
                     <hr className="border-black w-full" />
@@ -123,8 +124,8 @@ function Resumen() {
           <div className="sm:col-span-1 flex flex-col justify-center items-center ">
             <div className="sm:grid sm:grid-rows-2 flex justify-center items-center">
               <div className="flex flex-col justify-center items-center mx-4">
-                <a
-                  href={`/${idioma || "ar"}/emileHenry`}
+                <NavLink
+                  to={`/${idioma || "ar"}/emileHenry`}
                   title="Argentina venta mayorista wholesale dyr emile henry"
                   className="sm:w-1/3 w-1/2 justify-center text-center sm:ml-28 ml-4 sm:mr-0 mr-4 pb-4"
                 >
@@ -133,7 +134,7 @@ function Resumen() {
                     alt="Argentina venta mayorista wholesale dyr emile henry ooni boj mauviel1830"
                     className="hover:scale-125 transition duration-300 ease-in-out transform"
                   />
-                </a>
+                </NavLink>
                 <hr className="sm:ml-28  sm:mr-0 border-black w-full ml-4 mr-4" />
                 <div className="text-gray-700 font-gothamB text-subtitulo pt-6 sm:ml-28 ml-4 mr-4 sm:mr-0">
                   Con más de 6 generaciones de experiencia,{" "}
@@ -185,8 +186,8 @@ function Resumen() {
           <div className="col-span-1 flex justify-center items-center pb-6">
             <div className="sm:grid sm:grid-rows-2 flex flex-col">
               <div className="flex justify-center items-center sm:mb-6 h-40">
-                <a
-                  href={`/${idioma || "ar"}/mauviel1830`}
+                <NavLink
+                  to={`/${idioma || "ar"}/mauviel1830`}
                   title="Argentina venta mayorista wholesale dyr mauviel1830"
                   className="sm:w-1/2 w-2/3 justify-center text-center sm:mr-12 mr-0"
                 >
@@ -195,7 +196,7 @@ function Resumen() {
                     alt="Argentina venta mayorista wholesale dyr emile henry ooni boj mauviel1830"
                     className="hover:scale-125 transition duration-300 ease-in-out transform"
                   />
-                </a>
+                </NavLink>
               </div>
               <div className="sm:mr-12 mr-0">
                 <hr className="sm:mx-12 mx-4 border-black" />
@@ -227,8 +228,8 @@ function Resumen() {
               <div className="sm:col-span-1 flex flex-col justify-center items-center ">
                 <div className="sm:grid sm:grid-rows-2 flex justify-center items-center">
                   <div className="flex flex-col justify-center items-center mx-4">
-                    <a
-                      href="/ar/boj"
+                    <NavLink
+                      to="/ar/boj"
                       title="Argentina venta mayorista wholesale dyr boj"
                       className="sm:w-1/3 w-1/2 justify-center text-center sm:ml-28 ml-4 sm:mr-0 mr-4 pb-4"
                     >
@@ -237,7 +238,7 @@ function Resumen() {
                         alt="Boj Argentina DYR"
                         className="hover:scale-125 transition duration-300 ease-in-out transform"
                       />
-                    </a>
+                    </NavLink>
                     <hr className="sm:ml-28  sm:mr-0 border-black w-full ml-4 mr-4" />
                     <div className="text-gray-700 font-gothamB text-subtitulo pt-6 sm:ml-28 ml-4 mr-4 sm:mr-0">
                       Fundada en España en 1905,{" "}

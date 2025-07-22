@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
-import axios from "axios";
 import Swal from "sweetalert2";
+import ReactPixel from "react-facebook-pixel";
 
 const PopupRegistro = ({ isOpen, isClose }) => {
   const form = useRef();
@@ -45,21 +45,40 @@ const PopupRegistro = ({ isOpen, isClose }) => {
       if (formData.user_message)
         textParts.push(`Mensaje: ${formData.user_message}`);
       if (idioma) textParts.push(`Ubicacion: ${idioma}`);
+
+      const formPayload = {
+        access_key: "fc4fd88f-5f36-44bb-adf5-c0fa126d8f50",
+        from_name: `${formData.user_name} ${formData.user_lastname}`,
+        subject: "¡Quiero registrarme!",
+        message: textParts.join("\n"),
+        email: formData.user_email,
+        captcha: "true",
+      };
+
       try {
-        const objetoBody = {
-          to: "ximena.r@ws-dyr.com",
-          subject: "¡Quiero registrarme!",
-          text: textParts.join("\n"),
-        };
-        const { data } = await axios.post(
-          `https://wholesale-api.onrender.com/api/registration`,
-          objetoBody,
-          { headers: { "Content-Type": "Application/Json" } } // Configurar los encabezados
-        );
-        showSuccessAlert(data.message);
-        isClose(false); // Cerrar el popup después del envío
+        const res = await fetch("https://api.web3forms.com/submit", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(formPayload),
+        });
+
+        const data = await res.json();
+
+        if (data.success) {
+          ReactPixel.track("Contacto", {
+            method: "email",
+            name: formData.user_name,
+            company: formData.user_company,
+            email: formData.user_email,
+          });
+
+          showSuccessAlert("Formulario enviado con éxito.");
+          isClose(false); // Cerrar el popup después del envío
+        } else {
+          showErrorAlert("Error al enviar. Intenta nuevamente.");
+        }
       } catch (error) {
-        showErrorAlert(error.message);
+        showErrorAlert("Hubo un problema al enviar el formulario.");
       }
     } else {
       showErrorAlert(
@@ -128,6 +147,13 @@ const PopupRegistro = ({ isOpen, isClose }) => {
                     value={formData.user_name}
                     required
                     className="appearance-none border-b-2 border-tono2 focus:border-tono3 w-full px-3 text-gray-700 leading-tight focus:outline-none"
+                  />
+                  <input
+                    type="text"
+                    name="honeypot"
+                    className="hidden"
+                    tabIndex="-1"
+                    autoComplete="off"
                   />
                 </div>
                 <div>
@@ -237,7 +263,7 @@ const PopupRegistro = ({ isOpen, isClose }) => {
               </button>
               <button
                 type="button"
-                onClick={isClose} // Cerrar el popup
+                onClick={isClose}
                 className="font-gothamB  mb-2 h-10 w-11/12 inline-block bg-gray-300 text-black md:w-2/3 rounded-md md:px-2 md:m-1 text-sm font-medium uppercase leading-normal hover:text-white shadow-[0_4px_9px_-4px_#000000] transition duration-150 ease-in-out hover:bg-[#303030]"
               >
                 Cancelar

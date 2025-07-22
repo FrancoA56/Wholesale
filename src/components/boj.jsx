@@ -1,15 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useRef } from "react";
 import bojLogo from "../media/imagenes/logo boj negro.png";
 import bojLogoBlanco from "../media/imagenes/logo boj png blanco.png";
-import "pure-react-carousel/dist/react-carousel.es.css";
-import {
-  CarouselProvider,
-  Slider,
-  Slide,
-  ButtonBack,
-  ButtonNext,
-  Dot,
-} from "pure-react-carousel";
 import { useMediaQuery } from "react-responsive";
 import boj1 from "../media/imagenes/boj/0.webp";
 import boj2 from "../media/imagenes/boj/1.webp";
@@ -27,38 +18,33 @@ import gojCuality2 from "../media/imagenes/boj/cualitys/2.png";
 import gojCuality3 from "../media/imagenes/boj/cualitys/3.png";
 import gojCuality4 from "../media/imagenes/boj/cualitys/4.png";
 import "../styles/efectoLogo.css";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "../styles/carrousels.css";
 
-function Mauviel() {
-  const [activeSlide, setActiveSlide] = useState(0);
-
+function Boj() {
   const isDesktopOrLaptop = useMediaQuery({
     query: "(min-device-width: 640px)",
   });
 
-  useEffect(() => {
-    if (isDesktopOrLaptop) {
-      const timer = setTimeout(() => {
-        const nextIndex = activeSlide === 10 ? 0 : activeSlide + 1;
-        setActiveSlide(nextIndex);
-      }, 3000);
+  const swiperRef = useRef(null);
 
-      return () => clearTimeout(timer);
-    }
-  }, [activeSlide, isDesktopOrLaptop]);
-
-  const handleSlideChange = (slideIndex) => {
-    setActiveSlide(slideIndex);
-  };
-
-  const handlePreviousSlide = () => {
-    const previousIndex = activeSlide === 0 ? 10 : activeSlide - 1;
-    setActiveSlide(previousIndex);
-  };
-
-  const handleNextSlide = () => {
-    const nextIndex = activeSlide === 10 ? 0 : activeSlide + 1;
-    setActiveSlide(nextIndex);
-  };
+  const images = [
+    { id: 0, image: boj1 },
+    { id: 1, image: boj2 },
+    { id: 2, image: boj3 },
+    { id: 3, image: boj4 },
+    { id: 4, image: boj5 },
+    { id: 5, image: boj6 },
+    { id: 6, image: boj7 },
+    { id: 7, image: boj8 },
+    { id: 8, image: boj9 },
+    { id: 9, image: boj10 },
+    { id: 10, image: boj11 },
+  ];
 
   return (
     <>
@@ -85,91 +71,44 @@ function Mauviel() {
       </div>
       <div className="sm:grid sm:grid-cols-5 flex flex-col mb-12">
         <div className="sm:w-8/12 w-11/12 sm:ml-20 sm:mr-0 ml-4 mr-4 mt-12 col-span-2">
-          <CarouselProvider
-            naturalSlideHeight={46}
-            naturalSlideWidth={33}
-            totalSlides={11}
-            currentSlide={activeSlide}
+          <Swiper
+            modules={[Navigation, Pagination, Autoplay]}
+            spaceBetween={30}
+            slidesPerView={1}
+            navigation={{
+              prevEl: ".swiper-button-prev",
+              nextEl: ".swiper-button-next",
+            }}
+            pagination={{
+              clickable: true,
+              el: ".custom-pagination",
+              bulletClass: "custom-bullet",
+              bulletActiveClass: "custom-bullet-active",
+            }}
+            autoplay={
+              isDesktopOrLaptop
+                ? {
+                    delay: 3000,
+                    disableOnInteraction: false,
+                  }
+                : false
+            }
+            loop={true}
+            onSwiper={(swiper) => {
+              swiperRef.current = swiper;
+            }}
           >
-            <div>
-              <Slider className="rounded-xl">
-                <Slide index={0}>
-                  {" "}
-                  <img src={boj1} alt="Boj Argentina wholesale dyr venta mayorista" />{" "}
-                </Slide>
-                <Slide index={1}>
-                  {" "}
-                  <img src={boj2} alt="Boj Argentina wholesale dyr venta mayorista" />{" "}
-                </Slide>
-                <Slide index={2}>
-                  {" "}
-                  <img src={boj3} alt="Boj Argentina wholesale dyr venta mayorista" />{" "}
-                </Slide>
-                <Slide index={3}>
-                  {" "}
-                  <img src={boj4} alt="Boj Argentina wholesale dyr venta mayorista" />{" "}
-                </Slide>
-                <Slide index={4}>
-                  {" "}
-                  <img src={boj5} alt="Boj Argentina wholesale dyr venta mayorista" />{" "}
-                </Slide>
-                <Slide index={5}>
-                  {" "}
-                  <img src={boj6} alt="Boj Argentina wholesale dyr venta mayorista" />{" "}
-                </Slide>
-                <Slide index={6}>
-                  {" "}
-                  <img src={boj7} alt="Boj Argentina wholesale dyr venta mayorista" />{" "}
-                </Slide>
-                <Slide index={7}>
-                  {" "}
-                  <img src={boj8} alt="Boj Argentina wholesale dyr venta mayorista" />{" "}
-                </Slide>
-                <Slide index={8}>
-                  {" "}
-                  <img src={boj9} alt="Boj Argentina wholesale dyr venta mayorista" />{" "}
-                </Slide>
-                <Slide index={9}>
-                  {" "}
-                  <img src={boj10} alt="Boj Argentina wholesale dyr venta mayorista" />{" "}
-                </Slide>
-                <Slide index={10}>
-                  {" "}
-                  <img src={boj11} alt="Boj Argentina wholesale dyr venta mayorista" />{" "}
-                </Slide>
-              </Slider>
-              <div className="flex gap-8 justify-center mt-1">
-                <ButtonBack
-                  onClick={handlePreviousSlide}
-                  className="relative left-5 block text-tono4 sm:mr-0 mr-4 active:text-tono1 hover:scale-110 hover:text-tono3 focus:text-tono1 transition duration-300 ease-in-out transform"
-                >
-                  <i className="fa-solid fa-circle-left"></i>
-                </ButtonBack>
-                <div className="sm:inline-flex hidden gap-2 text-tono4">
-                  {[...Array(11)].map((_, index) => (
-                    <Dot
-                      key={index}
-                      slide={index}
-                      onClick={() => handleSlideChange(index)}
-                      className={activeSlide === index ? "active" : ""}
-                    >
-                      <i
-                        className={`fa-solid fa-circle ${
-                          activeSlide === index ? "text-tono1" : "text-tono4"
-                        }`}
-                      ></i>
-                    </Dot>
-                  ))}
-                </div>
-                <ButtonNext
-                  onClick={handleNextSlide}
-                  className="relative right-5 text-tono4 block sm:ml-0 ml-4 active:text-tono1 hover:scale-110 hover:text-tono3 focus:text-tono1 transition duration-300 ease-in-out transform"
-                >
-                  <i className="fa-solid fa-circle-right"></i>
-                </ButtonNext>
-              </div>
-            </div>
-          </CarouselProvider>
+            {images.map((image) => (
+              <SwiperSlide key={image.id}>
+                <img
+                  src={image.image}
+                  alt="Boj Argentina wholesale dyr venta mayorista"
+                  className="w-full h-auto rounded-xl"
+                />
+              </SwiperSlide>
+            ))}
+          </Swiper>
+          <div className="custom-pagination" />
         </div>
         <div className="col-span-3 flex text-justify items-center sm:mr-16 mr-6 ml-6 sm:ml-0">
           <div className="flex flex-col">
@@ -246,10 +185,14 @@ function Mauviel() {
         </div>
       </div>
       <div>
-        <img src={banner} alt="Boj Argentina wholesale dyr venta mayorista" className="w-full mb-12" />
+        <img
+          src={banner}
+          alt="Boj Argentina wholesale dyr venta mayorista"
+          className="w-full mb-12"
+        />
       </div>
     </>
   );
 }
 
-export default Mauviel;
+export default Boj;

@@ -1,15 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useRef } from "react";
 import ooniLogo from "../media/imagenes/Ooni-logo blanco png.png";
 import ooniLogoGris from "../media/imagenes/Ooni-03.png";
-import "pure-react-carousel/dist/react-carousel.es.css";
-import {
-  CarouselProvider,
-  Slider,
-  Slide,
-  ButtonBack,
-  ButtonNext,
-  Dot,
-} from "pure-react-carousel";
 import { useMediaQuery } from "react-responsive";
 import imagen1 from "../media/imagenes/ooni/funda.webp";
 import imagen2 from "../media/imagenes/ooni/balanza.webp";
@@ -28,38 +19,33 @@ import ooniCuality2 from "../media/imagenes/ooni/cualitys/2.png";
 import ooniCuality3 from "../media/imagenes/ooni/cualitys/3.png";
 import ooniCuality4 from "../media/imagenes/ooni/cualitys/4.png";
 import "../styles/efectoLogo.css";
+import "../styles/carrousels.css";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 function Ooni() {
-  const [activeSlide, setActiveSlide] = useState(0);
-
   const isDesktopOrLaptop = useMediaQuery({
     query: "(min-device-width: 640px)",
   });
 
-  useEffect(() => {
-    if (isDesktopOrLaptop) {
-      const timer = setTimeout(() => {
-        const nextIndex = activeSlide === 10 ? 0 : activeSlide + 1;
-        setActiveSlide(nextIndex);
-      }, 3000);
+  const swiperRef = useRef(null);
 
-      return () => clearTimeout(timer);
-    }
-  }, [activeSlide, isDesktopOrLaptop]);
-
-  const handleSlideChange = (slideIndex) => {
-    setActiveSlide(slideIndex);
-  };
-
-  const handlePreviousSlide = () => {
-    const previousIndex = activeSlide === 0 ? 10 : activeSlide - 1;
-    setActiveSlide(previousIndex);
-  };
-
-  const handleNextSlide = () => {
-    const nextIndex = activeSlide === 10 ? 0 : activeSlide + 1;
-    setActiveSlide(nextIndex);
-  };
+  const slides = [
+    { id: 0, image: imagen7 },
+    { id: 1, image: imagen2 },
+    { id: 2, image: imagen4 },
+    { id: 3, image: imagen5 },
+    { id: 4, image: imagen1 },
+    { id: 5, image: imagen6 },
+    { id: 6, image: imagen13 },
+    { id: 7, image: imagen10 },
+    { id: 8, image: imagen11 },
+    { id: 9, image: imagen12 },
+    { id: 10, image: imagen9 },
+  ];
 
   return (
     <>
@@ -86,95 +72,56 @@ function Ooni() {
       </div>
       <div className="sm:grid sm:grid-cols-5 flex flex-col mb-12">
         <div className="sm:w-9/12 sm:ml-20 mt-12 col-span-3 ml-4 mr-4 sm:mr-0">
-          <CarouselProvider
-            naturalSlideHeight={34}
-            naturalSlideWidth={52}
-            totalSlides={11}
-            currentSlide={activeSlide}
+          <Swiper
+            modules={[Navigation, Pagination, Autoplay]}
+            spaceBetween={30}
+            slidesPerView={1}
+            navigation={{
+              nextEl: ".swiper-button-next",
+              prevEl: ".swiper-button-prev",
+            }}
+            pagination={{
+              clickable: true,
+              el: ".custom-pagination",
+              bulletClass: "custom-bullet",
+              bulletActiveClass: "custom-bullet-active",
+            }}
+            autoplay={
+              isDesktopOrLaptop
+                ? {
+                    delay: 3000,
+                    disableOnInteraction: false,
+                  }
+                : false
+            }
+            loop={true}
+            onSwiper={(swiper) => {
+              swiperRef.current = swiper;
+            }}
           >
-            {" "}
-            <div>
-              <Slider className="rounded-xl">
-                <Slide index={0}>
-                  {" "}
-                  <img src={imagen7} alt="Argentina venta mayorista wholesale dyr ooni" />{" "}
-                </Slide>
-                <Slide index={1}>
-                  {" "}
-                  <img src={imagen2} alt="Argentina venta mayorista wholesale dyr ooni" />{" "}
-                </Slide>
-                <Slide index={2}>
-                  {" "}
-                  <img src={imagen4} alt="Argentina venta mayorista wholesale dyr ooni" />{" "}
-                </Slide>
-                <Slide index={3}>
-                  {" "}
-                  <img src={imagen5} alt="Argentina venta mayorista wholesale dyr ooni" />{" "}
-                </Slide>
-                <Slide index={4}>
-                  {" "}
-                  <img src={imagen1} alt="Argentina venta mayorista wholesale dyr ooni" />{" "}
-                </Slide>
-                <Slide index={5}>
-                  {" "}
-                  <img src={imagen6} alt="Argentina venta mayorista wholesale dyr ooni" />{" "}
-                </Slide>
-
-                <Slide index={6}>
-                  {" "}
-                  <img src={imagen13} alt="Argentina venta mayorista wholesale dyr ooni" />{" "}
-                </Slide>
-                <Slide index={7}>
-                  {" "}
-                  <img src={imagen10} alt="Argentina venta mayorista wholesale dyr ooni" />{" "}
-                </Slide>
-                <Slide index={8}>
-                  {" "}
-                  <img src={imagen11} alt="Argentina venta mayorista wholesale dyr ooni" />{" "}
-                </Slide>
-                <Slide index={9}>
-                  {" "}
-                  <img src={imagen12} alt="Argentina venta mayorista wholesale dyr ooni" />{" "}
-                </Slide>
-                <Slide index={10}>
-                  {" "}
-                  <img src={imagen9} alt="Argentina venta mayorista wholesale dyr ooni" />{" "}
-                </Slide>
-              </Slider>
-
-              <div className="flex gap-8 justify-center mt-1">
-                <ButtonBack
-                  onClick={handlePreviousSlide}
-                  className="relative left-5 sm:mr-0 mr-4 block text-tono4 active:text-tono1 hover:scale-110 hover:text-tono3 focus:text-tono1 transition duration-300 ease-in-out transform"
-                >
-                  {" "}
-                  <i className="fa-solid fa-circle-left"></i>
-                </ButtonBack>
-                <div className="sm:inline-flex hidden gap-2 text-tono4">
-                  {[...Array(11)].map((_, index) => (
-                    <Dot
-                      key={index}
-                      slide={index}
-                      onClick={() => handleSlideChange(index)}
-                      className={activeSlide === index ? "active" : ""}
-                    >
-                      <i
-                        className={`fa-solid fa-circle ${
-                          activeSlide === index ? "text-tono1" : "text-tono4"
-                        }`}
-                      ></i>
-                    </Dot>
-                  ))}
-                </div>
-                <ButtonNext
-                  onClick={handleNextSlide}
-                  className="relative right-5 text-tono4 sm:ml-0 ml-4 block active:text-tono1 hover:scale-110 hover:text-tono3 focus:text-tono1 transition duration-300 ease-in-out transform"
-                >
-                  <i className="fa-solid fa-circle-right"></i>
-                </ButtonNext>
-              </div>
-            </div>
-          </CarouselProvider>
+            {slides.map((slide) => (
+              <SwiperSlide key={slide.id}>
+                {isDesktopOrLaptop ? (
+                  <div className="rounded-xl h-[60vh] flex justify-center items-center overflow-hidden">
+                    <img
+                      src={slide.image}
+                      alt="Argentina venta mayorista wholesale dyr ooni"
+                      className="w-full h-auto rounded-xl"
+                    />
+                  </div>
+                ) : (
+                  <div className="h-[28vh] flex justify-center items-center overflow-hidden">
+                    <img
+                      src={slide.image}
+                      alt="Argentina venta mayorista wholesale dyr ooni"
+                      className="h-full w-auto object-contain rounded-xl"
+                    />
+                  </div>
+                )}
+              </SwiperSlide>
+            ))}
+          </Swiper>
+          <div className="custom-pagination" />
         </div>
         <div className="sm:col-span-2 flex text-justify items-center sm:mr-28 mr-6 ml-6 sm:ml-0 sm:mt-0 mt-12">
           <div className="flex flex-col sm:mt-6 mt-0">

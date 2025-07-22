@@ -28,36 +28,8 @@ function Nav() {
           E M I L E &#8194;H E N R Y
         </a>
         <div className="text-parrafo">|</div>
-        {idioma === "ar" && (
-          <>
-            <a
-              href="/ar/ooni"
-              className={`transition-colors duration-300 text-parrafo ${
-                location.pathname === "/ar/ooni"
-                  ? "text-tono2"
-                  : "hover:text-tono2"
-              }`}
-            >
-              O O N I
-            </a>
-            <div className="text-parrafo">|</div>
-          </>
-        )}
-        {idioma === "ar" && (
-          <>
-            <a
-              href="/ar/boj"
-              className={`transition-colors duration-300 text-parrafo ${
-                location.pathname === "/ar/boj"
-                  ? "text-tono2"
-                  : "hover:text-tono2"
-              }`}
-            >
-              B O J
-            </a>
-            <div className="text-parrafo">|</div>
-          </>
-        )}
+        
+       
         <a
           href={`/${idioma || "ar"}/mauviel1830`}
           className={`transition-colors duration-300 text-parrafo ${
@@ -69,6 +41,36 @@ function Nav() {
         >
           M A U V I E L 1 8 3 0
         </a>
+        {idioma === "ar" && (
+          <>
+              <div className="text-parrafo">|</div>
+            <a
+              href="/ar/ooni"
+              className={`transition-colors duration-300 text-parrafo ${
+                location.pathname === "/ar/ooni"
+                  ? "text-tono2"
+                  : "hover:text-tono2"
+              }`}
+            >
+              O O N I
+            </a>
+          </>
+        )}
+         {idioma === "ar" && (
+          <>
+            <div className="text-parrafo">|</div>
+            <a
+              href="/ar/boj"
+              className={`transition-colors duration-300 text-parrafo ${
+                location.pathname === "/ar/boj"
+                  ? "text-tono2"
+                  : "hover:text-tono2"
+              }`}
+            >
+              B O J
+            </a>
+          </>
+        )}
       </div>
       <div></div>
       {!menuOpen && (

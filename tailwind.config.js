@@ -30,7 +30,8 @@ module.exports = {
         "4xl": "2rem",
       },
       backgroundImage: {
-        "fondo": "url('/src/media/imagenes/fondoEmily3.webp')",
+        "fondo": "url('/src/media/imagenes/principalAr.webp')",
+        "fondoUy": "url('/src/media/imagenes/principalUy.webp')",
         "fondoPrincipal": "url('/src/media/imagenes/PortadaPrincipal.webp')",
         "fondoOoni": "url('/src/media/imagenes/ooni/portada.webp')",
         "fondoEmile": "url('/src/media/imagenes/emile/portada.webp')",

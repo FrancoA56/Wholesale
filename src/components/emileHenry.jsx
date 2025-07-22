@@ -1,15 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useRef } from "react";
 import emileLogo from "../media/imagenes/EmileHenry-logo blanco grande.png";
 import emileLogoRojo from "../media/imagenes/EmileHenry-logo blanco png.png";
-import "pure-react-carousel/dist/react-carousel.es.css";
-import {
-  CarouselProvider,
-  Slider,
-  Slide,
-  ButtonBack,
-  ButtonNext,
-  Dot,
-} from "pure-react-carousel";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 import { useMediaQuery } from "react-responsive";
 import emile1 from "../media/imagenes/emile/bowl.webp";
 import emile2 from "../media/imagenes/emile/budinera.webp";
@@ -27,38 +23,27 @@ import emileCuality1 from "../media/imagenes/emile/cualidades/garantia.png";
 import emileCuality2 from "../media/imagenes/emile/cualidades/ceramica-calidad.png";
 import emileCuality3 from "../media/imagenes/emile/cualidades/made-in-france.png";
 import emileCuality4 from "../media/imagenes/emile/cualidades/producto-artesanal.png";
+import "../styles/carrousels.css";
 
 function Emile() {
-  const [activeSlide, setActiveSlide] = useState(0);
-
   const isDesktopOrLaptop = useMediaQuery({
     query: "(min-device-width: 640px)",
   });
 
-  useEffect(() => {
-    if (isDesktopOrLaptop) {
-      const timer = setTimeout(() => {
-        const nextIndex = activeSlide === 9 ? 0 : activeSlide + 1;
-        setActiveSlide(nextIndex);
-      }, 3000);
+  const swiperRef = useRef(null);
 
-      return () => clearTimeout(timer);
-    }
-  }, [activeSlide, isDesktopOrLaptop]);
-
-  const handleSlideChange = (slideIndex) => {
-    setActiveSlide(slideIndex);
-  };
-
-  const handlePreviousSlide = () => {
-    const previousIndex = activeSlide === 0 ? 9 : activeSlide - 1;
-    setActiveSlide(previousIndex);
-  };
-
-  const handleNextSlide = () => {
-    const nextIndex = activeSlide === 9 ? 0 : activeSlide + 1;
-    setActiveSlide(nextIndex);
-  };
+  const slides = [
+    { id: 0, image: emile13 },
+    { id: 1, image: emile2 },
+    { id: 2, image: emile3 },
+    { id: 3, image: emile11 },
+    { id: 4, image: emile5 },
+    { id: 5, image: emile6 },
+    { id: 6, image: emile7 },
+    { id: 7, image: emile1 },
+    { id: 8, image: emile12 },
+    { id: 9, image: emile10 },
+  ];
 
   return (
     <>
@@ -83,120 +68,61 @@ function Emile() {
           </div>
         </div>
       </div>
-      <div className="sm:grid sm:grid-cols-5 flex flex-col  sm:mb-12 mb-0">
+      <div className="sm:grid sm:grid-cols-5 flex flex-col sm:mb-12 mb-0">
         <div className="sm:w-9/12 w-11/12 sm:ml-20 ml-4 mr-4 sm:mr-0 mt-12 sm:col-span-3">
-          <CarouselProvider
-            naturalSlideHeight={33}
-            naturalSlideWidth={52}
-            totalSlides={10}
-            currentSlide={activeSlide}
+          <Swiper
+            modules={[Navigation, Pagination, Autoplay]}
+            spaceBetween={30}
+            slidesPerView={1}
+            navigation={{
+              nextEl: ".swiper-button-next",
+              prevEl: ".swiper-button-prev",
+            }}
+            pagination={{
+              clickable: true,
+              el: ".custom-pagination",
+              bulletClass: "custom-bullet",
+              bulletActiveClass: "custom-bullet-active",
+            }}
+            autoplay={
+              isDesktopOrLaptop
+                ? {
+                    delay: 3000,
+                    disableOnInteraction: false,
+                  }
+                : false
+            }
+            loop={true}
+            onSwiper={(swiper) => {
+              swiperRef.current = swiper;
+            }}
           >
-            <div>
-              <Slider className="rounded-xl">
-                <Slide index={0}>
-                  {" "}
-                  <img
-                    src={emile13}
-                    alt="Emile Henry Argentina wholesale dyr venta mayorista"
-                  />{" "}
-                </Slide>
-                <Slide index={1}>
-                  {" "}
-                  <img
-                    src={emile2}
-                    alt="Emile Henry Argentina wholesale dyr venta mayorista"
-                  />{" "}
-                </Slide>
-                <Slide index={2}>
-                  {" "}
-                  <img
-                    src={emile3}
-                    alt="Emile Henry Argentina wholesale dyr venta mayorista"
-                  />{" "}
-                </Slide>
-                <Slide index={3}>
-                  {" "}
-                  <img
-                    src={emile11}
-                    alt="Emile Henry Argentina wholesale dyr venta mayorista"
-                  />{" "}
-                </Slide>
-                <Slide index={4}>
-                  {" "}
-                  <img
-                    src={emile5}
-                    alt="Emile Henry Argentina wholesale dyr venta mayorista"
-                  />{" "}
-                </Slide>
-                <Slide index={5}>
-                  {" "}
-                  <img
-                    src={emile6}
-                    alt="Emile Henry Argentina wholesale dyr venta mayorista"
-                  />{" "}
-                </Slide>
-                <Slide index={6}>
-                  {" "}
-                  <img
-                    src={emile7}
-                    alt="Emile Henry Argentina wholesale dyr venta mayorista"
-                  />{" "}
-                </Slide>
-                <Slide index={7}>
-                  {" "}
-                  <img
-                    src={emile1}
-                    alt="Emile Henry Argentina wholesale dyr venta mayorista"
-                  />{" "}
-                </Slide>
-                <Slide index={8}>
-                  {" "}
-                  <img
-                    src={emile12}
-                    alt="Emile Henry Argentina wholesale dyr venta mayorista"
-                  />{" "}
-                </Slide>
-                <Slide index={9}>
-                  {" "}
-                  <img
-                    src={emile10}
-                    alt="Emile Henry Argentina wholesale dyr venta mayorista"
-                  />{" "}
-                </Slide>
-              </Slider>
-              <div className="flex gap-8 justify-center mt-1">
-                <ButtonBack
-                  onClick={handlePreviousSlide}
-                  className="relative left-5 block text-tono4 sm:mr-0 mr-4 active:text-tono1 hover:scale-110 hover:text-tono3 focus:text-tono1 transition duration-300 ease-in-out transform"
-                >
-                  <i className="fa-solid fa-circle-left"></i>
-                </ButtonBack>
-                <div className="sm:inline-flex hidden gap-2 text-tono4">
-                  {[...Array(10)].map((_, index) => (
-                    <Dot
-                      key={index}
-                      slide={index}
-                      onClick={() => handleSlideChange(index)}
-                      className={activeSlide === index ? "active" : ""}
-                    >
-                      <i
-                        className={`fa-solid fa-circle ${
-                          activeSlide === index ? "text-tono1" : "text-tono4"
-                        }`}
-                      ></i>
-                    </Dot>
-                  ))}
-                </div>
-                <ButtonNext
-                  onClick={handleNextSlide}
-                  className="relative right-5 text-tono4 block sm:ml-0 ml-4 active:text-tono1 hover:scale-110 hover:text-tono3 focus:text-tono1 transition duration-300 ease-in-out transform"
-                >
-                  <i className="fa-solid fa-circle-right"></i>
-                </ButtonNext>
-              </div>
-            </div>
-          </CarouselProvider>
+            {slides.map((slide) => (
+              <SwiperSlide key={slide.id}>
+                {isDesktopOrLaptop ? (
+                  <div className="h-[60vh] flex justify-center items-center overflow-hidden">
+                    <img
+                      src={slide.image}
+                      alt="Emile Henry Argentina wholesale dyr venta mayorista"
+                      className="h-full w-auto object-contain rounded-xl"
+                    />
+                  </div>
+                ) : (
+                  <div className="h-[28vh] flex justify-center items-center overflow-hidden">
+                    <img
+                      src={slide.image}
+                      alt="Emile Henry Argentina wholesale dyr venta mayorista"
+                      className="h-full w-auto object-contain rounded-xl"
+                    />
+                  </div>
+                )}
+              </SwiperSlide>
+            ))}
+          </Swiper>
+
+          <div className="custom-pagination" />
         </div>
+
         <div className="sm:col-span-2 flex text-justify items-center sm:mr-16 sm:ml-0 mr-4 ml-4">
           <div className="flex flex-col mt-16 sm:mt-0">
             <a
@@ -225,6 +151,7 @@ function Emile() {
           </div>
         </div>
       </div>
+
       <div className="sm:grid sm:grid-cols-4 sm:mr-6 mr-0 mb-12">
         <div className="flex flex-col justify-center items-center text-center gap-4 mx-4 mb-8 sm:grid sm:grid-rows-4">
           <img

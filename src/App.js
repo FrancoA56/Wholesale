@@ -13,8 +13,11 @@ import Nav from "./components/nav";
 import NavBar from "./components/navBar";
 import Footer from "./components/footer";
 import Preguntas from "./components/preguntas";
+import Detail from "./components/detail"
 import axios from "axios";
 import "./App.css";
+import ScrollToTop from "./components/scrollToTop";
+import WhatsApp from "./components/whatsApp"
 
 // Inicializa Google Analytics una sola vez
 ReactGA.initialize("G-2XXT6JCP8P");
@@ -24,7 +27,6 @@ function App() {
   const location = useLocation();
 
   useEffect(() => {
-    // Envía un evento de "pageview" cada vez que cambia la ruta
     ReactGA.send({ hitType: "pageview", page: location.pathname });
   }, [location.pathname]);
 
@@ -57,16 +59,20 @@ function App() {
     "/uy/nosotros",
     "/uy/preguntas",
     "/ar/preguntas",
+    "/ar/detalle",
   ].includes(location.pathname);
 
   return (
     <div className="App">
       {shouldShowNavAndFooter && <NavBar />}
       {shouldShowNavAndFooter && shouldShowNav && <Nav />}
+        <WhatsApp />
+        <ScrollToTop />
       <Routes>
         <Route path="/" element={<Idioma />} />
         <Route path="/ar" element={<Home />} />
         <Route path="/uy" element={<Home />} />
+        <Route path="/ar/detalle" element={<Detail />} />
         <Route path="/ar/contacto" element={<Contact />} />
         <Route path="/uy/contacto" element={<Contact />} />
         <Route path="/ar/nosotros" element={<AcercaDe />} />

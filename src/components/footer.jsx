@@ -3,6 +3,7 @@ import logoWholesale from "../media/imagenes/LOGO-WHOLESALE-BLANCO.png";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
+import ReactPixel from 'react-facebook-pixel';
 
 function Footer() {
   const tel = "011-2305-3139";
@@ -12,6 +13,7 @@ function Footer() {
   const copiarTel = () => {
     navigator.clipboard.writeText(tel);
     toast.info("Número de telefono copiado");
+    ReactPixel.track("Contacto", { method: "Telefono"})
   };
   const copiarWsp = () => {
     const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
@@ -19,6 +21,12 @@ function Footer() {
       ? `https://wa.me/${wsp}`
       : `https://web.whatsapp.com/send?phone=${wsp}`;
     window.open(url, "_blank");
+    ReactPixel.track("Contacto", { method: "WhatsApp"})
+  };
+
+  const handleEmailClick = () => {
+    // Rastrear evento de contacto por correo
+    ReactPixel.track('Contacto', { method: 'email' });
   };
 
   return (
@@ -35,11 +43,12 @@ function Footer() {
           </div>
           <div className="flex-1 flex justify-start sm:justify-center">
             <div className="flex flex-col text-parrafo sm:mt-4 mt-0 sm:gap-0 gap-4 sm:ml-0 ml-28 ">
-              <div className="flex relative ">Contáctanos en:</div>
+              <div className="flex relative ">Contactanos en:</div>
               <a
                 href="mailto:hola@ws-dyr.com?subject=Solicitud%20de%20información&body=Hola%20equipo%20de%20nombre%20de%20tu%20empresa,%0D%0A%0D%0AQuisiera%20solicitar%20más%20información%20sobre%20sus%20servicios.%20Me%20interesa%20conocer%20sus%20métodos%20de%20trabajo,%20formas%20de%20pago%20disponibles%20y%20cualquier%20otra%20información%20relevante%20que%20puedan%20proporcionar.%0D%0A%0D%0AMuchas%20gracias%20por%20su%20atención.%0D%0A%0D%0ASaludos%20cordiales,%0D%0ATu%20nombre%20aquí"
                 className="flex hover:scale-110 transition duration-300 ease-in-out transform"
                 style={{ cursor: "pointer" }}
+                onClick={handleEmailClick} 
               >
                 <i className="fa-regular fa-envelope mr-2 mt-1"></i>
                 hola@ws-dyr.com
@@ -72,7 +81,7 @@ function Footer() {
 
           <div className="flex-1 flex justify-start sm:justify-center">
             <div className="flex flex-col text-parrafo sm:mt-4 mt-0 sm:gap-0 gap-4 sm:ml-0 ml-28 ">
-              <div className="flex relative ">Síguenos en:</div>
+              <div className="flex relative ">Seguinos en:</div>
               <a
                 className="flex hover:scale-110 transition duration-300 ease-in-out transform"
                 style={{ cursor: "pointer" }}

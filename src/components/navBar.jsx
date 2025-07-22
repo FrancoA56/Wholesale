@@ -39,6 +39,15 @@ function NavBar() {
               Inicio
             </a>
           )}
+          {/* {location.pathname !== "/ar/catalogo" &&
+            location.pathname !== "/uy/catalogo" && (
+              <a
+                className="hover:scale-110 transition duration-300 ease-in-out transform"
+                href={`/${idioma || "ar"}/catalogo`}
+              >
+                Catálogo
+              </a>
+            )} */}
           {location.pathname !== "/ar/contacto" &&
             location.pathname !== "/uy/contacto" && (
               <a
@@ -70,7 +79,7 @@ function NavBar() {
 
           <a
             className="hover:scale-110 transition pointer duration-300 ease-in-out transform"
-            href="https://app.holded.com/login?lang=es"
+            href="https://tradeampshippingcompanysrl9812.holded.com/portal/login"
             target="_blank"
             rel="noreferrer"
           >
