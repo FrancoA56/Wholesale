@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
 import ReactGA from "react-ga4";
 import Home from "./components/home";
@@ -14,7 +14,6 @@ import NavBar from "./components/navBar";
 import Footer from "./components/footer";
 import Preguntas from "./components/preguntas";
 import Detail from "./components/detail"
-import axios from "axios";
 import "./App.css";
 import ScrollToTop from "./components/scrollToTop";
 import WhatsApp from "./components/whatsApp"
@@ -23,30 +22,11 @@ import WhatsApp from "./components/whatsApp"
 ReactGA.initialize("G-2XXT6JCP8P");
 
 function App() {
-  const [start, setStart] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
     ReactGA.send({ hitType: "pageview", page: location.pathname });
   }, [location.pathname]);
-
-  useEffect(() => {
-    if (!start) {
-      const startServer = async () => {
-        try {
-          const { data } = await axios.get(
-            "https://wholesale-api.onrender.com/api/start"
-          );
-          if (data.message === "ok") {
-            setStart(true);
-          }
-        } catch (error) {
-          console.error("Error starting the server:", error);
-        }
-      };
-      startServer();
-    }
-  }, [start]);
 
   // Determinar si mostrar NavBar y Footer
   const shouldShowNavAndFooter = location.pathname !== "/";
