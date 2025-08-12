@@ -131,7 +131,7 @@ function Footer() {
             <div className="flex flex-col text-parrafo z-40 sm:mt-4 mt-0 sm:gap-0 gap-4">
               {idioma === "ar" ? (
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6554.052052432209!2d-58.2262164!3d-34.7801201!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a328d06d77b5a3%3A0xe6ab5b22c3a007a1!2sAv.%20Valent%C3%ADn%20Vergara%202164%2C%20B1884%20Berazategui%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1734108627815!5m2!1ses-419!2sar"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6566.63999506872!2d-58.364956!3d-34.6213529!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a334d1f2bc3f3d%3A0xb4d4e772c8679a66!2sAv.%20Alicia%20Moreau%20de%20Justo%201930%20piso%203%2C%20oficina%20306%2C%20C1107AFN%20Cdad.%20Aut%C3%B3noma%20de%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1754076077318!5m2!1ses-419!2sar" 
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}

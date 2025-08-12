@@ -15,7 +15,7 @@ function Head() {
               className="sm:w-1/3 w-1/2 h-auto flex justify-center items-center  mb-24"
             />
             <hr className="absolute bottom-20 text-tono5 w-5/6" />
-            <div className="absolute bottom-10 text-parrafo font-gothamB text-tono5 ">
+            <div className="absolute bottom-24 md:bottom-10 text-parrafo font-gothamB text-tono5 ">
               Únicamente venta mayorista
             </div>
           </div>
@@ -29,7 +29,7 @@ function Head() {
               className="sm:w-1/3 w-1/2 h-auto flex justify-center items-center  mb-24"
             />
             <hr className="absolute bottom-20 text-tono5 w-5/6" />
-            <div className="absolute bottom-10 text-parrafo font-gothamB text-tono5 ">
+            <div className="absolute bottom-24 md:bottom-10 text-parrafo font-gothamB text-tono5 ">
               Únicamente venta mayorista
             </div>
           </div>
