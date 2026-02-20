@@ -49,7 +49,7 @@ function Resumen() {
   }, []);
 
   return (
-    <>
+    <div className="pb-12">
       <div className="py-6">
         <div className="text-gray-700 font-gothamBI flex text-subtitulo justify-center items-center sm:text-start text-center sm:mx-0 mx-4">
           Representamos y distribuimos las mejores marcas premium reconocidas
@@ -268,8 +268,8 @@ function Resumen() {
           </div>
         </>
       )}
-      <div className="my-6"></div>
-    </>
+
+    </div>
   );
 }
 

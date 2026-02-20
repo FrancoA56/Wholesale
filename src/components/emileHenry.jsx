@@ -24,6 +24,8 @@ import emileCuality2 from "../media/imagenes/emile/cualidades/ceramica-calidad.p
 import emileCuality3 from "../media/imagenes/emile/cualidades/made-in-france.png";
 import emileCuality4 from "../media/imagenes/emile/cualidades/producto-artesanal.png";
 import "../styles/carrousels.css";
+import fondoEmile1 from "../media/imagenes/emile/portada.webp";
+import fondoEmile2 from "../media/imagenes/bannermobilemile.webp";
 
 function Emile() {
   const isDesktopOrLaptop = useMediaQuery({
@@ -45,12 +47,49 @@ function Emile() {
     { id: 9, image: emile10 },
   ];
 
+  const [currentBg, setCurrentBg] = React.useState(0);
+
+  const [showText, setShowText] = React.useState(false);
+
+  const backgrounds = [fondoEmile1, fondoEmile2];
+  // después ponés: [fondoEmile1, fondoEmile2]
+
+  React.useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentBg((prev) => (prev + 1) % backgrounds.length);
+    }, 4000);
+
+    return () => clearInterval(interval);
+  }, [backgrounds.length]);
+
+    React.useEffect(() => {
+      if (currentBg === 1) {
+        const timeout = setTimeout(() => {
+          setShowText(true);
+        }, 300); // ⬅ retraso de 0.5s
+
+        return () => clearTimeout(timeout);
+      } else {
+        setShowText(false);
+      }
+    }, [currentBg]);
+
   return (
     <>
-      <div className="bg-fondoEmile bg-cover bg-center h-screen flex justify-center items-center">
-        <div className="bg-tonoblackb h-screen w-screen flex justify-center items-center">
+      <div className="relative h-screen w-screen overflow-hidden">
+        {backgrounds.map((bg, index) => (
+          <div
+            key={index}
+            className={`absolute inset-0 mt-32 bg-cover bg-center transition-opacity duration-1000 ${
+              currentBg === index ? "opacity-100" : "opacity-0"
+            }`}
+            style={{ backgroundImage: `url(${bg})` }}
+          />
+        ))}{" "}
+        <div className="relative bg-gradient-to-t from-black/40 to-black/0 h-screen w-screen flex justify-center items-center">
+          {" "}
           <a
-            href="https://www.emilehenry.com/en/"
+            href="https://www.emilehenry.com.ar/"
             title="Emile Henry Argentina wholesale dyr venta mayorista"
             className="flex justify-center"
             target="_blank"
@@ -59,8 +98,20 @@ function Emile() {
             <img
               src={emileLogo}
               alt="Emile Henry Argentina wholesale dyr venta mayorista"
-              className="tracking-in-contract sm:w-1/3 w-3/5 h-auto flex justify-center items-center hover:scale-125 transition duration-300 ease-in-out transform"
+              className={`sm:w-1/3 w-1/2 h-auto mb-24 transition-opacity duration-1000 ${
+                currentBg === 0 ? "opacity-100" : "opacity-0"
+              }`}
             />
+            {showText && (
+              <div className="absolute inset-0 flex flex-col justify-center items-center text-center text-white px-6 transition-opacity duration-1000 animate-fadeIn">
+                <h2 className="text-4xl sm:text-6xl font-BodoniB mb-4">
+                  Nueva Línea Madeleine
+                </h2>
+                <p className="text-lg sm:text-2xl font-gothamB">
+                  Tradición francesa en cada detalle
+                </p>
+              </div>
+            )}
           </a>
           <hr className="absolute bottom-20 text-tono5 w-11/12" />
           <div className="tracking-in-contract absolute bottom-10 text-parrafo font-gothamB text-tono5 ">

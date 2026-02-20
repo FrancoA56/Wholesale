@@ -6,6 +6,7 @@ import Contact from "./components/contact";
 import AcercaDe from "./components/nosotros";
 import Ooni from "./components/ooni";
 import EmileHenry from "./components/emileHenry";
+import EmileHenryUy from "./components/emileHenryUy";
 import Mauviel from "./components/mauviel";
 import Boj from "./components/boj";
 import Idioma from "./components/idioma";
@@ -13,10 +14,10 @@ import Nav from "./components/nav";
 import NavBar from "./components/navBar";
 import Footer from "./components/footer";
 import Preguntas from "./components/preguntas";
-import Detail from "./components/detail"
+import Detail from "./components/detail";
 import "./App.css";
 import ScrollToTop from "./components/scrollToTop";
-import WhatsApp from "./components/whatsApp"
+import WhatsApp from "./components/whatsApp";
 
 // Inicializa Google Analytics una sola vez
 ReactGA.initialize("G-2XXT6JCP8P");
@@ -26,6 +27,12 @@ function App() {
 
   useEffect(() => {
     ReactGA.send({ hitType: "pageview", page: location.pathname });
+
+    if (window.gtag) {
+      window.gtag("config", "G-DD8HG9DPML", {
+        page_path: location.pathname,
+      });
+    }
   }, [location.pathname]);
 
   // Determinar si mostrar NavBar y Footer
@@ -46,8 +53,8 @@ function App() {
     <div className="App">
       {shouldShowNavAndFooter && <NavBar />}
       {shouldShowNavAndFooter && shouldShowNav && <Nav />}
-        <WhatsApp />
-        <ScrollToTop />
+      <WhatsApp />
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Idioma />} />
         <Route path="/ar" element={<Home />} />
@@ -61,7 +68,7 @@ function App() {
         <Route path="/uy/preguntas" element={<Preguntas />} />
         <Route path="/ar/ooni" element={<Ooni />} />
         <Route path="/ar/emileHenry" element={<EmileHenry />} />
-        <Route path="/uy/emileHenry" element={<EmileHenry />} />
+        <Route path="/uy/emileHenry" element={<EmileHenryUy />} />
         <Route path="/ar/mauviel1830" element={<Mauviel />} />
         <Route path="/uy/mauviel1830" element={<Mauviel />} />
         <Route path="/ar/boj" element={<Boj />} />

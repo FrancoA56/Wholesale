@@ -68,19 +68,15 @@ function Newsletter() {
   };
 
   return (
-    <div className="font-gothamB bg-tono1 py-6 flex flex-col md:flex-row items-center justify-center px-8 md:px-32 text-white mt-6">
-      <div className="w-full flex flex-col text-center md:text-end justify-center md:justify-right mr-4 mb-4 md:mb-0">
-        <div className="text-subtitulo">
-          Suscríbete a nuestro{" "}
-          <p className="font-gothamBI inline-block">Newsletter</p>
-        </div>
-        <div className="text-parrafo">
-          No te pierdas de todas nuestras promociones y novedades
+    <div className="font-gothamB bg-tono1 py-8 mb-12 flex flex-col md:flex-row items-center justify-center px-8 md:px-32 text-white mt-6">
+      <div className="md:w-1/2 w-full flex flex-col text-center md:text-end justify-center md:justify-right mr-4 mb-4 md:mb-0">
+        <div className="text-subtitulo md:pr-8 pr-0">
+          Suscribite al Newsletter y enterate de promociones y novedades.
         </div>
       </div>
 
       {/* Formulario */}
-      <form className="w-full" onSubmit={handleSubmit} ref={form}>
+      <form className="w-auto flex flex-row" onSubmit={handleSubmit} ref={form}>
         {/* Honeypot (anti-bot) */}
         <input
           type="text"
