@@ -70,7 +70,7 @@ function Boj() {
         </div>
       </div>
       <div className="sm:grid sm:grid-cols-5 flex flex-col mb-12">
-        <div className="sm:w-8/12 w-11/12 sm:ml-20 sm:mr-0 ml-4 mr-4 mt-12 col-span-2">
+        <div className="sm:w-8/12 w-11/12 sm:ml-40 sm:mr-0 ml-4 mr-4 mt-12 col-span-2">
           <Swiper
             modules={[Navigation, Pagination, Autoplay]}
             spaceBetween={30}
@@ -110,7 +110,7 @@ function Boj() {
           </Swiper>
           <div className="custom-pagination" />
         </div>
-        <div className="col-span-3 flex text-justify items-center sm:mr-16 mr-6 ml-6 sm:ml-0">
+        <div className="col-span-3 flex text-justify items-center sm:mr-36 mr-6 ml-6 sm:ml-0">
           <div className="flex flex-col">
             <a
               href="https://bojglobal.com/"

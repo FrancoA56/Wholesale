@@ -64,7 +64,7 @@ function Preguntas() {
                   {faqAr.pregunta}
                 </h2>
                 <p
-                  className="text-gray-600 px-12"
+                  className="text-gray-600 px-4"
                   dangerouslySetInnerHTML={{ __html: faqAr.respuesta }}
                 ></p>
               </div>
@@ -78,7 +78,7 @@ function Preguntas() {
                   {faq.pregunta}
                 </h2>
                 <p
-                  className="text-gray-600 px-12"
+                  className="text-gray-600 px-6"
                   dangerouslySetInnerHTML={{ __html: faq.respuesta }}
                 ></p>
               </div>

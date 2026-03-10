@@ -123,7 +123,7 @@ function Ooni() {
           </Swiper>
           <div className="custom-pagination" />
         </div>
-        <div className="sm:col-span-2 flex text-justify items-center sm:mr-28 mr-6 ml-6 sm:ml-0 sm:mt-0 mt-12">
+        <div className="sm:col-span-2 flex text-justify items-center sm:mr-40 mr-6 ml-6 sm:ml-0 sm:mt-0 mt-12">
           <div className="flex flex-col sm:mt-6 mt-0">
             <a
               href="https://ooni.com/"

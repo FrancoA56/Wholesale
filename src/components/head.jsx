@@ -3,7 +3,9 @@ import wholesaleLogo from "../media/imagenes/LOGO-WHOLESALE-BLANCO.png";
 import fondoAr from "../media/imagenes/principalAr.webp";
 import fondoArMobil from "../media/imagenes/principalArMobil.webp";
 import fondoAr2 from "../media/imagenes/bannerAr2.webp";
+import fondoAr3 from "../media/imagenes/bannerAr3.webp";
 import fondoAr2Mobil from "../media/imagenes/bannermobil.webp";
+import fondoAr3Mobil from "../media/imagenes/bannerAr3.webp";
 
 function Head() {
   const idioma = localStorage.getItem("ubicacion");
@@ -24,10 +26,10 @@ function Head() {
 
   // Fondos según dispositivo
   const backgrounds = isMobile
-    ? [fondoArMobil, fondoAr2Mobil] // en mobile solo una imagen (podés agregar más)
-    : [fondoAr, fondoAr2];
+    ? [fondoArMobil, fondoAr2Mobil, fondoAr3Mobil]
+    : [fondoAr, fondoAr2, fondoAr3];
 
-  // Animación solo si hay más de 1 imagen
+  // Animación de cambio de fondo
   useEffect(() => {
     if (idioma === "ar" && backgrounds.length > 1) {
       const interval = setInterval(() => {
@@ -38,17 +40,42 @@ function Head() {
     }
   }, [idioma, backgrounds.length]);
 
-  React.useEffect(() => {
-    if (currentBg === 1) {
+  // Mostrar texto cuando no sea el primer slide
+  useEffect(() => {
+    if (currentBg > 0) {
       const timeout = setTimeout(() => {
         setShowText(true);
-      }, 300); // ⬅ retraso de 0.5s
+      }, 300);
 
       return () => clearTimeout(timeout);
     } else {
       setShowText(false);
     }
   }, [currentBg]);
+
+  const getText = () => {
+    if (currentBg === 1) {
+      return {
+        tag: "NUEVO",
+        brand: "Emile Henry",
+        title: "Línea Madeleine",
+        subtitle: "Tradición francesa en cada detalle",
+      };
+    }
+
+    if (currentBg === 2) {
+      return {
+        tag: "NUEVO",
+        brand: "Emile Henry",
+        title: "Línea BBQ",
+        subtitle: "Aromas ahumados, texturas caramelizadas",
+      };
+    }
+
+    return null;
+  };
+
+  const text = getText();
 
   return (
     <>
@@ -60,16 +87,25 @@ function Head() {
           }}
         >
           <div className="bg-gradient-to-t from-black/50 to-black/0 h-screen w-screen flex justify-center items-end">
-            {showText && (
-              <div className="absolute inset-0 flex flex-col justify-center items-center text-center text-white px-6 transition-opacity duration-1000 animate-fadeIn">
-                <h2 className="text-4xl sm:text-6xl font-BodoniB mb-2">
-                  Nueva Línea Madeleine
-                </h2>
-                <p className="text-lg sm:text-2xl font-gothamB">
-                  Tradición francesa en cada detalle
-                </p>
-              </div>
-            )}
+            <a href="/ar/emilehenry">
+              {showText && text && (
+                <div className="absolute inset-0 flex flex-col justify-center items-center text-center text-white px-6 transition-opacity duration-1000 animate-fadeIn">
+                  <div className="mb-4 px-4 py-1 border border-white text-lg sm:text-xl font-gothamB  tracking-widest">
+                    {text.tag}
+                  </div>
+                  <div className=" px-4 py-1  text-lg sm:text-xl font-gothamB  tracking-widest">
+                    {text.brand}
+                  </div>
+                  <h2 className="text-4xl sm:text-6xl font-BodoniB mb-2">
+                    {text.title}
+                  </h2>
+                  {/* <p className="text-lg sm:text-2xl font-gothamB">
+                    {text.subtitle}
+                  </p> */}
+                </div>
+              )}
+            </a>
+
             <img
               src={wholesaleLogo}
               alt="wholesale dyr venta mayorista ooni emile henry boj mauviel1830"
@@ -81,7 +117,9 @@ function Head() {
                     : "opacity-0"
               }`}
             />
+
             <hr className="absolute bottom-20 text-tono5 w-5/6" />
+
             <div className="absolute bottom-24 md:bottom-10 text-parrafo font-gothamB text-tono5">
               Únicamente venta mayorista
             </div>
@@ -95,7 +133,9 @@ function Head() {
               alt="wholesale dyr venta mayorista ooni emile henry boj mauviel1830"
               className="sm:w-1/3 w-1/2 h-auto mb-24"
             />
+
             <hr className="absolute bottom-20 text-tono5 w-5/6" />
+
             <div className="absolute bottom-24 md:bottom-10 text-parrafo font-gothamB text-tono5">
               Únicamente venta mayorista
             </div>

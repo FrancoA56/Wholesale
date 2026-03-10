@@ -6,10 +6,11 @@ const routes = [
   { url: "/", changefreq: "monthly", priority: 1.0 }, // Página de inicio
   { url: "/ar", changefreq: "daily", priority: 1.0 }, // Página de inicio
   { url: "/uy", changefreq: "daily", priority: 1.0 }, // Página de inicio
+  { url: "/ar/new", changefreq: "daily", priority: 1.0 }, // Página de novedades
   { url: "/ar/contacto", changefreq: "monthly", priority: 0.8 }, // Página de contacto
   { url: "/uy/contacto", changefreq: "monthly", priority: 0.8 }, // Página de contacto
-  { url: "/ar/preguntas", changefreq: "monthly", priority: 0.8 }, // Página de contacto
-  { url: "/uy/preguntas", changefreq: "monthly", priority: 0.8 }, // Página de contacto
+  { url: "/ar/preguntas", changefreq: "monthly", priority: 0.8 }, // Página de preguntas y respuestas
+  { url: "/uy/preguntas", changefreq: "monthly", priority: 0.8 }, // Página de preguntas y respuestas
   { url: "/ar/nosotros", changefreq: "monthly", priority: 0.7 }, // Página acerca de
   { url: "/uy/nosotros", changefreq: "monthly", priority: 0.7 }, // Página acerca de
   { url: "/ar/ooni", changefreq: "monthly", priority: 1.0 }, // Página Ooni

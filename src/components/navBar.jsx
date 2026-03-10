@@ -10,8 +10,18 @@ function NavBar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const idioma = localStorage.getItem("ubicacion");
 
+  // Determinar si mostrar Nav
+  const shouldShowNovedades = ![
+    "/uy",
+    "/uy/contacto",
+    "/uy/nosotros",
+    "/uy/preguntas",
+    "/uy/emileHenry",
+    "/uy/mauviel1830",
+  ].includes(location.pathname);
+
   return (
-    <div className="fixed bg-tono1 text-white py-2 z-30 w-screen font-gothamB pr-8">
+    <div className="fixed bg-tono1 text-white py-2 z-50 w-screen font-gothamB pr-8">
       <div className="flex justify-between items-center px-4">
         <a href="/" className="ml-3">
           {idioma === "ar" ? (
@@ -31,6 +41,14 @@ function NavBar() {
         {/* Logo o nombre de la empresa */}
         {/* Menú de navegación */}
         <div className="hidden sm:flex flex-row gap-6">
+          {location.pathname !== "/ar/new" && shouldShowNovedades && (
+            <a
+              className="hover:scale-110 transition duration-300 ease-in-out transform"
+              href="/ar/new"
+            >
+              Novedades
+            </a>
+          )}
           {location.pathname !== "/ar" && location.pathname !== "/uy" && (
             <a
               className="hover:scale-110 transition duration-300 ease-in-out transform"
@@ -134,6 +152,14 @@ function NavBar() {
       {/* Menú desplegable móvil */}
       {menuOpen && (
         <div className="flex flex-col items-end gap-4 bg-tono1 text-white py-4 sm:hidden">
+          {location.pathname !== "/ar/new" && shouldShowNovedades && (
+            <a
+              className="hover:scale-110 transition duration-300 ease-in-out transform"
+              href="/ar/new"
+            >
+              Novedades
+            </a>
+          )}
           {location.pathname !== "/ar" && location.pathname !== "/uy" && (
             <a
               className="hover:scale-110 transition duration-300 ease-in-out transform"

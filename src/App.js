@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
 import ReactGA from "react-ga4";
 import Home from "./components/home";
+import New from "./components/new";
 import Contact from "./components/contact";
 import AcercaDe from "./components/nosotros";
 import Ooni from "./components/ooni";
@@ -15,6 +16,7 @@ import NavBar from "./components/navBar";
 import Footer from "./components/footer";
 import Preguntas from "./components/preguntas";
 import Detail from "./components/detail";
+import PopupNewLines from "./components/PopupNewLines";
 import "./App.css";
 import ScrollToTop from "./components/scrollToTop";
 import WhatsApp from "./components/whatsApp";
@@ -53,12 +55,14 @@ function App() {
     <div className="App">
       {shouldShowNavAndFooter && <NavBar />}
       {shouldShowNavAndFooter && shouldShowNav && <Nav />}
+      <PopupNewLines />
       <WhatsApp />
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<Idioma />} />
         <Route path="/ar" element={<Home />} />
         <Route path="/uy" element={<Home />} />
+        <Route path="/ar/new" element={<New />} />
         <Route path="/ar/detalle" element={<Detail />} />
         <Route path="/ar/contacto" element={<Contact />} />
         <Route path="/uy/contacto" element={<Contact />} />

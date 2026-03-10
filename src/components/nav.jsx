@@ -8,7 +8,7 @@ function Nav() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <nav className="bg-tono5 absolute text-black mt-10 font-gothamB h-auto w-full z-25 px-6 py-4 flex items-center justify-between">
+    <nav className="bg-tono5 absolute text-black mt-10 font-gothamB h-auto w-full z-40 px-6 py-4 flex items-center justify-between">
       {/* Logo */}
       <a href={`/${idioma || "ar"}`} className="flex items-center">
         <img src={wsAzul} className="w-20" alt="Logo Azul" />

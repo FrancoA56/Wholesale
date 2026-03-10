@@ -58,7 +58,7 @@ function Mauviel() {
         </div>
       </div>
       <div className="sm:grid sm:grid-cols-5 flex flex-col mb-12">
-        <div className="sm:w-8/12 w-11/12 sm:ml-20 sm:mr-0 ml-4 mr-4 mt-12 col-span-2">
+        <div className="sm:w-8/12 w-11/12 sm:ml-28 sm:mr-0 ml-4 mr-4 mt-12 col-span-2">
           <Swiper
             modules={[Navigation, Pagination, Autoplay]}
             spaceBetween={30}
@@ -101,7 +101,7 @@ function Mauviel() {
           </Swiper>
           <div className="custom-pagination" />
         </div>
-        <div className="col-span-3 flex text-justify items-center sm:mr-20 mr-0 ">
+        <div className="col-span-3 flex text-justify items-center sm:mr-40 mr-0 ">
           <div className="flex flex-col sm:mt-0 mt-8">
             <a
               href="https://www.mauviel.com/en/"
@@ -135,7 +135,7 @@ function Mauviel() {
         </div>
       </div>
 
-      <div className="sm:grid sm:grid-cols-3 sm:mr-6 mr-0 mb-12">
+      <div className="sm:grid sm:grid-cols-3 sm:mx-6 mr-0 mb-12">
         <div className="flex flex-col justify-center items-center text-center gap-2 mx-4 mb-8 sm:grid sm:grid-rows-4">
           <img
             src={mauvielCuality2}

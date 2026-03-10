@@ -123,7 +123,7 @@ function Emile() {
           <div className="custom-pagination" />
         </div>
 
-        <div className="sm:col-span-2 flex text-justify items-center sm:mr-16 sm:ml-0 mr-4 ml-4">
+        <div className="sm:col-span-2 flex text-justify items-center sm:mr-40 sm:ml-0 mr-4 ml-4">
           <div className="flex flex-col mt-16 sm:mt-0">
             <a
               href="https://www.emilehenry.com/en/"

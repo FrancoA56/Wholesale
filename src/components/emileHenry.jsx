@@ -8,16 +8,25 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { useMediaQuery } from "react-responsive";
 import emile1 from "../media/imagenes/emile/bowl.webp";
-import emile2 from "../media/imagenes/emile/budinera.webp";
-import emile3 from "../media/imagenes/emile/corazon.webp";
+import emile2 from "../media/imagenes/emile/budinera2.webp";
+import emile3 from "../media/imagenes/emile/corazon2.webp";
 import emile5 from "../media/imagenes/emile/fuente.webp";
-import emile6 from "../media/imagenes/emile/fuenteCebolla.webp";
-import emile7 from "../media/imagenes/emile/fuenteOnda.webp";
-import emile10 from "../media/imagenes/emile/fuentePlana2.webp";
+import emile6 from "../media/imagenes/emile/redondo.webp";
+import emile7 from "../media/imagenes/emile/pot.webp";
+import emile10 from "../media/imagenes/emile/bbqgrill.webp";
 import emile11 from "../media/imagenes/emile/panera.webp";
 import emile12 from "../media/imagenes/emile/ramekin.webp";
 import emile13 from "../media/imagenes/emile/tajine.webp";
 import banner from "../media/imagenes/emile/banner.webp";
+import fondoAr2 from "../media/imagenes/bannerAr2.webp";
+import fondoAr3 from "../media/imagenes/bannerAr3.webp";
+import fondoAr4 from "../media/imagenes/bannerAr4.webp";
+import fondoAr5 from "../media/imagenes/bannerAr5.webp";
+import fondoAr6 from "../media/imagenes/bannerAr6.webp";
+import fondoArMobil2 from "../media/imagenes/madeleineMobil.jpg";
+import fondoArMobil3 from "../media/imagenes/madeleineMobil2.jpg";
+import fondoArMobil4 from "../media/imagenes/madeleineMobil3.jpg";
+import fondoArMobil5 from "../media/imagenes/madeleineMobil4.webp";
 import "../styles/efectoLogo.css";
 import emileCuality1 from "../media/imagenes/emile/cualidades/garantia.png";
 import emileCuality2 from "../media/imagenes/emile/cualidades/ceramica-calidad.png";
@@ -25,7 +34,6 @@ import emileCuality3 from "../media/imagenes/emile/cualidades/made-in-france.png
 import emileCuality4 from "../media/imagenes/emile/cualidades/producto-artesanal.png";
 import "../styles/carrousels.css";
 import fondoEmile1 from "../media/imagenes/emile/portada.webp";
-import fondoEmile2 from "../media/imagenes/bannermobilemile.webp";
 
 function Emile() {
   const isDesktopOrLaptop = useMediaQuery({
@@ -51,49 +59,157 @@ function Emile() {
 
   const [showText, setShowText] = React.useState(false);
 
-  const backgrounds = [fondoEmile1, fondoEmile2];
-  // después ponés: [fondoEmile1, fondoEmile2]
+  const nextBg = () => {
+    clearInterval(intervalRef.current);
 
-  React.useEffect(() => {
-    const interval = setInterval(() => {
+    setCurrentBg((prev) => (prev + 1) % backgrounds.length);
+
+    startAutoplay();
+  };
+
+  const prevBg = () => {
+    clearInterval(intervalRef.current);
+
+    setCurrentBg(
+      (prev) => (prev - 1 + backgrounds.length) % backgrounds.length,
+    );
+
+    startAutoplay();
+  };
+
+  const intervalRef = React.useRef(null);
+
+  const startAutoplay = () => {
+    intervalRef.current = setInterval(() => {
       setCurrentBg((prev) => (prev + 1) % backgrounds.length);
     }, 4000);
+  };
 
-    return () => clearInterval(interval);
+  const backgroundsDesktop = [
+    {
+      image: fondoEmile1,
+      title: null,
+      subtitle: null,
+    },
+    {
+      image: fondoAr2,
+      tag: "NUEVO",
+      title: "Línea Madeleine",
+      subtitle: "Tradición francesa en cada detalle",
+    },
+    {
+      image: fondoAr3,
+      tag: "NUEVO",
+      title: "Línea BBQ",
+      subtitle: "Aromas ahumados, texturas caramelizadas",
+    },
+    {
+      image: fondoAr4,
+      title: "Línea Tradicional",
+      subtitle: "Diseño y tradición en cada pieza",
+    },
+    {
+      image: fondoAr5,
+      title: "Línea Delight",
+      subtitle: "Cerámica avanzada Flame®: liviana y resistente",
+    },
+    {
+      image: fondoAr6,
+      title: "Línea Sublime",
+      subtitle: "Ultraliviana y naturalmente antiadherente",
+    },
+  ];
+
+  const backgroundsMobile = [
+    {
+      image: fondoEmile1,
+      title: null,
+      subtitle: null,
+    },
+    {
+      image: fondoArMobil2,
+      tag: "NUEVO",
+      title: "Línea Madeleine",
+      subtitle: "Tradición francesa en cada detalle",
+    },
+    {
+      image: fondoAr3,
+      tag: "NUEVO",
+      title: "Línea BBQ",
+      subtitle: "Aromas ahumados,",
+      subtitle2: "texturas caramelizadas",
+    },
+    {
+      image: fondoArMobil3,
+      title: "Línea Tradicional",
+      subtitle: "Diseño y tradición en cada pieza",
+    },
+    {
+      image: fondoArMobil4,
+      title: "Línea Delight",
+      subtitle: "Cerámica avanzada Flame®:",
+      subtitle2: "liviana y resistente",
+    },
+    {
+      image: fondoArMobil5,
+      title: "Línea Sublime",
+      subtitle: "Ultraliviana y naturalmente",
+      subtitle2: "antiadherente",
+    },
+  ];
+
+  const backgrounds = isDesktopOrLaptop
+    ? backgroundsDesktop
+    : backgroundsMobile;
+
+  React.useEffect(() => {
+    startAutoplay();
+
+    return () => clearInterval(intervalRef.current);
   }, [backgrounds.length]);
 
-    React.useEffect(() => {
-      if (currentBg === 1) {
-        const timeout = setTimeout(() => {
-          setShowText(true);
-        }, 300); // ⬅ retraso de 0.5s
+  React.useEffect(() => {
+    if (backgrounds[currentBg].title) {
+      const timeout = setTimeout(() => {
+        setShowText(true);
+      }, 300);
 
-        return () => clearTimeout(timeout);
-      } else {
-        setShowText(false);
-      }
-    }, [currentBg]);
+      return () => clearTimeout(timeout);
+    } else {
+      setShowText(false);
+    }
+  }, [currentBg]);
 
   return (
     <>
       <div className="relative h-screen w-screen overflow-hidden">
+        <button
+          onClick={prevBg}
+          className="absolute left-3 top-1/2 -translate-y-1/2 z-20 text-white text-4xl sm:text-5xl opacity-70 hover:opacity-100 transition px-4"
+        >
+          ‹
+        </button>
+        <button
+          onClick={nextBg}
+          className="absolute right-6 md:right-10 top-1/2 -translate-y-1/2 z-20 text-white text-4xl sm:text-5xl opacity-70 hover:opacity-100 transition px-4"
+        >
+          ›
+        </button>
         {backgrounds.map((bg, index) => (
           <div
             key={index}
-            className={`absolute inset-0 mt-32 bg-cover bg-center transition-opacity duration-1000 ${
+            className={`absolute inset-0 mt-32 bg-cover sm:bg-cover bg-center bg-no-repeat transition-opacity duration-1000 ${
               currentBg === index ? "opacity-100" : "opacity-0"
             }`}
-            style={{ backgroundImage: `url(${bg})` }}
+            style={{ backgroundImage: `url(${bg.image})` }}
           />
         ))}{" "}
         <div className="relative bg-gradient-to-t from-black/40 to-black/0 h-screen w-screen flex justify-center items-center">
           {" "}
           <a
-            href="https://www.emilehenry.com.ar/"
+            href="#scroll"
             title="Emile Henry Argentina wholesale dyr venta mayorista"
             className="flex justify-center"
-            target="_blank"
-            rel="noreferrer"
           >
             <img
               src={emileLogo}
@@ -104,11 +220,21 @@ function Emile() {
             />
             {showText && (
               <div className="absolute inset-0 flex flex-col justify-center items-center text-center text-white px-6 transition-opacity duration-1000 animate-fadeIn">
-                <h2 className="text-4xl sm:text-6xl font-BodoniB mb-4">
-                  Nueva Línea Madeleine
+                {backgrounds[currentBg].tag && (
+                  <div className="mb-4 px-4 py-1 border border-white text-lg sm:text-xl font-gothamB  tracking-widest">
+                    {backgrounds[currentBg].tag}
+                  </div>
+                )}
+
+                <h2 className="text-5xl sm:text-6xl font-BodoniB mb-1">
+                  {backgrounds[currentBg].title}
                 </h2>
-                <p className="text-lg sm:text-2xl font-gothamB">
-                  Tradición francesa en cada detalle
+
+                <p className="text-xl sm:text-2xl font-gothamB">
+                  {backgrounds[currentBg].subtitle}
+                </p>
+                <p className="text-xl sm:text-2xl font-gothamB">
+                  {backgrounds[currentBg].subtitle2}
                 </p>
               </div>
             )}
@@ -119,7 +245,7 @@ function Emile() {
           </div>
         </div>
       </div>
-      <div className="sm:grid sm:grid-cols-5 flex flex-col sm:mb-12 mb-0">
+      <div className="sm:grid sm:grid-cols-5 flex flex-col sm:mb-12 mb-0" id="scroll">
         <div className="sm:w-9/12 w-11/12 sm:ml-20 ml-4 mr-4 sm:mr-0 mt-12 sm:col-span-3">
           <Swiper
             modules={[Navigation, Pagination, Autoplay]}
@@ -174,7 +300,7 @@ function Emile() {
           <div className="custom-pagination" />
         </div>
 
-        <div className="sm:col-span-2 flex text-justify items-center sm:mr-16 sm:ml-0 mr-4 ml-4">
+        <div className="sm:col-span-2 flex text-justify items-center sm:mr-40 sm:ml-0 mr-4 ml-4">
           <div className="flex flex-col mt-16 sm:mt-0">
             <a
               href="https://www.emilehenry.com/en/"
@@ -253,7 +379,7 @@ function Emile() {
           <div className="flex justify-center font-gothamBI">
             PRODUCTOS ARTESANALES DE CERÁMICA NATURAL
           </div>
-          <div className="flex justify-center self-start font-gothamB">
+          <div className="flex justify-center font-gothamB">
             Los productos son libre de plomo, cadmio y niquel.
           </div>
         </div>

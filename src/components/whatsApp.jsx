@@ -6,7 +6,7 @@ import ReactPixel from "react-facebook-pixel";
 function WhatsApp() {
   const [hover, setHover] = useState(false);
   const hideTimeout = useRef(null);
-  const wsp = "5491123053139";
+  const wsp = "5491131618802";
 
   const copiarWsp = () => {
     const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
